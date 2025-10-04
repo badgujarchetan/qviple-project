@@ -1,0 +1,102 @@
+.wordmark {
+  position: relative;
+  margin-top: 8rem;
+  /* margin: 0 auto; */
+  width: var(--grid-width);
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
+
+._wordmark {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+._wordmark .glyphs {
+  display: grid;
+  grid-template-columns: 230fr 359fr 286fr 366fr 318fr;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+}
+
+.name {
+  translate: none;
+  rotate: none;
+  scale: none;
+  transform: translate(0px, 0px);
+}
+
+._wordmark .glyphs svg {
+  fill: #f73b20;
+  overflow: visible;
+  flex-grow: 1;
+  height: 100%;
+  width: 100%;
+  will-change: transform;
+}
+
+.footer-paragraph {
+  opacity: 0.7;
+  white-space: pre-line;
+  color: #f73b20;
+  margin-top: 28rem;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
+
+.footer-bottom-card {
+  flex-wrap: wrap;
+  gap: 17px;
+  width: 100%;
+  margin-top: 3rem;
+  display: flex;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.partnership-card {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+  padding: 0 32px;
+  flex: 1;
+}
+
+.partnership-card .background {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+.partnership-card .gradient {
+ 
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  
+}
+
+.partnership-card .badge {
+  position: relative;
+  height: clamp(44px, 39.242px + 1.22vw, 60px);
+  margin-bottom: 0.85rem;
+  width: auto;
+  background-color: transparent;
+
+
+}

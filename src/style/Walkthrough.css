@@ -1,0 +1,232 @@
+:root{
+  --bg:#f73b20;
+  --text:#ffffff;
+  --muted: rgba(255,255,255,0.92);
+  --step-dot-size: 48px;
+  --transition: 420ms cubic-bezier(.22,.95,.35,1);
+  --glass: rgba(255,255,255,0.04);
+}
+
+/* reset small */
+*{box-sizing:border-box}
+body{margin:0}
+
+/* main container */
+.jw-walkthrough{
+  position:relative;
+  width:100%;
+  height:100vh;
+  min-height:620px;
+  color:var(--text);
+  overflow:hidden;
+  background:var(--bg);
+  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* premium modifier - ensures stronger vignette */
+.jw-premium { background: var(--bg); }
+
+/* background canvas */
+.jw-background{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  overflow:hidden;
+  will-change:transform;
+}
+.jw-canvas{
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+/* center content */
+.jw-center{
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:1180px;
+  padding: 48px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* device mock */
+.jw-device-mock{
+  width:360px;
+  height:720px;
+  border-radius:28px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  box-shadow: 0 22px 70px rgba(0,0,0,0.32), inset 0 1px 0 rgba(255,255,255,0.02);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:28px;
+  position:relative;
+  backdrop-filter: blur(4px);
+  transition: transform 420ms cubic-bezier(.22,.95,.35,1);
+}
+
+/* subtle floating lift when hovered */
+.jw-device-mock:hover { transform: translateY(-6px) scale(1.005); }
+
+/* screen area */
+.jw-screen{
+  position:relative;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  display:block;
+  border-radius:16px;
+}
+
+/* slide base */
+.jw-slide{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:40px;
+  text-align:center;
+  opacity:0;
+  transform: translateY(18px) scale(0.992);
+  transition: opacity var(--transition), transform var(--transition);
+  pointer-events:none;
+}
+
+/* active slide */
+.jw-slide.active{
+  opacity:1;
+  transform: translateY(0) scale(1);
+  pointer-events:auto;
+}
+
+/* title */
+.jw-title{
+  margin:0;
+  font-weight:700;
+  font-size: clamp(26px, 5.8vw, 44px);
+  line-height:1;
+  letter-spacing: -0.02em;
+  color:var(--text);
+  text-shadow:
+    0 6px 22px rgba(0,0,0,0.45),
+    0 0 28px rgba(255,255,255,0.03);
+}
+
+/* subtitle */
+.jw-sub{
+  margin-top:12px;
+  color: rgba(255,255,255,0.92);
+  font-size: 15px;
+  font-weight:600;
+  letter-spacing: 0.01em;
+  max-width: 84%;
+}
+
+/* stepper */
+.jw-stepper{
+  position:absolute;
+  left:28px;
+  bottom:26px;
+  z-index:3;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.jw-stepper ul{
+  margin:0;
+  padding:0;
+  list-style:none;
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+/* step button */
+.jw-step{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  border:0;
+  background:transparent;
+  padding:0;
+  cursor:pointer;
+  color:var(--text);
+  transition: transform 260ms cubic-bezier(.22,.95,.35,1);
+  outline:none;
+}
+
+/* number bubble */
+.jw-step .jw-step-num{
+  width:var(--step-dot-size);
+  height:var(--step-dot-size);
+  min-width:var(--step-dot-size);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  color:var(--text);
+  border:2px solid rgba(255,255,255,0.95);
+  background: transparent;
+  transition: transform 260ms ease, background 260ms ease, box-shadow 260ms ease;
+  position:relative;
+  font-size:14px;
+  text-shadow: 0 4px 18px rgba(0,0,0,0.35);
+}
+
+/* active step styles - glowing ring + subtle scale */
+.jw-step.active .jw-step-num{
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  transform: scale(1.06);
+  box-shadow:
+    0 8px 30px rgba(0,0,0,0.35),
+    0 0 22px rgba(255,255,255,0.06) inset,
+    0 0 18px rgba(255,255,255,0.03);
+  border-color: rgba(255,255,255,0.95);
+}
+
+/* small label appears when active */
+.jw-step .jw-step-label{
+  display:none;
+  font-size:13px;
+  color: rgba(255,255,255,0.95);
+  font-weight:700;
+}
+
+/* show label on active */
+.jw-step.active .jw-step-label{
+  display:inline-block;
+  transform-origin:left center;
+  animation: slideIn 360ms cubic-bezier(.22,.95,.35,1) forwards;
+}
+
+/* animation */
+@keyframes slideIn {
+  from { transform: translateX(-10px); opacity:0; }
+  to { transform: translateX(0); opacity:1; }
+}
+
+/* responsive tweaks */
+@media (max-width: 880px){
+  .jw-center{ padding:18px; }
+  .jw-device-mock{ width:300px; height:600px; border-radius:22px; padding:20px; }
+  :root{ --step-dot-size: 44px; }
+  .jw-stepper { left:12px; bottom:12px; }
+  .jw-sub { font-size:14px; }
+}
+
+/* small screens */
+@media (max-width:480px){
+  .jw-device-mock{ width:260px; height:520px; padding:16px; }
+  :root{ --step-dot-size: 40px; }
+  .jw-title { font-size: clamp(22px, 7vw, 30px); }
+}

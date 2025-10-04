@@ -1,0 +1,131 @@
+section {
+  display: block;
+}
+._client_testimonial {
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 5rem;
+  /* height: 130vh; */
+  height: 1000px;
+  color: white;
+}
+
+._client_testimonial .background {
+  /* background-color: #f73b20; */
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+._client_testimonial .background .our_client_image {
+  position: absolute;
+  translate: none;
+  rotate: none;
+  scale: none;
+  transform: translate3d(0px, -16.3364px, 0px);
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  object-fit: cover;
+
+  will-change: transform;
+}
+
+._client_testimonial > :not(.background) {
+  position: relative;
+}
+
+._client_testimonial .color-orange {
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: none;
+  padding-left: var(--grid-padding) !important;
+  padding-right: var(--grid-padding) !important;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  color: #fff6f5;
+}
+
+._client_testimonial .color-orange .h2_text {
+  flex: 1 1 0px;
+  min-width: auto;
+  padding-left: var(--grid-half-gap);
+  padding-right: var(--grid-half-gap);
+  flex: 0 0 62.5%;
+  max-width: 62.5%;
+  text-wrap: balance;
+  font-size: clamp(40px, 28.105px + 100vw * 0.0305, 80px);
+  letter-spacing: 0.01em;
+  line-height: 1;
+  font-weight: 500;
+  margin-top: 4rem;
+  margin-bottom: 8rem;
+}
+
+._client_testimonial .cards {
+  width: var(--cols-4);
+  margin-right: 37%;
+  margin-left: 37%;
+  letter-spacing: 0.03em;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 450;
+}
+
+._client_testimonial .cards .card_li {
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+  background: #ffffff1a;
+  border-radius: 16px;
+  box-shadow: 0 -4px 16px #0000000d;
+  display: block;
+  margin: var(--8) 0;
+  padding: 1rem;
+  position: relative;
+  transform-origin: 50% 100%;
+  will-change: transform;
+}
+
+.opacity-cards {
+  opacity: 0.7;
+}
+
+.opacity-cards_div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.opacity-cards_div-span {
+  --size: 40px;
+  background-color: var(--background-color, #fff);
+  color: var(--color, #f73b20);
+  display: inline-block;
+  height: var(--size);
+  width: var(--size);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  place-items: center;
+  border-radius: 100%;
+  --color: #360802;
+  --background-color: #bcffbb;
+}
+
+
+.opacity-cards_div-span_inside-span{
+    letter-spacing: .03em;
+    font-size: 16px;
+    line-height: 1.5;
+}
