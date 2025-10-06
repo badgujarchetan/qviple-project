@@ -126,7 +126,7 @@
 
 ._common_header video {
   opacity: 0;
-  transition: opacity 1.2s ease-out;
+  transition: opacity 1.4s ease-out;
 }
 
 ._common_header video.show {
@@ -147,7 +147,7 @@
 ._common_header .main-row {
   min-height: 100vh;
   min-height: 100svh;
-  padding-bottom: clamp(116px, 108.863px + 100vw * 0.0183, 140px);
+  padding-bottom: 12rem;
   padding-top: 10rem;
 }
 
@@ -221,7 +221,7 @@
 
 .t {
   will-change: transform;
-}
+} 
 
 .lang-cta-wrapper .ml-1 {
   font-weight: 700;
@@ -238,7 +238,7 @@
 }
 
 .xx-offset {
-  margin-left: 16.75%;
+  margin-left: 20.75%;
   margin-bottom: 3.5rem;
 }
 

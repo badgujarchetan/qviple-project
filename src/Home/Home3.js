@@ -1,355 +1,108 @@
-// import React from "react";
-// import "../style/Home3.css";
-// export default function Home3() {
-//   return (
-//     <section className="_jeton-walkthrough">
-//       <div className="canvas">
-//         <div className="rives">
-//           <canvas
-//             id="nhUKueFFVLQ-8"
-//             className="_rive-asset"
-//             data-n-ids='{"nhUKueFFVLQ-0":"nhUKueFFVLQ-8"}'
-//             width="489"
-//             height="489"
-//             style={{ opacity: "0" }}
-//           ></canvas>
-//           <canvas
-//             id="nhUKueFFVLQ-8"
-//             className="_rive-asset"
-//             data-n-ids='{"nhUKueFFVLQ-0":"nhUKueFFVLQ-8"}'
-//             width="489"
-//             height="489"
-//             style={{ opacity: "0" }}
-//           ></canvas>
-//           <canvas
-//             id="nhUKueFFVLQ-8"
-//             className="_rive-asset"
-//             data-n-ids='{"nhUKueFFVLQ-0":"nhUKueFFVLQ-8"}'
-//             width="489"
-//             height="489"
-//             style={{ opacity: "0" }}
-//           ></canvas>
-//           <canvas
-//             id="nhUKueFFVLQ-8"
-//             className="_rive-asset"
-//             data-n-ids='{"nhUKueFFVLQ-0":"nhUKueFFVLQ-8"}'
-//             width="489"
-//             height="489"
-//             style={{ opacity: "0" }}
-//           ></canvas>
-//           <canvas
-//             id="nhUKueFFVLQ-8"
-//             className="_rive-asset"
-//             data-n-ids='{"nhUKueFFVLQ-0":"nhUKueFFVLQ-8"}'
-//             width="489"
-//             height="489"
-//             style={{ opacity: "0" }}
-//           ></canvas>
-//           <canvas
-//             id="nhUKueFFVLQ-8"
-//             className="_rive-asset"
-//             data-n-ids='{"nhUKueFFVLQ-0":"nhUKueFFVLQ-8"}'
-//             width="489"
-//             height="489"
-//             style={{ opacity: "1" }}
-//           ></canvas>
-//         </div>
-//       </div>
+"use client";
 
-//       {/* 1st */}
+import "../style/Home3.css";
 
-//       <article style={{ opacity: 1 }}>
-//         <div
-//           className="heading"
-//           style={{
-//             transform: "translate(0px, -20px)",
-//             opacity: 0,
-//           }}
-//         >
-//           <p>All currencies</p>
-//         </div>
+import React from "react";
 
-//         <div
-//           className="heading"
-//           style={{
-//             transform: "translate(0px, -20px)",
-//             opacity: 0,
-//           }}
-//         >
-//           <p>One App</p>
-//         </div>
+export default function Home3() {
+  return (
+    <section className="_client_testimonial">
+      <div className="background">
+        <img
+          // style={{
+          //   transform:
+          //     "translate3d(0px, -10.8562px, 0px) rotate(0deg) scale(1)",
+          // }}
+          className="our_client_image"
+          src="/images\bg_image.jpg"
+        ></img>
+      </div>
+      <div className="color-orange">
+        <h2 className="h2_text">Hear it from our clients</h2>
+      </div>
+      <ul className="cards">
+        <li>
+          <div className="card_li">
+            <p>Recommended</p>
+            <p className="opacity-cards">
+              Very happy with the app. Does what it says, simple payments and
+              transactions. Quick account verification and withdrawals. 24/7
+              support available.{" "}
+            </p>
+            <div className="opacity-cards_div">
+              <span className="opacity-cards_div-span">
+                <spna className="opacity-cards_div-span_inside-span">VK</spna>
+              </span>
+              <span>Vamsi K.</span>
+            </div>
+          </div>
+        </li>
 
-//         <div
-//           className="feature"
-//           style={{
-//             transform: "translate(0px, -20px)",
-//             opacity: 0,
-//           }}
-//         >
-//           <div
-//             className="divider"
-//             style={{
-//               transform: "translate(0px, -20px)",
-//               scale: ("0", "1"),
-//             }}
-//           ></div>
-//           <p
-//             style={{ transform: "translate(0px, -20px)", opacity: 0 }}
-//             className="title"
-//           >
-//             Move your money across Europe{" "}
-//           </p>
-//           <p
-//             className="text"
-//             style={{ transform: "translate(0px, -20px)", opacity: 0 }}
-//           >
-//             Send money anywhere in the EU, effortlessly.
-//           </p>
-//         </div>
-//       </article>
-//       {/* 2nd */}
-//       <article style={{ opacity: 1 }}>
-//         <div
-//           className="feature"
-//           style={{
-//             transform: "translate(0px, -20px)",
-//             opacity: 0,
-//           }}
-//         >
-//           <div
-//             className="divider"
-//             style={{
-//               transform: "translate(0px, -20px)",
-//               scale: ("0", "1"),
-//             }}
-//           ></div>
-//           <p
-//             style={{ transform: "translate(0px, -20px)", opacity: 0 }}
-//             className="title"
-//           >
-//             Add or send in a few taps
-//           </p>
-//           <p
-//             className="text"
-//             style={{ transform: "translate(0px, -20px)", opacity: 0 }}
-//           >
-//             Easily add or send money from your account.
-//           </p>
-//         </div>
-//       </article>
+        <li>
+          <div
+            className="card_li"
+            style={{ transform: "translate(0px, 0px) rotate(0deg) scale(1)" }}
+          >
+            <p>Awesome app very user friendly</p>
+            <p className="opacity-cards">
+              Would highly recommend Jeton to my friends.
+            </p>
+            <div className="opacity-cards_div">
+              <span className="opacity-cards_div-span">
+                <spna className="opacity-cards_div-span_inside-span">LA</spna>
+              </span>
+              <span>Leonie A.</span>
+            </div>
+          </div>
+        </li>
 
-//       {/* 3rd */}
-//       <article style={{ opacity: 1 }}>
-//         <div
-//           className="feature"
-//           style={{
-//             transform: "translate(0px, -20px)",
-//             opacity: 0,
-//           }}
-//         >
-//           <div
-//             className="divider"
-//             style={{
-//               transform: "translate(0px, -20px)",
-//               scale: ("0", "1"),
-//             }}
-//           ></div>
-//           <p
-//             style={{ transform: "translate(0px, -20px)", opacity: 0 }}
-//             className="title"
-//           >
-//             50+ payment methods across Europe
-//           </p>
-//           <p
-//             className="text"
-//             style={{ transform: "translate(0px, -20px)", opacity: 0 }}
-//           >
-//             Jeton is seamlessly connected with more than 25 countries, and 50
-//             payment methods.
-//           </p>
-//         </div>
-//       </article>
-//       {/* 4th  */}
-//       <article style={{ opacity: 1 }}>
-//         <div
-//           className="feature"
-//           style={{
-//             transform: "translate(0px, -20px)",
-//             opacity: 0,
-//           }}
-//         >
-//           <div
-//             className="divider"
-//             style={{
-//               transform: "translate(0px, -20px)",
-//               scale: ("0", "1"),
-//             }}
-//           ></div>
-//           <p
-//             style={{ transform: "translate(0px, -20px)", opacity: 0 }}
-//             className="title"
-//           >
-//             Fast and safe transactions
-//           </p>
-//           <p
-//             className="text"
-//             style={{ transform: "translate(0px, -20px)", opacity: 0 }}
-//           >
-//             Fast and safe transactions at your fingertips.
-//           </p>
-//         </div>
-//       </article>
+        <li>
+          <div
+            className="card_li"
+            // style={{
+            //   transform:
+            //     "translate3d(0px, -228.891px, 0px) scale(0.9193, 0.9193)",
+            //   clipPath: "inset(72px 0px 0px)",
+            // }}
+          >
+            <p>The best payment solution for German customers</p>
+            <p className="opacity-cards">
+              I've been a Jeton user for a few years!The support was always
+              great and I'm always able to make my payments to the websites I
+              want with no problem.
+            </p>
+            <div className="opacity-cards_div">
+              <span className="opacity-cards_div-span">
+                <spna className="opacity-cards_div-span_inside-span">KR</spna>
+              </span>
+              <span>Karl R.</span>
+            </div>
+          </div>
+        </li>
 
-//       {/* 5th */}
-
-//       <article style={{ opacity: 1 }}>
-//         <div
-//           className="subheading"
-//           style={{
-//             transform: "translate(0px, -20px)",
-//             opacity: 1,
-//           }}
-//           data-position="left"
-//         >
-//           <p className="grow">Simple</p>
-//         </div>
-//         <div
-//           className="subheading"
-//           style={{
-//             transform: "translate(0px, -20px)",
-//             opacity: 1,
-//           }}
-//           data-position="right"
-//         >
-//           <p className="grow">fast & safe</p>
-//         </div>
-//         <div
-//           className="subheading"
-//           style={{
-//             transform: "translate(0px, -20px)",
-//             opacity: 1,
-//           }}
-//           data-position="center"
-//         >
-//           <p className="grow">Simple, fast & safe</p>
-//         </div>
-//       </article>
-
-//       <div className="stepper">
-//         <ul className="_stepper">
-//           <li>
-//             <button className="shrink" data-active="false">
-//               <div className="itemss-baseline" style={{ opacity: 1 }}>
-//                 <div className="_books">
-//                   <svg
-//                     className="svg-books"
-//                     viewBox="0 0 24 24"
-//                     fill="none"
-//                     xmlns="http://www.w3.org/2000/svg"
-//                     style={{ "--p": 1 }} // Correct way to use CSS variable
-//                   >
-//                     <circle cx="12" cy="12" r="12"></circle>
-//                     <circle cx="12" cy="12" r="12"></circle>
-//                   </svg>
-//                   <span>01</span>
-//                 </div>
-//                 <div className="_medium"   style={{ "--w": "64px" }}>
-//                   <div class="account">Account</div>
-//                 </div>
-//               </div>
-//             </button>
-//           </li>
-//           <li>
-//             <button className="shrink" data-active="false">
-//               <div className="itemss-baseline" style={{ opacity: 1 }}>
-//                 <div className="_books">
-//                   <svg
-//                     className="svg-books"
-//                     viewBox="0 0 24 24"
-//                     fill="none"
-//                     xmlns="http://www.w3.org/2000/svg"
-//                     style={{ "--p": 1 }} // Correct way to use CSS variable
-//                   >
-//                     <circle cx="12" cy="12" r="12"></circle>
-//                     <circle cx="12" cy="12" r="12"></circle>
-//                   </svg>
-//                   <span>02</span>
-//                 </div>
-//                 <div className="_medium"   style={{ "--w": "64px" }}>
-//                   <div class="account">Account</div>
-//                 </div>
-//               </div>
-//             </button>
-//           </li>
-//           <li>
-//             <button className="shrink" data-active="false">
-//               <div className="itemss-baseline" style={{ opacity: 1 }}>
-//                 <div className="_books">
-//                   <svg
-//                     className="svg-books"
-//                     viewBox="0 0 24 24"
-//                     fill="none"
-//                     xmlns="http://www.w3.org/2000/svg"
-//                     style={{ "--p": 1 }} // Correct way to use CSS variable
-//                   >
-//                     <circle cx="12" cy="12" r="12"></circle>
-//                     <circle cx="12" cy="12" r="12"></circle>
-//                   </svg>
-//                   <span>03</span>
-//                 </div>
-//                 <div className="_medium"   style={{ "--w": "64px" }}>
-//                   <div class="account">Account</div>
-//                 </div>
-//               </div>
-//             </button>
-//           </li>
-//           <li>
-//             <button className="shrink" data-active="false">
-//               <div className="itemss-baseline" style={{ opacity: 1 }}>
-//                 <div className="_books">
-//                   <svg
-//                     className="svg-books"
-//                     viewBox="0 0 24 24"
-//                     fill="none"
-//                     xmlns="http://www.w3.org/2000/svg"
-//                     style={{ "--p": 1 }} // Correct way to use CSS variable
-//                   >
-//                     <circle cx="12" cy="12" r="12"></circle>
-//                     <circle cx="12" cy="12" r="12"></circle>
-//                   </svg>
-//                   <span>04</span>
-//                 </div>
-//                 <div className="_medium"   style={{ "--w": "64px" }}>
-//                   <div class="account">Account</div>
-//                 </div>
-//               </div>
-//             </button>
-//           </li>
-//           <li>
-//             <button className="shrink" data-active="false">
-//               <div className="itemss-baseline" style={{ opacity: 1 }}>
-//                 <div className="_books">
-//                   <svg
-//                     className="svg-books"
-//                     viewBox="0 0 24 24"
-//                     fill="none"
-//                     xmlns="http://www.w3.org/2000/svg"
-//                     style={{ "--p": 1 }} // Correct way to use CSS variable
-//                   >
-//                     <circle cx="12" cy="12" r="12"></circle>
-//                     <circle cx="12" cy="12" r="12"></circle>
-//                   </svg>
-//                   <span>05</span>
-//                 </div>
-//                 <div className="_medium"   style={{ "--w": "64px" }}>
-//                   <div class="account">Account</div>
-//                 </div>
-//               </div>
-//             </button>
-//           </li>
-
-//         </ul>
-//       </div>
-//     </section>
-//   );
-// }
+        <li>
+          <div className="card_li" 
+          //  style={{
+          //     transform:
+          //       "translate3d(0px, -228.891px, 0px) scale(0.9193, 0.9193)",
+          //     clipPath: "inset(72px 0px 0px)",
+          //   }}
+            >
+            <p>Easy and Fast</p>
+            <p className="opacity-cards">
+              Great app for fast and easy transfers. I have been using Jeton for
+              a while now without any problem. I have recently started using
+              their Jeton Card for my everyday purchases too.
+            </p>
+            <div className="opacity-cards_div">
+              <span className="opacity-cards_div-span">
+                <spna className="opacity-cards_div-span_inside-span">DP</spna>
+              </span>
+              <span>Dennis P.</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+  );
+}

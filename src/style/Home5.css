@@ -1,0 +1,199 @@
+._mobile_app_hero {
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+  position: relative;
+  padding-bottom: clamp(160px, -1904px + 100vw * 1.6, 400px);
+  padding-top: clamp(160px, -1603.043px + 100vw * 1.3667, 365px);
+}
+
+._mobile_app_hero .bg-video-section {
+  background-color: #6b3843;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.bg-video-section video {
+  display: inline;
+  zoom: 1;
+}
+
+._video-asset {
+  object-fit: cover;
+  height: auto;
+  max-height: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  position: relative;
+  width: auto;
+}
+
+._mobile_app_hero-g-row {
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: none;
+  padding-left: 3.4rem;
+  padding-right: var(--grid-padding) !important;
+  width: 100%;
+  position: relative;
+  color: white;
+}
+
+._mobile_app_hero-g-col {
+  flex: 1 1 0px;
+  min-width: auto;
+  padding-left: var(--grid-half-gap);
+  padding-right: var(--grid-half-gap);
+}
+.xxl-7 {
+  flex: 0 0 43.75%;
+  max-width: 43.75%;
+}
+.finances-in-one-app {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.title-3 {
+  font-size: 4.2rem;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.subhead-2 {
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  font-size: clamp(19px, 17.518px + 100vw * 0.0038, 24px);
+  font-weight: 500;
+}
+
+.get_started_button {
+  display: flex;
+  gap: 2rem;
+}
+
+[data-button][data-tone="neutral"] {
+  --color: #f73b20;
+  background-color: #fff;
+}
+
+.no-tap-highlight {
+  -webkit-tap-highlight-color: transparent;
+}
+
+[data-button] {
+  width: max-content;
+  --height: 48px;
+  align-items: center;
+  border-radius: 12px;
+  display: inline-flex;
+  gap: 8px;
+  height: var(--height);
+  justify-content: center;
+  padding: 0 24px;
+}
+
+._button {
+  color: var(--color);
+  position: relative;
+}
+
+.get_started_button {
+  text-decoration: none;
+}
+
+.whitespace-nowrap {
+  font-weight: 600;
+}
+
+.btnFinance {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  gap: 2rem;
+}
+
+.btnFinance {
+    /* margin-top: 2rem; */
+    gap: 1.2rem;
+  display: flex;
+  padding-left: 3.4rem;
+}
+
+[data-button][data-tone="orange"][data-variant="outline"] {
+  --color: white;
+  
+}
+
+[data-button][data-tone="orange"] {
+  --color: #fff;
+  --background-color: white;
+  
+}
+
+._app-buttons[data-button] {
+  display: inline-block;
+  height: 44px;
+  position: relative;
+  width: 148px;
+  
+}
+
+.btnFinance {
+  color: inherit;
+  text-decoration: none;
+  
+}
+[data-button-backgrounds] {
+  -webkit-backdrop-filter: unset !important;
+  backdrop-filter: unset !important;
+  
+}
+
+[data-button] > [data-button-backgrounds] {
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: inheit;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  
+}
+
+.btnFinance .outlines {
+  border: 2px solid white;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 7px;
+}
+
+._app-buttons[data-button] img {
+  z-index: 1;
+}
+
+.btnFinance .imgeess {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}

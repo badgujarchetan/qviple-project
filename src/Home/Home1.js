@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import React, { useState } from "react";
 import "../style/Home1.css";
 
@@ -62,9 +63,13 @@ export default function Home1() {
               </div>
 
               <div className="ctas flex gap-3">
-                <a href="/login" className="_button" data-variant="outline">
+                <motion.a
+                  href="/login"
+                  className="_button"
+                  data-variant="outline"
+                >
                   Login
-                </a>
+                </motion.a>
                 <a href="/signup" className="_button" data-variant="primary">
                   Sign Up
                 </a>
