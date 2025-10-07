@@ -1,0 +1,90 @@
+.jeton_card-overview {
+  margin-top: 12rem;
+  margin-bottom: 12rem;
+}
+
+.jeton_card-overview .jeton-g-row {
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: none;
+  padding-left: var(--grid-padding) !important;
+  padding-right: var(--grid-padding) !important;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.jeton-col-section {
+  flex: 1 1 0px;
+  min-width: auto;
+  padding-left: var(--grid-half-gap);
+  padding-right: var(--grid-half-gap);
+}
+
+.xxl-10 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.jeton_card_text_section {
+  margin-top: 1rem;
+  font-weight: 500;
+  white-space: pre-line;
+  margin-bottom: 1rem;
+}
+
+.jeton_card_text_section2 {
+  margin-top: 1rem;
+  font-weight: 600;
+  white-space: pre-line;
+  margin-bottom: 1rem;
+}
+
+.title-5 {
+  font-size: clamp(27px, 20.76px + 100vw * 0.016, 48px);
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+
+.jeton_tag_section {
+  display: inline-block;
+  position: relative;
+  padding: 6px 16px;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+  color: #f73b20;
+  cursor: pointer;
+}
+
+.jeton_tag_section[data-tone="orange"] {
+  --color: #f73b20;
+}
+
+.jeton-card_outline_section {
+  border-radius: 20px;
+  border: 1px solid #f73b20;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.jeton_card_video_section {
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+
+}
+
+.media_jeton_card {
+  display: block;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  border-radius:1rem;
+}
