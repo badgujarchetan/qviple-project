@@ -31,7 +31,7 @@ export default function Home3() {
             </p>
             <div className="opacity-cards_div">
               <span className="opacity-cards_div-span">
-                <spna className="opacity-cards_div-span_inside-span">VK</spna>
+                <span className="opacity-cards_div-span_inside-span">VK</span>
               </span>
               <span>Vamsi K.</span>
             </div>
@@ -49,7 +49,7 @@ export default function Home3() {
             </p>
             <div className="opacity-cards_div">
               <span className="opacity-cards_div-span">
-                <spna className="opacity-cards_div-span_inside-span">LA</spna>
+                <span className="opacity-cards_div-span_inside-span">LA</span>
               </span>
               <span>Leonie A.</span>
             </div>
@@ -73,7 +73,7 @@ export default function Home3() {
             </p>
             <div className="opacity-cards_div">
               <span className="opacity-cards_div-span">
-                <spna className="opacity-cards_div-span_inside-span">KR</spna>
+                <span className="opacity-cards_div-span_inside-span">KR</span>
               </span>
               <span>Karl R.</span>
             </div>
@@ -96,7 +96,7 @@ export default function Home3() {
             </p>
             <div className="opacity-cards_div">
               <span className="opacity-cards_div-span">
-                <spna className="opacity-cards_div-span_inside-span">DP</spna>
+                <span className="opacity-cards_div-span_inside-span">DP</span>
               </span>
               <span>Dennis P.</span>
             </div>

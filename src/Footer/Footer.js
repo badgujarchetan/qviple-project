@@ -2,15 +2,11 @@ import Link from "next/link";
 import React from "react";
 import "../style/Footer.css";
 export default function Footer() {
-  // ... (rest of the component)
-
   const AnimatedLink = ({ href, children }) => (
     <li className="group">
-      {" "}
-      {/* 1. Add 'group' class to the parent <li> */}
       <Link
         href={href}
-        className="relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#f73b20] after:transition-all after:duration-500 after:ease-in-out group-hover:after:w-full"
+        className="relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#f73b20] after:transition-all after:duration-500 after:ease-in-out group-hover:after:w-full"
       >
         {children}
       </Link>
@@ -18,11 +14,11 @@ export default function Footer() {
   );
 
   return (
-    <footer className="pb-[6rem] pt-[4rem] text-[#f73b20]  w-full">
-      <ul className="grid gap-[1rem] grid-cols-[repeat(auto-fit,minmax(150px,1fr))] text-[1rem] leading-6 tracking-normal mx-[3.5rem]  ">
+    <footer className="foter_section">
+      <ul className="footer-grid-section">
         <li>
-          <h3 className="opacity-50 mb-2 font-medium">Get Started</h3>
-          <ul className="space-y-2">
+          <h3 className="commonopacity">Get Started</h3>
+          <ul className="space">
             {/* Use the new AnimatedLink component */}
             <AnimatedLink href="/signup">Sign up</AnimatedLink>
             <AnimatedLink href="/login">Login</AnimatedLink>
@@ -31,8 +27,8 @@ export default function Footer() {
 
         {/* Discover */}
         <li>
-          <h3 className="opacity-50 mb-2 font-medium">Discover</h3>
-          <ul className="space-y-2">
+          <h3 className="commonopacity">Discover</h3>
+          <ul className="space">
             <AnimatedLink href="/jeton-card">Jeton Card</AnimatedLink>
             <AnimatedLink href="/fees">Fees</AnimatedLink>
           </ul>
@@ -40,8 +36,8 @@ export default function Footer() {
 
         {/* Company */}
         <li>
-          <h3 className="opacity-50 mb-2 font-medium">Company</h3>
-          <ul className="space-y-2">
+          <h3 className="commonopacity">Company</h3>
+          <ul className="space">
             <AnimatedLink href="/about">About</AnimatedLink>
             <AnimatedLink href="/newsroom">Newsroom</AnimatedLink>
             <AnimatedLink href="/partnerships">Partnerships</AnimatedLink>
@@ -51,8 +47,8 @@ export default function Footer() {
 
         {/* Legal */}
         <li>
-          <h3 className="opacity-50 mb-2 font-medium">Legal</h3>
-          <ul className="space-y-2">
+          <h3 className="commonopacity">Legal</h3>
+          <ul className="space">
             <AnimatedLink href="/cookie-policy">Cookie Policy</AnimatedLink>
             <AnimatedLink href="/privacy-policy">Privacy Policy</AnimatedLink>
             <AnimatedLink href="/terms">Terms and Conditions</AnimatedLink>
@@ -63,8 +59,8 @@ export default function Footer() {
 
         {/* Help */}
         <li>
-          <h3 className="opacity-50 mb-2 font-medium">Help</h3>
-          <ul className="space-y-2">
+          <h3 className="commonopacity">Help</h3>
+          <ul className="space">
             <AnimatedLink href="/developers">Developers</AnimatedLink>
             <AnimatedLink href="/faq">FAQ</AnimatedLink>
             <AnimatedLink href="/support">Support</AnimatedLink>
@@ -142,13 +138,12 @@ export default function Footer() {
 
       {/*  */}
 
-      <div className="justify-between items-center flex mt-[1.1rem] w-[calc(100%-6rem)] ">
-        {/* <div className="relative rounded-md">
-          <button className=""></button>
-        </div> */}
-        <h1>English and made by section</h1>
+      <div className="justify-end items-center flex mt-[1.1rem] w-[calc(100%-6rem)] ">
+        <h2>
+          made by <span className="hover:underline  cursor-pointer font-semibold">......</span>
+         
+        </h2>
       </div>
-      {/* (Removed commented out SVG block for brevity) */}
 
       <div className="wordmark">
         <span className="_wordmark">
@@ -233,42 +228,6 @@ export default function Footer() {
         an Electronic Money Institution under Firm Reference Number 902039.
       </p>
 
-      {/* <div className="footer-bottom-card" data-count="2">
-        <div className="_patenrships ">
-          <img
-            className="background"
-            src="/images/footer1_image.jpg"
-            width="1532"
-            height="840"
-            alt="West ham background"
-          ></img>
-          <div className="gardient"></div>
-          <img
-            className="badge"
-            src="/images/footer1_image-absolute.png"
-            width="664"
-            height="160"
-            alt="West ham badge"
-          ></img>
-        </div>
-        <div className="_patenrships">
-          <img
-            className="background"
-            src="/images/footer2_image.jpg"
-            width="1532"
-            height="840"
-            alt="West ham background"
-          ></img>
-          <div className="gardient"></div>
-          <img
-            className="badge"
-            src="/images/footer2_image_absolute.png"
-            width="664"
-            height="160"
-            alt="West ham badge"
-          ></img>
-        </div>
-      </div> */}
       <div className="footer-bottom-card" data-count="2">
         <div className="partnership-card">
           <img

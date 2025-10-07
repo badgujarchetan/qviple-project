@@ -46,8 +46,10 @@
 }
 
 .ctas {
-  gap: 0.5rem;
+  display: flex;
+  gap: 1rem;
 }
+
 
 ._navbar .lang-cta-wrapper {
   align-items: center;

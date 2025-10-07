@@ -61,8 +61,8 @@ export default function Home1() {
                   </span>
                 </button>
               </div>
-
-              <div className="ctas flex gap-3">
+              
+              <div className="ctas ">
                 <motion.a
                   href="/login"
                   className="_button"
@@ -73,7 +73,8 @@ export default function Home1() {
                 <a href="/signup" className="_button" data-variant="primary">
                   Sign Up
                 </a>
-              </div>
+              </div> 
+              
             </div>
           </div>
         </nav>
