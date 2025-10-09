@@ -1,6 +1,8 @@
+"use client";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import React from "react";
-import "../style/Footer.css";
+import "./Footer.css"
 export default function Footer() {
   const AnimatedLink = ({ href, children }) => (
     <li className="group">
@@ -69,79 +71,47 @@ export default function Footer() {
         </li>
       </ul>
 
-      {/* //////// */}
-
-      <div className="flex justify-evenly items-center gap-8 w-full py-[4.5rem]  max-w-screen">
-        {/* App Store Links */}
-        <div className="flex gap-4 shrink-0">
-          <button className="border border-[#f73b20] rounded-lg p-1">
-            <Link
-              href="/google_play"
-              className="h-[44px] w-[148px] relative inline-block"
-            >
-              <img
-                src="/google-play-orange.svg"
-                alt="Google Play"
-                className="absolute h-full w-full top-0 left-0 object-contain"
-              />
-            </Link>
-          </button>
-
-          <button className="border border-[#f73b20] rounded-lg p-1">
-            <Link
-              href="/app-store"
-              className="h-[44px] w-[148px] relative inline-block"
-            >
-              <img
-                src="/app-store-orange.svg"
-                alt="App Store"
-                className="absolute h-full w-full top-0 left-0 object-contain"
-              />
-            </Link>
-          </button>
+      <div className="footer_middle">
+        <div className="store_buttons">
+          <a
+            href="https://play.google.com/store/apps/details?id=com.mithakalminds.qviple"
+            target="_blank"
+          >
+            <img src="/google-play-orange.svg" alt="Google Play" />
+          </a>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.mithakalminds.qviple"
+            target="_blank"
+          >
+            <img src="/google-play-orange.svg" alt="Google Play" />
+          </a>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.mithakalminds.qviple"
+            target="_blank"
+          >
+            <img src="/google-play-orange.svg" alt="Google Play" />
+          </a>
+          <a
+            href="https://apps.apple.com/in/app/qviple-your-education-online/id6463501865"
+            target="_blank"
+          >
+            <img src="/app-store-orange.svg" alt="App Store" />
+          </a>
         </div>
-
-        {/* Certification Logos */}
-        <ul className="flex gap-8 items-center justify-center shrink-0">
-          {imges.map((logo, idx) => (
-            <li
-              key={idx}
-              className="filter [sepia(.4)_hue-rotate(329deg)_contrast(1.1)_saturate(2.2)]"
-            >
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className="h-[30px] w-auto object-contain"
-              />
-            </li>
-          ))}
-        </ul>
-
-        {/* Social Media Icons */}
-        <div className="flex gap-8 shrink-0">
-          {svgIcons.map((item, idx) => (
-            <Link
-              key={idx}
-              href={item.href}
-              className="relative grid place-items-center w-[2rem] h-[2rem] text-white"
-            >
-              <div className="absolute inset-0 bg-[#f73b20] rounded-full hover:bg-red-400"></div>
-              <span className="relative z-10 ">{item.icon}</span>
-            </Link>
+        <div className="social_icons">
+          {svgIcons.map((item, i) => (
+            <a key={i} href={item.href} target="_blank" className="social_link">
+              <span className="social_bg"></span>
+              <span className="social_icon">{item.icon}</span>
+            </a>
           ))}
         </div>
       </div>
-
-      {/* divider */}
-
-      <div className="h-[1px] bg-[#f73b20] opacity-30 mt-[0.6rem] mx-[3rem]"></div>
-
-      {/*  */}
-
-      <div className="justify-end items-center flex mt-[1.1rem] w-[calc(100%-6rem)] ">
+      <hr className="footer_divider" />
+      <div className="footer_credit">
         <h2>
-          made by <span className="hover:underline  cursor-pointer font-semibold">......</span>
-         
+          ©{new Date().getFullYear()} All Rights Reserved by Mithikal Minds Pvt.
+          Ltd.
         </h2>
       </div>
 
@@ -201,7 +171,6 @@ export default function Footer() {
           </div>
         </span>
       </div>
-
       <p className="footer-paragraph">
         © 2025 | www.jeton.com is owned and operated by LA Orange CY Limited
         (Gladstonos, 116 M. Kyprianou House, 3&4th Floor, 3032, Limassol,
@@ -227,7 +196,6 @@ export default function Footer() {
         which is authorised and regulated by the Financial Conduct Authority as
         an Electronic Money Institution under Firm Reference Number 902039.
       </p>
-
       <div className="footer-bottom-card" data-count="2">
         <div className="partnership-card">
           <img
@@ -324,6 +292,47 @@ const svgIcons = [
         strokeLinejoin="round"
       >
         <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+      </svg>
+    ),
+  },
+  {
+    href: "/twitter",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="lucide lucide-linkedin-icon lucide-linkedin"
+      >
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+        <rect width="4" height="12" x="2" y="9" />
+        <circle cx="4" cy="4" r="2" />
+      </svg>
+    ),
+  },
+  {
+    href: "/twitter",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="lucide lucide-youtube-icon lucide-youtube"
+      >
+        <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+        <path d="m10 15 5-3-5-3z" />
       </svg>
     ),
   },

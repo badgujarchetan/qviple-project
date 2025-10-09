@@ -22,10 +22,10 @@
   font: medium;
 }
 
-.space{
- display: flex;
- flex-direction: column;
- gap: 0.5rem;
+.space {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .wordmark {
@@ -125,4 +125,82 @@
   margin-bottom: 0.85rem;
   width: auto;
   background-color: transparent;
+}
+
+.footer_middle {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2.6rem 6rem ;
+  gap: 2rem;
+}
+
+.store_buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.store_buttons a img {
+  height: 44px;
+  width: 148px;
+  border: 1px solid #f73b20;
+  border-radius: 8px;
+  padding: 4px;
+  transition: 0.3s;
+}
+
+.store_buttons a img:hover {
+  background-color: rgba(247, 59, 32, 0.1);
+}
+
+.social_icons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social_link {
+  width: 2.5rem;
+  height: 2.5rem;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.social_bg {
+  position: absolute;
+  inset: 0;
+  background: #f73b20;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.social_link:hover .social_bg {
+  background: #ff4c3b;
+}
+
+.social_icon {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+.footer_divider {
+  height: 1px;
+  background: #f73b20;
+  opacity: 0.3;
+  border: none;
+  margin: 0.6rem 3rem;
+}
+.footer_credit {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem 3rem;
+}
+.footer_author {
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.footer_author:hover {
+  text-decoration: underline;
 }

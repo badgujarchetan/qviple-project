@@ -16,68 +16,7 @@ export default function Home1() {
       }}
     >
       <div style={{ position: "relative", zIndex: 1 }}>
-        <nav className="_navbar">
-          <div className="g-row-full flex items-center justify-between">
-            <a
-              href="/"
-              className="homepage-link relative overflow-hidden"
-              aria-label="Homepage"
-            >
-              <span className="_wordmark" data-tone="neutral">
-                <div className="glyphs">
-                  <div className="glyph">
-                    <span className="brand_name">JETON</span>
-                  </div>
-                </div>
-                <svg
-                  className="spacer"
-                  width="1558"
-                  height="415"
-                  aria-hidden="true"
-                />
-              </span>
-            </a>
-
-            <div className="lang-cta-wrapper">
-              <div className="_dropdown _language-select">
-                <button className=" _button flex items-center justify-center ">
-                  {/* <span className="_icon">🌐</span> */}
-                  <span className="ml-1">EN</span>
-                  <span className="_icon chevron">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="lucide lucide-chevron-down-icon lucide-chevron-down"
-                    >
-                      <path d="m6 9 6 6 6-6" />
-                    </svg>
-                  </span>
-                </button>
-              </div>
-              
-              <div className="ctas ">
-                <motion.a
-                  href="/login"
-                  className="_button"
-                  data-variant="outline"
-                >
-                  Login
-                </motion.a>
-                <a href="/signup" className="_button" data-variant="primary">
-                  Sign Up
-                </a>
-              </div> 
-              
-            </div>
-          </div>
-        </nav>
+      
         <header className="_common_header" data-layout="full">
           {/* Background with hover zoom */}
           <div
@@ -195,7 +134,7 @@ export default function Home1() {
               <p className="subhead-2">Single account for all your payments.</p>
               <div className="btn">
                 <a
-                  href="/"
+                  href="https://apps.apple.com/in/app/qviple-your-education-online/id6463501865mi"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="_app-button"
@@ -214,7 +153,7 @@ export default function Home1() {
                 </a>
 
                 <a
-                  href="/"
+                  href="https://play.google.com/store/apps/details?id=com.mithakalminds.qviple"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="_app-button"
@@ -239,3 +178,4 @@ export default function Home1() {
     </div>
   );
 }
+

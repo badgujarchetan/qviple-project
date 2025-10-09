@@ -72,7 +72,7 @@ export default function Home5() {
       </div>
       <div className="btnFinance">
         <a
-          href="/"
+          href="https://apps.apple.com/in/app/qviple-your-education-online/id6463501865"
           target="_blank"
           rel="noopener noreferrer"
           className="_app-buttons"
@@ -90,7 +90,7 @@ export default function Home5() {
           />
         </a>
         <a
-          href="/"
+          href="https://play.google.com/store/apps/details?id=com.mithakalminds.qviple"
           target="_blank"
           rel="noopener noreferrer"
           className="_app-buttons"

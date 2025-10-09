@@ -10,7 +10,7 @@ export default function Home4() {
         <p className="subhead-2">It only takes few seconds to get started.</p>
         <div className="millions">
           <a
-            href="/"
+            href="https://apps.apple.com/in/app/qviple-your-education-online/id6463501865"
             target="_blank"
             rel="noopener noreferrer"
             className="_app-button"
@@ -29,7 +29,7 @@ export default function Home4() {
           </a>
 
           <a
-            href="/"
+            href="https://play.google.com/store/apps/details?id=com.mithakalminds.qviple"
             target="_blank"
             rel="noopener noreferrer"
             className="_app-button"

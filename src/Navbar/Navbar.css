@@ -1,0 +1,112 @@
+._navbar {
+  z-index: 50;
+  background: none;
+  width: 100%;
+  /* margin-top: 0.55rem; */
+  padding: 1.2rem 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+._navbar .g-row-full {
+  margin: 0 auto;
+  width: 100%;
+  /* max-width: 1200px; */
+}
+
+._navbar .flex {
+  display: flex;
+}
+
+.brand_name {
+  /* font-family: Montserrat ExtraBold; */
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: orangered;
+  margin-bottom: 0.1rem !important;
+  /* letter-spacing: 0.1rem; */
+  background: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+}
+
+._navbar .items-center {
+  align-items: center;
+}
+._navbar .justify-between {
+  justify-content: space-between;
+}
+
+/* === Wordmark / Logo === */
+._navbar ._wordmark svg {
+  fill: white;
+  height: 32px;
+  width: auto;
+}
+
+.ctas {
+  display: flex;
+  gap: 1rem;
+}
+
+._navbar .lang-cta-wrapper {
+  align-items: center;
+  gap: 0.5rem;
+  display: flex;
+}
+
+._navbar ._button {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+._navbar ._button[data-variant="outline"] {
+  border: 1px solid white;
+  color: white;
+  background: transparent;
+}
+._navbar ._button[data-variant="outline"]:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+._navbar ._button[data-variant="primary"] {
+  background: #f73b20;
+  color: white;
+}
+._navbar ._button[data-variant="primary"]:hover {
+  background: #d53018;
+}
+
+._navbar ._dropdown-button {
+  color: #fff;
+  cursor: pointer;
+  background: none;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+  display: flex;
+}
+
+._navbar ._dropdown-button ._icon {
+  font-size: 0.85rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .ctas ._button {
+    transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+}
