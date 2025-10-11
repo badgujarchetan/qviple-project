@@ -73,37 +73,37 @@ export default function Footer() {
 
       <div className="footer_middle">
         <div className="store_buttons">
-          <a
+          <Link
+            href="https://play.google.com/store/apps/details?id=com.mithakalminds.qviple"
+            target="_blank"
+          >
+            <img src="/images/web-qviple.svg" alt="Google Play" />
+          </Link>
+          <Link
             href="https://play.google.com/store/apps/details?id=com.mithakalminds.qviple"
             target="_blank"
           >
             <img src="/google-play-orange.svg" alt="Google Play" />
-          </a>
-          <a
+          </Link>
+          <Link
             href="https://play.google.com/store/apps/details?id=com.mithakalminds.qviple"
             target="_blank"
           >
             <img src="/google-play-orange.svg" alt="Google Play" />
-          </a>
-          <a
-            href="https://play.google.com/store/apps/details?id=com.mithakalminds.qviple"
-            target="_blank"
-          >
-            <img src="/google-play-orange.svg" alt="Google Play" />
-          </a>
-          <a
+          </Link>
+          <Link
             href="https://apps.apple.com/in/app/qviple-your-education-online/id6463501865"
             target="_blank"
           >
             <img src="/app-store-orange.svg" alt="App Store" />
-          </a>
+          </Link>
         </div>
         <div className="social_icons">
           {svgIcons.map((item, i) => (
-            <a key={i} href={item.href} target="_blank" className="social_link">
+            <Link key={i} href={item.href} target="_blank" className="social_link">
               <span className="social_bg"></span>
               <span className="social_icon">{item.icon}</span>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
@@ -229,18 +229,18 @@ export default function Footer() {
   );
 }
 
-const imges = [
-  { src: "/ukas-mangement-system.png", alt: "ukas system management" },
-  { src: "/cyber-certified-plus.png", alt: "cyber certified" },
-  { src: "/iso-company.png", alt: "iso company" },
-  { src: "/euro-banking-association.png", alt: "euro banking association" },
-  { src: "/fastest-growing-companies.png", alt: "fastesig companies" },
-  { src: "/cyber-certified-plus.png", alt: "cyber certified" },
-];
+// const imges = [
+//   { src: "/ukas-mangement-system.png", alt: "ukas system management" },
+//   { src: "/cyber-certified-plus.png", alt: "cyber certified" },
+//   { src: "/iso-company.png", alt: "iso company" },
+//   { src: "/euro-banking-association.png", alt: "euro banking association" },
+//   { src: "/fastest-growing-companies.png", alt: "fastesig companies" },
+//   { src: "/cyber-certified-plus.png", alt: "cyber certified" },
+// ];
 
 const svgIcons = [
   {
-    href: "/instagram",
+    href: "https://www.instagram.com/qviple/",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -260,7 +260,7 @@ const svgIcons = [
     ),
   },
   {
-    href: "/facebook",
+    href: "https://www.facebook.com/Qviple",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -278,7 +278,7 @@ const svgIcons = [
     ),
   },
   {
-    href: "/twitter",
+    href: "https://x.com/Qviple1r",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -296,7 +296,7 @@ const svgIcons = [
     ),
   },
   {
-    href: "/twitter",
+    href: "https://www.linkedin.com/company/qviple/",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -317,7 +317,7 @@ const svgIcons = [
     ),
   },
   {
-    href: "/twitter",
+    href: "https://www.youtube.com/channel/UCcXbbBOYSMXOFEfyBLDjdyw",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"

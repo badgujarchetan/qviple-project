@@ -98,7 +98,7 @@ export default function PrivacyPage() {
                   </strong>
                 </p>
               </details>
-              <details open>
+              <details>
                 <summary>
                   <h2>License</h2>
                 </summary>
@@ -129,7 +129,7 @@ export default function PrivacyPage() {
                 </p>
               </details>
 
-              <details >
+              <details>
                 <summary>
                   <h2>Restrictions</h2>
                 </summary>
@@ -590,12 +590,12 @@ export default function PrivacyPage() {
                   </li>
                   <li>
                     <p>
-                      <li>
-                        <p>
+                    
+                       
                           Protecting the safety and security of our products,
                           systems and users;
-                        </p>
-                      </li>
+                     
+                     
                     </p>
                   </li>
                   <li>
@@ -629,7 +629,7 @@ export default function PrivacyPage() {
                 </ul>
               </details>
 
-              <details >
+              <details>
                 <summary>
                   <h2>Links to Other Websites</h2>
                 </summary>
@@ -648,7 +648,7 @@ export default function PrivacyPage() {
                   other methods to collect information about you.
                 </p>
               </details>
-              <details >
+              <details>
                 <summary>
                   <h2>Cookies</h2>
                 </summary>
@@ -669,7 +669,7 @@ export default function PrivacyPage() {
                 </p>
               </details>
 
-              <details >
+              <details>
                 <summary>
                   <h2>Changes To Our Terms & Conditions</h2>
                 </summary>
@@ -689,7 +689,7 @@ export default function PrivacyPage() {
                   Identifiable Information in Cookies.
                 </p>
               </details>
-              <details >
+              <details>
                 <summary>
                   <h2>Modifications to Our app</h2>
                 </summary>
@@ -717,7 +717,7 @@ export default function PrivacyPage() {
                   of this Agreement.
                 </p>
               </details>
-              <details >
+              <details>
                 <summary>
                   <h2>Third-Party Services</h2>
                 </summary>
@@ -738,7 +738,7 @@ export default function PrivacyPage() {
                 </p>
               </details>
 
-              <details >
+              <details>
                 <summary>
                   <h2>Term and Termination</h2>
                 </summary>
@@ -759,7 +759,7 @@ export default function PrivacyPage() {
                   Agreement.
                 </p>
               </details>
-              <details >
+              <details>
                 <summary>
                   <h2>Copyright Infringement Notice</h2>
                 </summary>
@@ -779,7 +779,7 @@ export default function PrivacyPage() {
                   act on behalf of the owner.
                 </p>
               </details>
-              <details >
+              <details>
                 <summary>
                   <h2>Indemnification</h2>
                 </summary>
@@ -793,7 +793,7 @@ export default function PrivacyPage() {
                   right of a third party.
                 </p>
               </details>
-              <details >
+              <details>
                 <summary>
                   <h2>No Warranties</h2>
                 </summary>
@@ -832,7 +832,7 @@ export default function PrivacyPage() {
                   exclusions and limitations may not apply to you.
                 </p>
               </details>
-              <details >
+              <details>
                 <summary>
                   <h2>Severability</h2>
                 </summary>
@@ -880,7 +880,7 @@ export default function PrivacyPage() {
                   terms of this Agreement shall govern.
                 </p>
               </details>
-              <details >
+              <details>
                 <summary>
                   <h2>Amendments to this Agreement</h2>
                 </summary>
@@ -896,7 +896,7 @@ export default function PrivacyPage() {
                   Qviple.
                 </p>
               </details>
-              <details >
+              <details>
                 <summary>
                   <h2>Entire Agreement</h2>
                 </summary>
@@ -910,7 +910,7 @@ export default function PrivacyPage() {
                   purchase.
                 </p>
               </details>
-              <details >
+              <details>
                 <summary>
                   <h2>Updates to Our Termst</h2>
                 </summary>
@@ -926,7 +926,7 @@ export default function PrivacyPage() {
                   can delete your account.
                 </p>
               </details>
-              <details >
+              <details>
                 <summary>
                   <h2>Intellectual Property</h2>
                 </summary>
@@ -946,7 +946,7 @@ export default function PrivacyPage() {
                   prohibited.
                 </p>
               </details>
-              <details >
+              <details>
                 <summary>
                   <h2>Agreement to Arbitrate</h2>
                 </summary>
@@ -980,7 +980,7 @@ export default function PrivacyPage() {
                   After sixty (60) days, you or Qviple may commence arbitration.
                 </p>
               </details>
-              <details >
+              <details>
                 <summary>
                   <h2>Binding Arbitration</h2>
                 </summary>
@@ -1001,7 +1001,7 @@ export default function PrivacyPage() {
                   party shall be borne by the non-prevailing party.
                 </p>
               </details>
-              <details >
+              <details>
                 <summary>
                   <h2>Submissions and Privacy</h2>
                 </summary>
@@ -1022,7 +1022,7 @@ export default function PrivacyPage() {
                   ideas.
                 </p>
               </details>
-              <details >
+              <details>
                 <summary>
                   <h2>Promotions</h2>
                 </summary>
@@ -1042,7 +1042,7 @@ export default function PrivacyPage() {
                   by this reference.
                 </p>
               </details>
-              <details >
+              <details>
                 <summary>
                   <h2>Typographical Errors</h2>
                 </summary>
@@ -1060,7 +1060,7 @@ export default function PrivacyPage() {
                   charge.
                 </p>
               </details>
-              <details >
+              <details>
                 <summary>
                   <h2>Miscellaneous</h2>
                 </summary>
@@ -1091,7 +1091,7 @@ export default function PrivacyPage() {
                   import.
                 </p>
               </details>
-              <details >
+              <details>
                 <summary>
                   <h2>Disclaimer</h2>
                 </summary>
@@ -1145,7 +1145,7 @@ export default function PrivacyPage() {
             </section>
 
             {/* <hr className="section-divider" /> */}
-{/* 
+            {/* 
             <footer className="privacy-footer">
               <h2>Changes to This Policy & Contact</h2>
 

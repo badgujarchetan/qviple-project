@@ -13,7 +13,7 @@ export default function page() {
   return (
     <div className="-mt-[5rem]">
       <Home1 />
-      <Home2 />
+      {/* <Home2 /> */}
       <Home6 />
       <Home3 />
       {/* <Home4 /> */}

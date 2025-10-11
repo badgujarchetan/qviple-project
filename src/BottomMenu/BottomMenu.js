@@ -1,14 +1,35 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Home, User, Briefcase, Info, ChevronDown } from "lucide-react";
-import "./BottomMenu.css"
+import "./BottomMenu.css";
 
 export default function BottomMenu() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false); 
+      } else {
+        setIsVisible(true); 
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   return (
-    <nav className="_menu">
+    <motion.nav
+      className="_menu"
+      animate={{ y: isVisible ? 0 : 100 }}
+      transition={{ duration: 0.4, ease: "easeInOut" }}
+    >
       <motion.ul
         className="menu-bar"
         initial={{ y: 80, opacity: 0 }}
@@ -35,7 +56,6 @@ export default function BottomMenu() {
                     <ChevronDown size={14} />
                   </motion.span>
                 </button>
-
                 <AnimatePresence>
                   {hoveredIndex === idx && (
                     <motion.div
@@ -43,11 +63,7 @@ export default function BottomMenu() {
                       initial={{ opacity: 0, y: 20, scale: 0.95 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 220,
-                        damping: 22,
-                      }}
+                      transition={{ type: "spring", stiffness: 220, damping: 22 }}
                     >
                       <ul>
                         {item.drawer.map((sub, sIdx) => (
@@ -87,7 +103,7 @@ export default function BottomMenu() {
           </li>
         ))}
       </motion.ul>
-    </nav>
+    </motion.nav>
   );
 }
 
