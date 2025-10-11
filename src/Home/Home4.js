@@ -1,12 +1,15 @@
+"use client"
 import React from "react";
 import "../style/Home4.css";
-
+import { motion } from "framer-motion";
 export default function Home4() {
   return (
-    <section className="extra-bold-hero">
+    <motion.section className="extra-bold-hero">
       {/* Main Users Section */}
       <div className="users">
-        <h2 className="title">1 million users,<br></br> plus you.</h2>
+        <h2 className="title">
+          1 million users,<br></br> plus you.
+        </h2>
         <p className="subhead-2">It only takes few seconds to get started.</p>
         <div className="millions">
           <a
@@ -102,6 +105,6 @@ export default function Home4() {
           </a>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

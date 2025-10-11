@@ -50,10 +50,10 @@ export default function Footer() {
         {/* Legal */}
         <li>
           <h3 className="commonopacity">Legal</h3>
-          <ul className="space">
+          <ul className="space">  
             <AnimatedLink href="/cookie-policy">Cookie Policy</AnimatedLink>
             <AnimatedLink href="/privacy-policy">Privacy Policy</AnimatedLink>
-            <AnimatedLink href="/terms">Terms and Conditions</AnimatedLink>
+            <AnimatedLink href="/terms-of-use">Terms of use</AnimatedLink>
             <AnimatedLink href="/disclaimers">Disclaimers</AnimatedLink>
             <AnimatedLink href="/aml-policy">AML Policy</AnimatedLink>
           </ul>

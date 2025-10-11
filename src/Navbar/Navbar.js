@@ -1,12 +1,10 @@
-"use client";
-import React from "react";
-import "./Navbar.css";
-import { motion } from "framer-motion";
+import React from 'react'
+import {motion} from "framer-motion"
+import "./Navbar.css"
 export default function Navbar() {
   return (
-    <div>
-      <nav
-        className="_navbar"
+    <nav
+        className={"_navbar"}
         initial={{
           maskImage:
             "linear-gradient(to right, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%)",
@@ -38,11 +36,11 @@ export default function Navbar() {
           </a>
 
           <div className="lang-cta-wrapper">
-            <div className="_dropdown _language-select">
+            {/* <div className="_dropdown _language-select">
               <button className=" _button flex items-center justify-center ">
-                {/* <span className="_icon">🌐</span> */}
-                <span className="ml-1">EN</span>
-                <span className="_icon chevron">
+                {/* <span className="_icon"></span> */}
+                {/* <span className="ml-1">EN</span> */}
+                {/* <span className="_icon chevron">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -57,9 +55,9 @@ export default function Navbar() {
                   >
                     <path d="m6 9 6 6 6-6" />
                   </svg>
-                </span>
-              </button>
-            </div>
+                </span> */}
+              {/* </button> */}
+            {/* </div>  */}
 
             <div className="ctas ">
               <motion.button
@@ -96,6 +94,8 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
-    </div>
-  );
+  )
 }
+
+
+

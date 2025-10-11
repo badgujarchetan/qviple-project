@@ -1,15 +1,20 @@
 ._navbar {
-  z-index: 50;
+  /* z-index: 50; */
   background: none;
   width: 100%;
   /* margin-top: 0.55rem; */
-  padding: 1.2rem 0;
+  padding: 1.4rem 0;
   position: absolute;
+  /* position: relative; */
   top: 0;
   left: 0;
   padding-left: 4%;
   padding-right: 4%;
+  background-color:#F73B20;
+
+
 }
+
 ._navbar .g-row-full {
   margin: 0 auto;
   width: 100%;
@@ -52,11 +57,11 @@
   gap: 1rem;
 }
 
-._navbar .lang-cta-wrapper {
+/* ._navbar .lang-cta-wrapper {
   align-items: center;
   gap: 0.5rem;
   display: flex;
-}
+} */
 
 ._navbar ._button {
   padding: 0.5rem 1rem;
@@ -85,7 +90,7 @@
   background: #d53018;
 }
 
-._navbar ._dropdown-button {
+/* ._navbar ._dropdown-button {
   color: #fff;
   cursor: pointer;
   background: none;
@@ -98,12 +103,12 @@
   font-weight: 500;
   text-decoration: none;
   transition: all 0.2s;
-  display: flex;
-}
+  display: flex; */
+/* }
 
 ._navbar ._dropdown-button ._icon {
   font-size: 0.85rem;
-}
+} */
 
 @media (hover: hover) and (pointer: fine) {
   .ctas ._button {

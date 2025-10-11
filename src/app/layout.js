@@ -1,18 +1,15 @@
-
-
-
-import Navbar from "@/Navbar/Navbar";
+import BottomMenu from "@/BottomMenu/BottomMenu";
 import "./globals.css";
 // import {Inter} from "next/font/google"
 import { Poppins } from "next/font/google";
-
+import Footer from "@/Footer/Footer";
+import Home4 from "@/Home/Home4";
 
 // const InterFont = Inter({
 //   subsets : ["latin"]
 // })
 
-
-const PoppinsFonts = Poppins({
+const poppins = Poppins({
   weight: ["400", "500", "600", "700", "800", "900"],
   display: "swap",
   subsets: ["latin"],
@@ -25,9 +22,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Navbar />
-      <body className={`${PoppinsFonts.className} antialiased`}>{children}</body>
-      
+      <body className={`${poppins.className} antialiased`}>
+        {/* <Navbar /> */}
+        <div className="mt-[5rem]">
+          {children}
+          <Home4 />
+          <Footer />
+          <BottomMenu />
+        </div>
+      </body>
     </html>
   );
 }
