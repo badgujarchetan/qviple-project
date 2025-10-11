@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import "../style/Home1.css";
+import Link from "next/link";
 
 export default function Home1() {
   const [hover, setHover] = useState(false);
@@ -37,6 +38,9 @@ export default function Home1() {
               <div className="glyphs">
                 <div className="glyph">
                   <span className="brand_name">QVIPLE</span>
+                  {/* <span className="">
+                    <img className="logo_qviple" src="/images/logo-qviple.svg"></img>
+                  </span> */}
                 </div>
               </div>
               <svg
@@ -49,9 +53,9 @@ export default function Home1() {
           </a>
 
           <div className="lang-cta-wrapper">
-            <div className="_dropdown _language-select">
+            {/* <div className="_dropdown _language-select">
               <button className=" _button flex items-center justify-center ">
-                {/* <span className="_icon">🌐</span> */}
+                <span className="_icon">🌐</span>
                 <span className="ml-1">EN</span>
                 <span className="_icon chevron">
                   <svg
@@ -70,10 +74,10 @@ export default function Home1() {
                   </svg>
                 </span>
               </button>
-            </div>
+            </div> */}
 
             <div className="ctas ">
-              <motion.button
+              {/* <motion.button
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 whileHover={{ scale: 0.95 }}
@@ -87,8 +91,8 @@ export default function Home1() {
                 data-variant="outline"
               >
                 Login
-              </motion.button>
-              <motion.button
+              </motion.button> */}
+              {/* <motion.button
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 whileHover={{ scale: 0.95 }}
@@ -97,12 +101,26 @@ export default function Home1() {
                   duration: 0.5,
                   scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
                 }}
-                href="/signup"
+                href="/enquiry"
                 className="_button"
                 data-variant="primary"
               >
-                Sign Up
-              </motion.button>
+               sign up
+              </motion.button> */}
+              {/* <motion.button
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                whileHover={{ scale: 0.95 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{
+                  duration: 0.5,
+                  scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+                }}
+                className="_button glow"
+                data-variant="primary"
+              >
+                Enquiry
+              </motion.button> */}
             </div>
           </div>
         </div>
@@ -121,7 +139,8 @@ export default function Home1() {
           >
             <video
               className={`_video-asset ${videoLoaded ? "show" : ""}`}
-              src="/videos/56449435.mp4"
+              // src="/videos/56449435.mp4"
+              src="/videos/background.mp4"
               type="video/mp4"
               width="3840"
               height="2160"
@@ -243,7 +262,7 @@ export default function Home1() {
                   />
                 </a>
 
-                <a
+                <Link
                   href="https://play.google.com/store/apps/details?id=com.mithakalminds.qviple"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -260,7 +279,7 @@ export default function Home1() {
                     src="/images/google-play-neutral.svg"
                     alt="Google Play icon"
                   />
-                </a>
+                </Link>
               </div>
             </div>
           </div>

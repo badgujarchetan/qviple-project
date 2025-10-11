@@ -18,6 +18,7 @@
 
 }
 
+
 ._navbar .g-row-full {
   margin: 0 auto;
   width: 100%;
@@ -66,34 +67,34 @@
   display: flex;
 }
 
-._navbar ._button {
+/* ._navbar ._button {
   padding: 0.5rem 1rem;
   border-radius: 5px;
-  font-size: 0.95rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 600;
   transition: all 0.2s ease;
   text-decoration: none;
   cursor: pointer;
-}
+} */
 
-._navbar ._button[data-variant="outline"] {
+/* ._navbar ._button[data-variant="outline"] {
   border: 1px solid white;
   color: white;
   background: transparent;
-}
-._navbar ._button[data-variant="outline"]:hover {
+} */
+/* ._navbar ._button[data-variant="outline"]:hover {
   background: rgba(255, 255, 255, 0.1);
-}
+} */
 
-._navbar ._button[data-variant="primary"] {
+/* ._navbar ._button[data-variant="primary"] {
   background: #f73b20;
   color: white;
-}
-._navbar ._button[data-variant="primary"]:hover {
+} */
+/* ._navbar ._button[data-variant="primary"]:hover {
   background: #d53018;
-}
+} */
 
-._navbar ._dropdown-button {
+/* ._navbar ._dropdown-button {
   color: #fff;
   cursor: pointer;
   background: none;
@@ -107,17 +108,19 @@
   text-decoration: none;
   transition: all 0.2s;
   display: flex;
-}
+} */
 
-._navbar ._dropdown-button ._icon {
+/* ._navbar ._dropdown-button ._icon {
   font-size: 0.85rem;
-}
+} */
 
-@media (hover: hover) and (pointer: fine) {
+/* @media (hover: hover) and (pointer: fine) {
   .ctas ._button {
     transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
-}
+} */
+
+
 
 ._common_header {
   position: relative;

@@ -16,11 +16,12 @@
   gap: 1.3rem;
   padding: 0.6rem 1.6rem;
   height: 55px;
-  background: rgba(255, 77, 53, 0.9);
+  /* background: rgba(255, 77, 53, 0.9); */
+  background:linear-gradient(90deg, #0a192f, #1e3a8a, #2563eb);
   border: 1px solid rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(15px);
   border-radius: 3rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25), 0 0 15px rgba(255, 94, 50, 0.5);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25), 0 0 15px #005A9C;
   pointer-events: all;
   transition: all 0.4s ease;
 }
@@ -51,8 +52,8 @@
 }
 
 ._menu-button:hover {
-  background: rgb(240, 26, 26);
-  box-shadow: 0 0 10px rgba(202, 45, 25, 0.4);
+  background: #0E3386;
+  box-shadow: 0 0 10px #f73b20;
   transform: translateY(-2px);
   /* filter: drop-shadow(0 0 1rem crimson); */
 }

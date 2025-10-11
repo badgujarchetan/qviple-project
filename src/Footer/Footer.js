@@ -73,13 +73,7 @@ export default function Footer() {
 
       <div className="footer_middle">
         <div className="store_buttons">
-          <Link
-            href="https://play.google.com/store/apps/details?id=com.mithakalminds.qviple"
-            target="_blank"
-          >
-            <img src="/images/web-qviple.svg" alt="Google Play" />
-          </Link>
-          <Link
+          {/* <Link
             href="https://play.google.com/store/apps/details?id=com.mithakalminds.qviple"
             target="_blank"
           >
@@ -90,12 +84,18 @@ export default function Footer() {
             target="_blank"
           >
             <img src="/google-play-orange.svg" alt="Google Play" />
+          </Link> */}
+          <Link
+            href="https://play.google.com/store/apps/details?id=com.mithakalminds.qviple"
+            target="_blank"
+          >
+            <img src="/app-store-orange.svg" alt="Google Play" />
           </Link>
           <Link
             href="https://apps.apple.com/in/app/qviple-your-education-online/id6463501865"
             target="_blank"
           >
-            <img src="/app-store-orange.svg" alt="App Store" />
+            <img src="/google-play-orange.svg" alt="App Store" />
           </Link>
         </div>
         <div className="social_icons">
@@ -115,7 +115,7 @@ export default function Footer() {
         </h2>
       </div>
 
-      <div className="wordmark">
+      {/* <div className="wordmark">
         <span className="_wordmark">
           <div className="glyphs">
             <div className="name">
@@ -170,8 +170,8 @@ export default function Footer() {
             </div>
           </div>
         </span>
-      </div>
-      <p className="footer-paragraph">
+      </div> */}
+      {/* <p className="footer-paragraph">
         © 2025 | www.jeton.com is owned and operated by LA Orange CY Limited
         (Gladstonos, 116 M. Kyprianou House, 3&4th Floor, 3032, Limassol,
         Cyprus.) LA Orange CY Limited trading as Jeton, is authorised by the
@@ -195,8 +195,8 @@ export default function Footer() {
         The Jeton Card Account and Card are issued by Financial House Limited,
         which is authorised and regulated by the Financial Conduct Authority as
         an Electronic Money Institution under Firm Reference Number 902039.
-      </p>
-      <div className="footer-bottom-card" data-count="2">
+      </p> */}
+      {/* <div className="footer-bottom-card" data-count="2">
         <div className="partnership-card">
           <img
             className="background"
@@ -224,7 +224,7 @@ export default function Footer() {
             alt="Brand ambassadors badge"
           />
         </div>
-      </div>
+      </div> */}
     </footer>
   );
 }

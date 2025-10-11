@@ -13,9 +13,9 @@ export default function BottomMenu() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setIsVisible(false); 
+        setIsVisible(false);
       } else {
-        setIsVisible(true); 
+        setIsVisible(true);
       }
       setLastScrollY(currentScrollY);
     };
@@ -28,7 +28,7 @@ export default function BottomMenu() {
     <motion.nav
       className="_menu"
       animate={{ y: isVisible ? 0 : 100 }}
-      transition={{ duration: 0.4, ease: "easeInOut" }}
+      transition={{ duration: 0.8, ease: "easeInOut" }}
     >
       <motion.ul
         className="menu-bar"
@@ -63,7 +63,11 @@ export default function BottomMenu() {
                       initial={{ opacity: 0, y: 20, scale: 0.95 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                      transition={{ type: "spring", stiffness: 220, damping: 22 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 220,
+                        damping: 22,
+                      }}
                     >
                       <ul>
                         {item.drawer.map((sub, sIdx) => (

@@ -193,8 +193,8 @@
 }
 .footer_credit {
   display: flex;
-  justify-content: flex-end;
-  margin: 1rem 3rem;
+  justify-content:center;
+  margin: 4rem ;
 }
 .footer_author {
   font-weight: 600;
