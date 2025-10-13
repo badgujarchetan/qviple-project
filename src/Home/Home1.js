@@ -86,11 +86,12 @@ export default function Home1() {
                   duration: 0.5,
                   scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
                 }}
-                href="/login"
+                
                 className="_button"
                 data-variant="outline"
               >
-                Login
+                <a href={"/enquiry"}>Enquiry</a>
+               
               </motion.button> */}
               {/* <motion.button
                 initial={{ opacity: 0, scale: 0 }}
@@ -105,7 +106,7 @@ export default function Home1() {
                 className="_button"
                 data-variant="primary"
               >
-               sign up
+              Enquiry
               </motion.button> */}
               {/* <motion.button
                 initial={{ opacity: 0, scale: 0 }}
@@ -121,6 +122,21 @@ export default function Home1() {
               >
                 Enquiry
               </motion.button> */}
+              <motion.button
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                whileHover={{ scale: 0.95 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{
+                  duration: 0.5,
+                  scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+                }}
+                href="/enquiry"
+                className="_button"
+                data-variant="primary"
+              >
+               <a href={"/enquiry"}>Enquiry</a>
+              </motion.button>
             </div>
           </div>
         </div>

@@ -2,16 +2,16 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import React from "react";
-import "./Footer.css"
+import "./Footer.css";
 export default function Footer() {
   const AnimatedLink = ({ href, children }) => (
     <li className="group">
-      <Link
+      <a
         href={href}
         className="relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#f73b20] after:transition-all after:duration-500 after:ease-in-out group-hover:after:w-full"
       >
         {children}
-      </Link>
+      </a>
     </li>
   );
 
@@ -50,10 +50,13 @@ export default function Footer() {
         {/* Legal */}
         <li>
           <h3 className="commonopacity">Legal</h3>
-          <ul className="space">  
+          <ul className="space">
             <AnimatedLink href="/cookie-policy">Cookie Policy</AnimatedLink>
-            <AnimatedLink href="/privacy-policy">Privacy Policy</AnimatedLink>
-            <AnimatedLink href="/terms-of-use">Terms of use</AnimatedLink>
+          
+              <AnimatedLink href="/privacy-policy">Privacy Policy</AnimatedLink>
+       
+              <AnimatedLink href="/terms-of-use">Terms of use</AnimatedLink>
+           
             <AnimatedLink href="/disclaimers">Disclaimers</AnimatedLink>
             <AnimatedLink href="/aml-policy">AML Policy</AnimatedLink>
           </ul>
@@ -63,7 +66,9 @@ export default function Footer() {
         <li>
           <h3 className="commonopacity">Help</h3>
           <ul className="space">
-            <AnimatedLink href="/developers">Developers</AnimatedLink>
+            <AnimatedLink href="https://developer.qviple.com">
+              Developers
+            </AnimatedLink>
             <AnimatedLink href="/faq">FAQ</AnimatedLink>
             <AnimatedLink href="/support">Support</AnimatedLink>
             <AnimatedLink href="/release-notes">Release Notes</AnimatedLink>
@@ -100,7 +105,12 @@ export default function Footer() {
         </div>
         <div className="social_icons">
           {svgIcons.map((item, i) => (
-            <Link key={i} href={item.href} target="_blank" className="social_link">
+            <Link
+              key={i}
+              href={item.href}
+              target="_blank"
+              className="social_link"
+            >
               <span className="social_bg"></span>
               <span className="social_icon">{item.icon}</span>
             </Link>

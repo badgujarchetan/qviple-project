@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { motion } from "framer-motion";
 import "./Navbar.css";
@@ -73,9 +74,9 @@ export default function Navbar() {
               className="_button"
               data-variant="outline"
             >
-              Login
+             Enquiry
             </motion.button>
-            <motion.button
+            {/* <motion.button
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               whileHover={{ scale: 0.95 }}
@@ -89,7 +90,7 @@ export default function Navbar() {
               data-variant="primary"
             >
               Sign Up
-            </motion.button>
+            </motion.button> */}
           </div>
         </div>
       </div>
