@@ -108,3 +108,88 @@
   left: 0;
   width: 100%;
 }
+/* container */
+._extra-bold-hero,
+._extra-bold-hero.grid-stack,
+._extra-bold-hero.grid-stack .users,
+._extra-bold-hero.grid-stack .bg-layer,
+._extra-bold-hero.grid-stack .fg-layer {
+  box-sizing: border-box;
+}
+
+/* base section */
+._extra-bold-hero.grid-stack {
+  position: relative;
+  overflow: hidden;
+}
+
+/* both layers share size/placement */
+._extra-bold-hero .users,
+._extra-bold-hero .fg-layer,
+._extra-bold-hero .bg-layer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10rem 0;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+/* foreground (top) */
+._extra-bold-hero .fg-layer {
+  z-index: 2;
+  background-color: #f73b20; /* initial white */
+  color: #fff; /* initial orange text */
+  transition: background-color linear, color linear;
+  pointer-events: auto;
+}
+
+/* background (clipped) */
+._extra-bold-hero .bg-layer {
+  z-index: 1;
+  /* position: absolute;
+  inset: 0; */
+  background-color: #fff; /* orange layer */
+  color: #f73b20;
+  -webkit-clip-path: polygon(0% -1%, 100% -1%, 100% 100%, 50% 101%, 50% 101%, 0% 100%);
+  clip-path: polygon(0% -1%, 100% -1%, 100% 100%, 50% 101%, 50% 101%, 0% 100%);
+  transition: clip-path 120ms linear;
+  pointer-events: none; /* keep top interactive */
+}
+
+/* title and paragraph size (tune to your design tokens) */
+._extra-bold-hero .title-1,
+._extra-bold-hero .title {
+  font-size: clamp(40px, 9vw, 96px); /* adapt for responsiveness */
+  line-height: 1;
+  margin: 0;
+}
+
+._extra-bold-hero .subhead-2 {
+  margin-top: 1.6rem;
+  font-size: clamp(16px, 2.2vw, 20px);
+}
+
+/* icon/button placement */
+._extra-bold-hero ._app-button {
+  display: inline-block;
+  height: 44px;
+  width: 148px;
+  position: relative;
+}
+
+._extra-bold-hero ._app-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: absolute;
+  inset: 0;
+}
+
+/* small performance hint */
+._extra-bold-hero .bg-layer,
+._extra-bold-hero .fg-layer {
+  will-change: clip-path, background-color, color;
+}
