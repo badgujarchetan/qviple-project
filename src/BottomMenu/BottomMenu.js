@@ -132,7 +132,7 @@ const menuItems = [
   {
     label: "Business",
     iconName: "Business",
-    href: "https://www.jetonbank.com",
+    href: "/qviple-business",
     external: true,
   },
   {

@@ -1,0 +1,311 @@
+.erp-main {
+  margin-top: -5rem;
+}
+
+.erp-dashbord-section {
+  position: relative;
+  padding-top: 7rem;
+  height: 40rem;
+  background-size: cover;
+}
+
+.erp-dashbord-section .bg-color-img {
+  position: absolute;
+  z-index: -10;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+}
+
+.erp-dashbord-section .erp-container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 1.3rem;
+  padding-right: 1.3rem;
+}
+
+.erp-container-space {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 13rem;
+  padding-right: 7rem;
+}
+
+.erp-container-space .space-1 {
+  padding-top: 7rem;
+}
+
+.erp-container-space .space-1 .h1-space {
+  font-size: 4rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+  font-weight: 600;
+  line-height: 60px;
+}
+
+.erp-container-space .erp-space-1-description {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+  font-size: 20px;
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+  line-height: 2rem;
+}
+
+.erp-contact {
+  display: inline-flex;
+  justify-content: center;
+  gap: 5px;
+  align-items: center;
+  border-radius: 5px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  padding: 14px 2rem;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgb(19 30 61 / var(--tw-text-opacity, 1));
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+}
+
+.erp-contact:hover {
+  --tw-text-opacity: 1;
+  color: rgb(95 123 202 / var(--tw-text-opacity, 1));
+}
+
+.erp-container-space .space-2 {
+  min-height: 725px;
+}
+
+.erp-container-space .space-2 .business-hero-img {
+  /* max-width: 566px; */
+  width: 100%;
+  height: 90%;
+}
+
+.erp-main .coperate-digital {
+  padding-top: 10rem;
+  padding-bottom: 9rem;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.coperate-digital .blue-section {
+  padding-bottom: 6rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(72 136 251 / var(--tw-bg-opacity, 1));
+  border-radius: 1.1rem;
+  margin-top: 9rem;
+}
+
+.coperate-digital .data-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.coperate-digital .data-section-1 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.coperate-digital .coperate-digital-h2 {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+  line-height: 54px;
+  font-weight: 600;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+.coperate-digital .coperate-digital-support {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+  line-height: 2rem;
+  font-size: 1.125rem;
+}
+
+.coperate-digital .coperate-digital-image {
+  max-width: 607px;
+  vertical-align: middle;
+}
+
+.coperate-digital .custome-container {
+  width: 73.125rem;
+  margin: 0 auto;
+}
+
+.erp-main .erp-main-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  margin-top: -7rem;
+}
+
+.erp-main-card .box-section {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  box-shadow: 12.3487px 21.1692px 63.5077px hsla(0, 0%, 40%, 0.1);
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  padding: 2rem;
+  border-radius: 0.5rem;
+  z-index: 10;
+}
+
+.erp-main-card .box-section-icons {
+  display: flex;
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 239 239 / var(--tw-bg-opacity, 1));
+  border-radius: 9999px;
+  justify-content: center;
+  align-items: center;
+  width: 51px;
+  height: 51px;
+}
+
+.erp-main-card .box-section-h3 {
+  --tw-text-opacity: 1;
+  color: rgb(34 34 34 / var(--tw-text-opacity, 1));
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.erp-main-card .box-section-p {
+  --tw-text-opacity: 1;
+  color: rgb(102 102 102 / var(--tw-text-opacity, 1));
+  line-height: 23px;
+  font-size: 15px;
+}
+
+.erp-main .time-grow {
+  padding-top: 138px;
+  padding-bottom: 138px;
+  background-position: 50%;
+  background-size: cover;
+  background-image: url(/images/grow-bg.webp);
+}
+
+.erp-main .time-grow .containe {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.time-grow .text-data {
+  text-align: center;
+}
+
+.time-grow .text-data-h2 {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+  line-height: 61px;
+  font-weight: 600;
+  font-size: 48px;
+}
+
+.time-grow .text-data-p {
+  color: hsla(0, 0%, 100%, 0.8);
+  line-height: 27px;
+  font-weight: 300;
+  font-size: 18px;
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.time-grow .btn-blue {
+  display: inline-block;
+  border-radius: 5px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(72 136 251 / var(--tw-bg-opacity, 1));
+  padding: 14px 2rem;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.erp-main .chain-bg {
+  position: relative;
+  background: url(/images/chain-bg.png);
+  background-size: contain;
+}
+
+.chain-bg .chain-bg-container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 140px;
+  padding-bottom: 140px;
+}
+
+.chain-bg .bg-url-section {
+  padding-top: 2.5rem;
+  padding-right: 2.5rem;
+  padding-left: 3rem;
+  padding-bottom: 30px;
+  background-image: url(/images/light-blue-bg.webp);
+  border-radius: 18px;
+  gap: 1.25rem;
+}
+
+.chain-bg .qviple-business-btn {
+  display: flex;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: #ffffff30;
+  border-radius: 4rem;
+  justify-content: center;
+  align-items: center;
+  /* max-width: 200px; */
+  width: 9.5rem;
+}
+
+.chain-bg .qvi {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+  font-weight: 700;
+  margin: auto;
+}
+
+.chain-bg .chain-bg-container-h2 {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+  line-height: 54px;
+  font-weight: 600;
+  font-size: 48px;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.chain-bg .chain-bg-container-p {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+  line-height: 2rem;
+  font-size: 1.1rem;
+}
