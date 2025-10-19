@@ -150,20 +150,9 @@ export default function page() {
           </div>
         </div>
       </div>
-
-      <div className="chain-bg">
-        <div className="chain-bg-container">
-          <div className="bg-url-section">
-            <div className="qviple-business-btn">
-              <p className="qvi">Qviple Business</p>
-            </div>
-            <h2 className="chain-bg-container-h2">
-              Fill out the form for a custom pricing offer for you.
-            </h2>
-            <p className="chain-bg-container-p">
-                Help us offer you the best pricing with three <br></br> simple questions.            </p>
-          </div>
-        </div>
+      <div>this is from components</div>
+      <div className="card-conatiner">
+        <div className="card-section"></div>
       </div>
     </div>
   );
