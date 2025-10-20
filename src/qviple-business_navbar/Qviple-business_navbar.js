@@ -84,7 +84,7 @@ export default function QvipleNavbar() {
                               <LayoutDashboard className="icon" />
                               <div>
                                 <a href="/qviple-business/erp-dashbord">
-                                <h4>ERP Dashboard</h4>
+                                <h4>Business Banking</h4>
                                 <p>Complete academic management system</p> </a>
                                
                               </div>
@@ -92,8 +92,9 @@ export default function QvipleNavbar() {
                             <div className="dropdown-item">
                               <FileText className="icon" />
                               <div>
-                                <h4>Admission Portal</h4>
-                                <p>Streamlined digital admission process</p>
+                                <a href="multi-currency-account">
+                                <h4>Multi Currency Account</h4>
+                                <p>Streamlined digital admission process</p></a>
                               </div>
                             </div>
                             <div className="dropdown-item">

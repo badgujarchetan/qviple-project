@@ -151,9 +151,8 @@ export default function page() {
         </div>
       </div>
       <div>this is from components</div>
-      <div className="card-conatiner">
-        <div className="card-section"></div>
-      </div>
+
+    
     </div>
   );
 }
