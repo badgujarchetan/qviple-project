@@ -100,8 +100,9 @@ export default function QvipleNavbar() {
                             <div className="dropdown-item">
                               <GraduationCap className="icon" />
                               <div>
-                                <h4>Student Panel</h4>
-                                <p>Track attendance, fees & academics</p>
+                                <a href="/your-banking-manger">
+                                <h4>Your Banking Manager</h4>
+                                <p>Track attendance, fees & academics</p></a>
                               </div>
                             </div>
                             <div className="dropdown-item">
