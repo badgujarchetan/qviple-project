@@ -64,17 +64,187 @@
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
-.your-banking-manger-section .account-picture {
+.your-banking-manger-section .Banking-image-section {
   min-height: 732px;
 }
 
-.your-banking-manger-section .account-picture .account-imgs {
+.your-banking-manger-section .bankI {
+  max-width: 973px;
+  margin: 1rem auto;
+}
+
+.your-banking-manger-section .manage-linear {
+  background: linear-gradient(
+      102.99deg,
+      rgba(0, 0, 0, 0.2) 7.58%,
+      rgba(0, 0, 0, 0) 84.74%
+    ),
+    linear-gradient(0deg, #131e3d, #131e3d);
+  padding-top: 70px;
+  padding-bottom: 70px;
+  position: relative;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.your-banking-manger-section .container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.your-banking-manger-section .divide-section {
+  display: flex;
+  gap: 70px;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  position: relative;
+}
+
+.your-banking-manger-section .left-section {
+  border-color: rgba(72, 136, 251, 0.24);
+  border-bottom-width: 1px;
+  align-items: center;
+  gap: 2.25rem;
+  padding-bottom: 35px;
+  display: flex;
+  padding-top: 20px;
+}
+
+.your-banking-manger-section .posi-section {
+  --tw-bg-opacity: 1;
+  background-color: rgb(25 39 78 / var(--tw-bg-opacity, 1));
+  border-radius: 9999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 102px;
+  min-height: 102px;
+}
+
+.your-banking-manger-section .digital-text {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+  line-height: 39px;
+  font-weight: 500;
+  font-size: 26px;
+  margin-bottom: 0.5rem;
+}
+
+.your-banking-manger-section .digital-text-p {
+  --tw-text-opacity: 1;
+  color: rgb(91 111 139 / var(--tw-text-opacity, 1));
+
+  line-height: 30px;
+  font-size: 20px;
+}
+
+.your-banking-manger-section .mdc-img {
+  max-width: 464px;
   width: 100%;
 }
 
-.your-banking-manger-section .account-picture .account-imgss {
-  max-width: 973px;
+.your-banking-manger-section .track-funds-section {
   width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.your-banking-manger-section .track-funds-div {
+  position: relative;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  z-index: 10;
+}
 
-  margin: 1.8rem auto;
+.your-banking-manger-section .track-funds-h3 {
+  padding-top: 2.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(72 136 251 / var(--tw-text-opacity, 1));
+  line-height: 36px;
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+}
+.your-banking-manger-section .track-funds-h2 {
+  --tw-text-opacity: 1;
+  color: rgb(34 34 34 / var(--tw-text-opacity, 1));
+  line-height: 72px;
+  font-weight: 700;
+  font-size: 4rem;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 77px;
+}
+
+.your-banking-manger-section .own-limits {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2.5rem;
+  margin-bottom: -7rem;
+}
+
+.your-banking-manger-section .limits-img {
+  border-radius: 10px;
+  max-width: 490px;
+  width: 100%;
+}
+.your-banking-manger-section .own-limits-div {
+  max-width: 492px;
+}
+
+.your-banking-manger-section .own-limits-h3 {
+  --tw-text-opacity: 1;
+  color: rgb(26 26 26 / var(--tw-text-opacity, 1));
+  line-height: 3rem;
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.your-banking-manger-section .own-limits-p {
+  --tw-text-opacity: 1;
+  color: rgb(103 103 103 / var(--tw-text-opacity, 1));
+  line-height: 1.9rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.your-banking-manger-section .recive-money {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+
+.your-banking-manger-section .recive-money-div {
+  max-width: 492px;
+}
+
+.your-banking-manger-section .recive-money-h3 {
+  --tw-text-opacity: 1;
+  color: rgb(26 26 26 / var(--tw-text-opacity, 1));
+  line-height: 3rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  font-size: 2rem;
+}
+
+.your-banking-manger-section .recive-money-p {
+  --tw-text-opacity: 1;
+  color: rgb(103 103 103 / var(--tw-text-opacity, 1));
+  line-height: 30px;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.your-banking-manger-section .faster-img {
+  border-radius: 10px;
+  max-width: 490px;
+  width: 100%;
 }
