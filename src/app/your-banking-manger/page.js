@@ -236,6 +236,83 @@ export default function page() {
           ></img>
         </div>
       </div>
+      <div className="fast-transfer-opportunities">
+        <div className="fast-transfer-container">
+          <div className="fast-transfer-img">
+            <img
+              alt="Hero Background"
+              className="hero-bg"
+              loading="lazy"
+              width="2560"
+              height="880"
+              decoding="async"
+              data-nimg="1"
+              style={{ color: "transparent" }}
+              src="/images/light-blue-bg.webp"
+            ></img>
+            <div className="fast-transfer-div">
+              <div className="rounded-div">
+                <p className="rounded-div-p">
+                  International payments are here.
+                </p>
+              </div>
+            </div>
+            <h2 className="fast-transfer-h2">
+              Fast transfer opportunity to all over the world.
+            </h2>
+            <div className="no-limits-payments-section">
+              <img
+                alt="No limit for payments"
+                loading="lazy"
+                width="380"
+                height="500"
+                decoding="async"
+                data-nimg="1"
+                className="no-limits-payments-img"
+                style={{ color: "transparent" }}
+                src="/images/payments.webp"
+              ></img>
+              <div className="text-no-limits">
+                <h3 className="text-no-limits-h3">No limit for payments</h3>
+                <p className="text-no-limits-p">
+                  Make unlimited payments to the other side of the world with
+                  Jetonbank.
+                </p>
+              </div>
+            </div>
+            <img
+              alt="bracket"
+              loading="lazy"
+              width="2560"
+              height="100"
+              decoding="async"
+              data-nimg="1"
+              className="bracket-img"
+              style={{ color: "transparent" }}
+              src="/images/bracket.svg"
+            ></img>
+            <div className="no-limits-payments-section">
+              <div className="text-no-limits">
+                <h3 className="text-no-limits-h3">Don't be afraid to go global</h3>
+                <p className="text-no-limits-p">
+                  Jetonbank does not include the excessive fees of traditional banking. Don't worry, let's grow together
+                </p>
+              </div>
+              <img
+                alt="No limit for payments"
+                loading="lazy"
+                width="380"
+                height="500"
+                decoding="async"
+                data-nimg="1"
+                className="no-limits-payments-img"
+                style={{ color: "transparent" }}
+                src="/images/global.webp"
+              ></img>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
