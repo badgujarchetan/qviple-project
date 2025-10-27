@@ -223,7 +223,7 @@ export default function page() {
               You can plan all your payments and record the payments made.
             </p>
           </div>
-          <img
+          <img  
             alt="Create your own limits."
             loading="lazy"
             width="490"
