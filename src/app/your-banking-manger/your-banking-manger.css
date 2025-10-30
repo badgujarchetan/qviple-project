@@ -354,8 +354,179 @@
   margin-bottom: 30px;
 }
 
-.your-banking-manger-section .afraid-section{
+.your-banking-manger-section .afraid-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.your-banking-manger-section .funds-action {
+  padding-top: 140px;
+  padding-bottom: 5rem;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.your-banking-manger-section .funds-action-p {
+  --tw-text-opacity: 1;
+  color: rgb(72 136 251 / var(--tw-text-opacity, 1));
+  line-height: 36px;
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+}
+
+.your-banking-manger-section .funds-action-h2 {
+  --tw-text-opacity: 1;
+  color: rgb(19 30 61 / var(--tw-text-opacity, 1));
+  line-height: 75px;
+  font-weight: 600;
+  font-size: 60px;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.your-banking-manger-section .funds-action-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  gap: 1.5rem;
+}
+
+.your-banking-manger-section .funds-action-images {
+  max-width: 698px;
+  width: 100%;
+}
+
+.your-banking-manger-section .funds-action-data-h2 {
+  --tw-text-opacity: 1;
+  color: rgb(19 30 61 / var(--tw-text-opacity, 1));
+  line-height: 3rem;
+  font-weight: 500;
+  font-size: 32px;
+}
+
+.your-banking-manger-section .funds-action-data-p {
+  --tw-text-opacity: 1;
+  color: rgb(91 111 139 / var(--tw-text-opacity, 1));
+  line-height: 30px;
+  font-size: 20px;
+  margin-top: 1.25rem;
+  margin-bottom: 2.25rem;
+}
+
+.your-banking-manger-section .funds-section-btn-lblue {
+  display: inline-block;
+  border-radius: 5px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(72 136 251 / var(--tw-bg-opacity, 1));
+  padding: 14px 2rem;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+
+  text-decoration: inherit;
+}
+
+/* .your-banking-manger-section .card-banking-section {
+  position: relative;
+  padding-bottom: 140px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(246 246 246 / var(--tw-bg-opacity, 1));
+}
+.your-banking-manger-section .card-shape-l {
+  position: absolute;
+  max-width: 250px;
+  left: 30rem;
+  bottom: 0;
+}
+
+.your-banking-manger-section .card-shape-r {
+  position: absolute;
+
+  max-width: 250px;
+  right: 0;
+} */
+
+/* .your-banking-manger-section .card-shape-m {
+  position: absolute;
+  max-width: 250px;
+  left: 2rem;
+  bottom: 5rem;
+} */
+
+.your-banking-manger-section .our-customer-service {
+  padding-top: 140px;
+  padding-bottom: 140px;
+  background-position: 50%;
+  background-size: cover;
+  background-image: url(/images/grow-bg.webp);
+}
+.your-banking-manger-section .our-cust-container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.your-banking-manger-section .our-customer-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  gap: 1.2rem;
+}
+
+.your-banking-manger-section .our-customer-p {
+  --tw-text-opacity: 1;
+  color: rgb(72 136 251 / var(--tw-text-opacity, 1));
+  line-height: 28px;
+  font-weight: 700;
+}
+
+.your-banking-manger-section .our-customer-h2 {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+  line-height: 54px;
+  font-weight: 600;
+  font-size: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.your-banking-manger-section .our-customer-pp {
+  color: #a3b8c2cc;
+  line-height: 2rem;
+  font-size: 18px;
+  margin-bottom: 2.25rem;
+}
+.your-banking-manger-section .signup-white {
+  display: inline-block;
+  border-radius: 5px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  padding: 14px 2rem;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgb(19 30 61 / var(--tw-text-opacity, 1));
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+}
+
+.your-banking-manger-section .customers-img {
+  max-width: 636px;
+  width: 100%;
 }

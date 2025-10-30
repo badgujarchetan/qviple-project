@@ -223,7 +223,7 @@ export default function page() {
               You can plan all your payments and record the payments made.
             </p>
           </div>
-          <img  
+          <img
             alt="Create your own limits."
             loading="lazy"
             width="490"
@@ -293,9 +293,12 @@ export default function page() {
             ></img>
             <div className="no-limits-payments-section">
               <div className="text-no-limits">
-                <h3 className="text-no-limits-h3">Don't be afraid to go global</h3>
+                <h3 className="text-no-limits-h3">
+                  Don't be afraid to go global
+                </h3>
                 <p className="text-no-limits-p">
-                  Jetonbank does not include the excessive fees of traditional banking. Don't worry, let's grow together
+                  Jetonbank does not include the excessive fees of traditional
+                  banking. Don't worry, let's grow together
                 </p>
               </div>
               <img
@@ -305,11 +308,121 @@ export default function page() {
                 height="500"
                 decoding="async"
                 data-nimg="1"
-                className="no-limits-payments-img"
+                className="no-limits-payments-imgs"
                 style={{ color: "transparent" }}
                 src="/images/global.webp"
               ></img>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="funds-action">
+        <p className="funds-action-p">Access your funds whenever you want.</p>
+        <h2 className="funds-action-h2">
+          Funding in business
+          <br></br>
+          is no longer a challenge.
+        </h2>
+        <div className="funds-action-div">
+          <img
+            alt="Don't be afraid to go global"
+            loading="lazy"
+            width="698"
+            height="500"
+            decoding="async"
+            data-nimg="1"
+            className="funds-action-images"
+            style={{ color: "transparent" }}
+            src="/images/devices.webp"
+          ></img>
+          <div>
+            <h2 className="funds-action-data-h2">
+              Take control of your money, make your payments quickly and
+              securely.
+            </h2>
+            <p className="funds-action-data-p">
+              Transaction abroad may be included heavy fees. With Jetonbank,
+              that's not the case. You can make your worldwide payment
+              transactions with no hidden fees.
+            </p>
+            <a
+              className="funds-section-btn-lblue"
+              href="/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              SIGN UP NOW
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* <div className="card-banking-section">
+        <img
+          alt="shape"
+          fetchpriority="high"
+          width="250"
+          height="250"
+          decoding="async"
+          data-nimg="1"
+          className="card-shape-l"
+          style={{ color: "transparent" }}
+          src="/images/l-vector.webp"
+        ></img>
+        <img
+          alt="shape"
+          fetchpriority="high"
+          width="250"
+          height="250"
+          decoding="async"
+          data-nimg="1"
+          className="card-shape-r"
+          style={{ color: "transparent" }}
+          src="/img/r-vector.webp"
+        ></img>
+        <img
+          alt="shape"
+          fetchpriority="high"
+          width="250"
+          height="250"
+          decoding="async"
+          data-nimg="1"
+          className="card-shape-m"
+          style={{ color: "transparent" }}
+          src="/img/down-vector.webp"
+        ></img>
+      </div> */}
+
+      <div className="our-customer-service">
+        <div className="our-cust-container">
+          <div className="our-customer-div">
+            <div>
+              <p className="our-customer-p">
+                One-to-one <br></br>solutions to each of your problems.
+              </p>
+              <h2 className="our-customer-h2">
+                We care about <br></br> our customers.
+              </h2>
+              <p className="our-customer-pp">
+                24/7 available customer service is here. Reach our team via
+                Email, Live Chat or Telegram.
+              </p>
+              <a
+                className="signup-white"
+                href="/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get Started
+              </a>
+            </div>
+            <img
+              src="/images/24-7.webp"
+              alt="We care about our customers."
+              className="customers-img"
+              width="636"
+              height="365"
+            ></img>
           </div>
         </div>
       </div>

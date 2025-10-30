@@ -1,0 +1,132 @@
+.dedicatd-iban-section {
+  margin-top: -5rem;
+}
+
+.dedicatd-iban-container {
+  position: relative;
+  padding-top: 109px;
+  height: 40rem;
+}
+
+.dedicatd-iban-container .private-hero-img {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  top: 0;
+  left: 0;
+}
+
+.dedicatd-iban-container .container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.dedicatd-iban-container .cont-div {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.dedicatd-iban-container .padding-top-div {
+  padding-top: 85px;
+}
+
+.dedicatd-iban-container .cont-h1 {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+  line-height: 60px;
+  font-weight: 600;
+  font-size: 64px;
+}
+
+.dedicatd-iban-container .btn-white {
+  display: inline-block;
+  border-radius: 5px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  padding: 14px 2rem;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgb(19 30 61 / var(--tw-text-opacity, 1));
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+}
+
+.dedicatd-iban-container .contact {
+  display: inline-flex;
+  margin-top: 51px;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.dedicatd-iban-container .img-right-section {
+  min-height: 670px;
+}
+
+.dedicatd-iban-container .dedicated-hero-img {
+  padding-top: 54px;
+  min-width: 606px;
+}
+
+.dedicatd-iban-section .back-img {
+  background-image: url(/images/chain-bg.png);
+  background-position: 50%;
+  background-size: cover;
+  width: 100%;
+  height: 290px;
+}
+.dedicatd-iban-section .container-blue-section {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.dedicatd-iban-section .blue-section {
+  display: flex;
+  padding-left: 66px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(72 136 251 / var(--tw-bg-opacity, 1));
+  border-radius: 20px;
+  gap: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.dedicatd-iban-section .text-white-section {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.dedicatd-iban-section .text-white-h2 {
+  line-height: 54px;
+  font-weight: 600;
+  font-size: 48px;
+  margin-bottom: 1.5rem;
+}
+
+.dedicatd-iban-section .text-white-p {
+  line-height: 2rem;
+  font-size: 1.2rem;
+}
+
+.dedicatd-iban-section .Euro-IBAN-imag {
+  max-width: 700px;
+  width: 100%;
+  margin-right: -9rem;
+}

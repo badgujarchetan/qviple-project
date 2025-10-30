@@ -12,7 +12,7 @@ import {
   PhoneCall,
   Link,
 } from "lucide-react";
-import "./qviple-business-navbar.css"
+import "./qviple-business-navbar.css";
 
 export default function QvipleNavbar() {
   const [show, setShow] = useState(true);
@@ -84,25 +84,29 @@ export default function QvipleNavbar() {
                               <LayoutDashboard className="icon" />
                               <div>
                                 <a href="/erp-dashbord">
-                                <h4>Business Banking</h4>
-                                <p>Complete academic management system</p> </a>
-                               
+                                  <h4>Business Banking</h4>
+                                  <p>
+                                    Complete academic management system
+                                  </p>{" "}
+                                </a>
                               </div>
                             </div>
                             <div className="dropdown-item">
                               <FileText className="icon" />
                               <div>
                                 <a href="/multi-currency-account">
-                                <h4>Multi Currency Account</h4>
-                                <p>Streamlined digital admission process</p></a>
+                                  <h4>Multi Currency Account</h4>
+                                  <p>Streamlined digital admission process</p>
+                                </a>
                               </div>
                             </div>
                             <div className="dropdown-item">
                               <GraduationCap className="icon" />
                               <div>
                                 <a href="/your-banking-manger">
-                                <h4>Your Banking Manager</h4>
-                                <p>Track attendance, fees & academics</p></a>
+                                  <h4>Your Banking Manager</h4>
+                                  <p>Track attendance, fees & academics</p>
+                                </a>
                               </div>
                             </div>
                             <div className="dropdown-item">
@@ -110,6 +114,15 @@ export default function QvipleNavbar() {
                               <div>
                                 <h4>College Management</h4>
                                 <p>Automate campus operations efficiently</p>
+                              </div>
+                            </div>
+                            <div className="dropdown-item">
+                              <Building2 className="icon" />
+                              <div>
+                                <a href="/dedicated-iban">
+                                  <h4>Dedicated IBAN</h4>
+                                  <p>Automate campus operations efficiently</p>
+                                </a>
                               </div>
                             </div>
                           </div>
@@ -173,8 +186,12 @@ export default function QvipleNavbar() {
                 </ul>
 
                 <div className="buttons">
-                  <a href="/" className="btn-login">Login</a>
-                  <a href="/" className="btn-create">Create Account</a>
+                  <a href="/" className="btn-login">
+                    Login
+                  </a>
+                  <a href="/" className="btn-create">
+                    Create Account
+                  </a>
                 </div>
               </div>
             </header>
