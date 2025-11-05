@@ -125,6 +125,15 @@ export default function QvipleNavbar() {
                                 </a>
                               </div>
                             </div>
+                            <div className="dropdown-item">
+                              <Building2 className="icon" />
+                              <div>
+                                <a href="/virtual-card">
+                                  <h4>Virtual card</h4>
+                                  <p>Automate campus operations efficiently</p>
+                                </a>
+                              </div>
+                            </div>
                           </div>
                         </motion.div>
                       )}

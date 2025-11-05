@@ -1,0 +1,190 @@
+.virtual-card-section {
+  margin-top: -5rem;
+}
+
+.virtual-card-section .virtual-card-container {
+  background: url(/images/virtual-card-hero-bg.png) center top / cover;
+  height: 100vh;
+}
+.virtual-card-section .virtual-card-main {
+  width: 73.125rem;
+  margin: 0 auto;
+}
+.virtual-card-section .virtual-card-hero {
+  padding-top: 10rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.virtual-card-section .virtual-card-h1 {
+  font-size: 4.75rem;
+  font-weight: 600;
+  line-height: 5rem;
+}
+
+.virtual-card-section .virtual-card-desc {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 2.5rem;
+}
+.virtual-card-section .virtual-card-sub-desc {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 2rem;
+}
+.virtual-card-section .virtual-card-actions a {
+  display: inline-block;
+  background: white;
+  border-radius: 0.3125rem;
+  padding: 0.88rem 0px;
+  width: 19.6875rem;
+  color: rgb(19, 30, 61);
+  font-size: 1.125rem;
+  font-weight: 500;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.virtual-card-section .virtual-card-actions .circle {
+  width: 0%;
+  height: 0%;
+  opacity: 0;
+  border-radius: 50%;
+  background: rgb(227, 227, 227);
+  position: absolute;
+  transition: 0.5s ease-out;
+  top: 20px;
+  left: 8.75rem;
+  z-index: 0;
+}
+.virtual-card-section :hover .circle {
+  width: 200%;
+  height: 500%;
+  opacity: 1;
+  top: -70px;
+  left: -8.75rem;
+}
+
+.virtual-card-section span {
+  position: relative;
+  z-index: 1;
+}
+
+.virtual-card-section .custome-container {
+  width: 73.125rem;
+  margin: 0 auto;
+}
+.virtual-card-section .what-is-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 7.5rem;
+  padding: 5.25rem 0px 0px;
+}
+.virtual-card-section .left-section {
+  width: 60%;
+  margin-top: 6rem;
+}
+
+.virtual-card-section .left-h2 {
+  color: rgb(24, 29, 39);
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 3.75rem;
+  margin-bottom: 2rem;
+}
+
+.virtual-card-section .left-p {
+  color: rgb(83, 88, 98);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 3rem;
+}
+
+.virtual-card-section .right-section {
+  width: 40%;
+}
+
+.virtual-card-section .right-section img {
+  width: 40rem;
+  mask-image: linear-gradient(black 25%, transparent 80%);
+}
+.virtual-card-section .key-benefits-section {
+  background: url(/images/virtual-card-key-benefits-bg.png) center top / cover
+    no-repeat rgb(16, 25, 50);
+  color: white;
+  padding-top: 6.25rem;
+  padding-bottom: 6.25rem;
+}
+.virtual-card-section .key-benefits-container {
+  width: 73.125rem;
+  margin: 0 auto;
+}
+.virtual-card-section .key-benefits-h2 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 2rem;
+  margin-bottom: 2.5rem;
+}
+.virtual-card-section .key-benefits-desc {
+  text-align: center;
+  margin-bottom: 7.5rem;
+  color: rgb(199, 199, 199);
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.5rem;
+}
+.virtual-card-section .key-benefits-desc b {
+  font-weight: 600;
+}
+
+.virtual-card-section .cols-with-phone {
+  display: flex;
+  justify-content: space-between;
+}
+
+.virtual-card-section .cols {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2rem;
+  width: 60%;
+  height: 30rem;
+}
+
+.virtual-card-section .col {
+  border-radius: 0.75rem;
+  background: rgb(244, 246, 248);
+  color: rgb(83, 88, 98);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 21.9152rem;
+}
+
+.virtual-card-section .title {
+  color: rgb(24, 29, 39);
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+.virtual-card-section .get {
+  color: rgb(83, 88, 98);
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 2rem;
+  margin-top: 1rem;
+}
+
+.virtual-card-section .phones {
+    margin-top: 1rem;
+  height: 43rem;
+  display: flex;
+  justify-content: flex-end;
+}
