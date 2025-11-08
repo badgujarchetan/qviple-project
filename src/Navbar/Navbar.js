@@ -1,99 +1,56 @@
-"use client"
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
 import "./Navbar.css";
+
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <nav
-      className={"_navbar"}
-      initial={{
-        maskImage:
-          "linear-gradient(to right, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%)",
-      }}
-      animate={{
-        maskImage:
-          "linear-gradient(to right, rgba(0,0,0,1) 90%, rgba(0,0,0,1) 100%)",
-      }}
+    <motion.nav
+      className="_navbar"
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <div className="g-row-full flex items-center justify-between">
-        <a
-          href="/"
-          className="homepage-link relative overflow-hidden"
-          aria-label="Homepage"
-        >
-          <span className="_wordmark" data-tone="neutral">
-            <div className="glyphs">
-              <div className="glyph">
-                <span className="brand_name">QVIPLE</span>
-              </div>
-            </div>
-            <svg
-              className="spacer"
-              width="1558"
-              height="415"
-              aria-hidden="true"
-            />
-          </span>
+      <div className="nav-container">
+        {/* Brand / Logo */}
+        <a href="/" className="brand-name">
+          QVIPLE
         </a>
 
-        <div className="lang-cta-wrapper">
-          {/* <div className="_dropdown _language-select">
-              <button className=" _button flex items-center justify-center ">
-                {/* <span className="_icon"></span> */}
-          {/* <span className="ml-1">EN</span> */}
-          {/* <span className="_icon chevron">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-chevron-down-icon lucide-chevron-down"
-                  >
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
-                </span> */}
-          {/* </button> */}
-          {/* </div>  */}
-
-          <div className="ctas ">
-            <motion.button
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              whileHover={{ scale: 0.95 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{
-                duration: 0.5,
-                scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
-              }}
-              href="/login"
-              className="_button"
-              data-variant="outline"
-            >
-             Enquiry
-            </motion.button>
-            {/* <motion.button
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              whileHover={{ scale: 0.95 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{
-                duration: 0.5,
-                scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
-              }}
-              href="/signup"
-              className="_button"
-              data-variant="primary"
-            >
-              Sign Up
-            </motion.button> */}
-          </div>
+        {/* Desktop Buttons */}
+        <div className={`nav-links ${menuOpen ? "active" : ""}`}>
+          {/* <a href="#about" className="nav-item">
+            About
+          </a>
+          <a href="#features" className="nav-item">
+            Features
+          </a>
+          <a href="#contact" className="nav-item">
+            Contact
+          </a> */}
+          <motion.a
+            href="/enquiry"
+            className="enquiry-btn"
+            whileHover={{ scale: 0.95 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            Enquiry
+          </motion.a>
         </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="menu-btn"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle Menu"
+        >
+          {menuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
       </div>
-    </nav>
+    </motion.nav>
   );
 }

@@ -1,29 +1,31 @@
+"use client";
 import React from "react";
-import "../style/Home6.css";
+
 export default function Home3() {
   return (
-    <section className="jeton_card-overview">
-      <div className="jeton-g-row">
-        <div className="jeton-col-section xxl-10">
-          <span className="jeton_tag_section" data-tone="orange">
-            <div className="jeton-card_outline_section"></div>
+    <section className="mt-32 md:mt-40 lg:mt-48 mb-32 md:mb-40 lg:mb-48">
+      {/* --- Top Section --- */}
+      <div className="flex flex-wrap mx-auto w-full text-center justify-center px-4 sm:px-8 md:px-[var(--grid-padding)]">
+        <div className="w-full md:w-[80%] lg:w-1/2 px-2 md:px-[var(--grid-half-gap)]">
+          <span className="inline-block relative px-4 py-[6px] text-sm sm:text-base tracking-[0.03em] text-[#f73b20] cursor-pointer mb-4">
+            <div className="absolute inset-0 rounded-[20px] border border-[#f73b20] pointer-events-none"></div>
             Jeton Card
           </span>
-          <h2 className="jeton_card_text_section title-5">
+
+          <h2 className="mt-4 mb-4 font-medium whitespace-pre-line text-[24px] sm:text-[28px] md:text-[36px] lg:text-[44px] xl:text-[48px] tracking-[0.01em] leading-[1.2]">
             Contactless payments? Sure. Spending limits? Check. Card freezing?
             Also check.
           </h2>
         </div>
       </div>
 
-      <div className="jeton-g-row jeton_card_video_section">
-        <div className="jeton-col-section xxl-10">
+      {/* --- Video Section --- */}
+      <div className="flex flex-wrap mx-auto w-full text-center justify-center px-4 sm:px-8 md:px-[var(--grid-padding)] my-16 sm:my-24 md:my-32">
+        <div className="w-full sm:w-[90%] md:w-[80%] lg:w-1/2 px-2 md:px-[var(--grid-half-gap)]">
           <video
-            className="jeton_card_video media_jeton_card"
+            className="block w-full h-auto overflow-hidden rounded-xl shadow-lg"
             src="/videos/jeton-card-rip.mp4"
             type="video/mp4"
-            width="1960"
-            height="1240"
             loop
             autoPlay
             muted
@@ -36,13 +38,15 @@ export default function Home3() {
         </div>
       </div>
 
-      <div className="jeton-g-row">
-        <div className="jeton-col-section xxl-10">
-          <h2 className="jeton_card_text_section2 title-5 ">
+      {/* --- Bottom Section --- */}
+      <div className="flex flex-wrap mx-auto w-full text-center justify-center px-4 sm:px-8 md:px-[var(--grid-padding)]">
+        <div className="w-full md:w-[80%] lg:w-1/2 px-2 md:px-[var(--grid-half-gap)]">
+          <h2 className="mt-4 mb-4 font-semibold whitespace-pre-line text-[24px] sm:text-[28px] md:text-[36px] lg:text-[44px] xl:text-[48px] tracking-[0.01em] leading-[1.2]">
             Jeton Card: Your Go-To for Every Purchase
           </h2>
-          <span className="jeton_tag_section">
-            <div className="jeton-card_outline_section"></div>
+
+          <span className="inline-block relative px-4 py-[6px] text-sm sm:text-base tracking-[0.03em] text-[#f73b20] cursor-pointer mt-2 sm:mt-4">
+            <div className="absolute inset-0 rounded-[20px] border border-[#f73b20] pointer-events-none"></div>
             Learn more
           </span>
         </div>

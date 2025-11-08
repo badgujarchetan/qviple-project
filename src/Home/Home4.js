@@ -1,7 +1,5 @@
 "use client";
-
 import { useEffect, useRef } from "react";
-import "../style/Home4.css";
 
 export default function Home4() {
   const rootRef = useRef(null);
@@ -95,16 +93,10 @@ export default function Home4() {
 
       requestAnimationFrame(() => {
         const t = calcProgress();
-        const mappedT = t;
-        const k = getInterpolated(mappedT);
-
+        const k = getInterpolated(t);
         const clip = `polygon(0% -1%, 100% -1%, 100% ${k.thirdY}%, 50% ${k.fourthY}%, 50% ${k.fourthY}%, 0% ${k.sixthY}%)`;
-
         bg.style.clipPath = clip;
         bg.style.webkitClipPath = clip;
-
-       
-
         ticking = false;
       });
     }
@@ -112,7 +104,6 @@ export default function Home4() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
-
     return () => {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
@@ -120,108 +111,79 @@ export default function Home4() {
   }, []);
 
   return (
-    <section className="extra-bold-hero grid-stack" ref={rootRef}>
-    
+    <section
+      ref={rootRef}
+      className="relative grid overflow-hidden mt-16 md:mt-24 lg:mt-32"
+    >
+      {/* --- Foreground Layer --- */}
       <div
-        className="flex flex-col items-center text-center py-216-140 users fg-layer"
         ref={fgRef}
+        className="z-20 flex flex-col items-center justify-center text-center bg-white text-[#f73b20] py-32 sm:py-40 md:py-48 px-6"
       >
-        <h2 className="title-1 -medium w-cols-12 sm-w-cols-14 xs-w-cols-16 title">
-          1 million users,
-          <br /> plus you.
+        <h2 className="font-semibold leading-[0.9] text-[2.5rem] sm:text-[4rem] md:text-[5.5rem] lg:text-[6rem] tracking-tight">
+          1 million users, <br /> plus you.
         </h2>
-        <p className="subhead-2 -medium w-cols-10 xs-w-cols-12 mt-64-24">
+        <p className="mt-8 text-[1.1rem] sm:text-[1.25rem] md:text-[1.4rem] leading-[1.3] max-w-xl font-medium">
           It only takes few seconds to get started.
         </p>
-        <div className="millions flex gap-24 mt-64-48">
+
+        <div className="flex gap-4 mt-10 flex-wrap justify-center">
           <a
             href="https://apps.apple.com/us/app/jeton/id6499320378"
             target="_blank"
             rel="noopener noreferrer"
-            className="_app-button"
-            data-button=""
-            data-tone="orange"
-            data-variant="outline"
-            aria-label="go to mobile app"
+            className="relative flex items-center justify-center w-36 h-12 rounded-lg border border-[#f73b20] overflow-hidden hover:scale-105 transition-transform duration-300"
           >
-            <div data-button-background></div>
-            <div className="outline absolute inset-0"></div>
             <img
-              className="imgess absolute inset-0"
               src="/app-store-orange.svg"
-              alt="App Store icon"
+              alt="App Store"
+              className="absolute inset-0 w-full h-full object-contain"
             />
           </a>
-
           <a
             href="/"
             target="_blank"
             rel="noopener noreferrer"
-            className="_app-button"
-            data-button=""
-            data-tone="orange"
-            data-variant="outline"
-            aria-label="go to mobile app"
+            className="relative flex items-center justify-center w-36 h-12 rounded-lg border border-[#f73b20] overflow-hidden hover:scale-105 transition-transform duration-300"
           >
-            <div data-button-background=""></div>
-            <div className="outline"></div>
             <img
-              className="imgess"
               src="/google-play-orange.svg"
-              alt="Google Play icon"
+              alt="Google Play"
+              className="absolute inset-0 w-full h-full object-contain"
             />
           </a>
         </div>
       </div>
 
-      {/* Background (animated polygon layer) */}
+      {/* --- Background Animated Layer --- */}
       <div
-        aria-hidden="true"
-        className="flex flex-col items-center text-center py-216-140 users bg-layer"
         ref={bgRef}
+        aria-hidden="true"
+        className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center text-[#f73b20] bg-[#f73b20] transition-all duration-200 ease-linear"
         style={{
-          color: "#fff",
-          backgroundColor: "#f73b20",
           clipPath:
             "polygon(0% -1%, 100% -1%, 100% 100%, 50% 101%, 50% 101%, 0% 100%)",
         }}
       >
-        <div className="title-1 -medium w-cols-12 sm-w-cols-14 xs-w-cols-16 title">
+        <h2 className="font-semibold leading-[0.9] text-[2.5rem] sm:text-[4rem] md:text-[5.5rem] lg:text-[6rem] tracking-tight text-white">
           1 million users, plus you.
-        </div>
-        <div className="-medium w-cols-10 xs-w-cols-12 mt-64-24 subhead-2">
+        </h2>
+        <p className="mt-8 text-[1.1rem] sm:text-[1.25rem] md:text-[1.4rem] leading-[1.3] font-medium text-white max-w-xl">
           It only takes few seconds to get started.
-        </div>
-        <div className="millions flex gap-24 mt-64-48">
-          <span
-            className="_app-button"
-            data-button=""
-            data-tone="orange"
-            data-variant="outline"
-            aria-hidden
-          >
-            <div data-button-background></div>
-            <div className="outline absolute inset-0"></div>
+        </p>
+        <div className="flex gap-4 mt-10 flex-wrap justify-center">
+          <span className="relative flex items-center justify-center w-36 h-12 rounded-lg border border-white overflow-hidden opacity-80">
             <img
-              className="imgess absolute inset-0"
               src="/app-store-orange.svg"
-              alt="App Store icon"
+              alt="App Store"
+              className="absolute inset-0 w-full h-full object-contain"
             />
           </span>
-
-          <span
-            className="_app-button"
-            data-button
-            data-tone="orange"
-            data-variant="outline"
-            aria-hidden
-          >
-            <div data-button-background></div>
-            <div className="outline absolute inset-0"></div>
+          <span className="relative flex items-center justify-center w-36 h-12 rounded-lg border border-white overflow-hidden opacity-80">
             <img
-              className="imgess absolute inset-0"
               src="/google-play-orange.svg"
-              alt="Google Play icon"
+              alt="Google Play"
+              className="absolute inset-0 w-full h-full object-contain"
             />
           </span>
         </div>

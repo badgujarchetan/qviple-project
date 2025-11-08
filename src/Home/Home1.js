@@ -1,306 +1,115 @@
 "use client";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
-import "../style/Home1.css";
 import Link from "next/link";
 
 export default function Home1() {
   const [hover, setHover] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
+// bg-gradient-to-b from-[#001A33] via-[#002D62] to-[#0047AB]
   return (
-    <div
-      style={{
-        position: "relative",
-        width: "100%",
-        minHeight: "100vh",
-        overflow: "hidden",
-      }}
-    >
-      {" "}
-      <nav
-        className={"_navbar"}
-        initial={{
-          maskImage:
-            "linear-gradient(to right, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%)",
-        }}
-        animate={{
-          maskImage:
-            "linear-gradient(to right, rgba(0,0,0,1) 90%, rgba(0,0,0,1) 100%)",
-        }}
-      >
-        <div className="g-row-full flex items-center justify-between">
-          <a
-            href="/"
-            className="homepage-link relative overflow-hidden"
-            aria-label="Homepage"
-          >
-            <span className="_wordmark" data-tone="neutral">
-              <div className="glyphs">
-                <div className="glyph">
-                  <span className="brand_name">QVIPLE</span>
-                  {/* <span className="">
-                    <img className="logo_qviple" src="/images/logo-qviple.svg"></img>
-                  </span> */}
-                </div>
-              </div>
-              <svg
-                className="spacer"
-                width="1558"
-                height="415"
-                aria-hidden="true"
-              />
-            </span>
-          </a>
+    <div className="relative w-full min-h-screen overflow-hidden bg-red-600 ">
+      {/* NAVBAR */}
+      <nav className="absolute top-0 left-0 w-full z-50 px-[4%] py-5 flex justify-between items-center">
+        <a
+          href="/"
+          className="relative text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400 text-[1.85rem] font-extrabold tracking-tight"
+        >
+          QVIPLE
+        </a>
 
-          <div className="lang-cta-wrapper">
-            {/* <div className="_dropdown _language-select">
-              <button className=" _button flex items-center justify-center ">
-                <span className="_icon">🌐</span>
-                <span className="ml-1">EN</span>
-                <span className="_icon chevron">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-chevron-down-icon lucide-chevron-down"
-                  >
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
-                </span>
-              </button>
-            </div> */}
+        <motion.button
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          whileHover={{ scale: 0.95 }}
+          whileTap={{ scale: 0.95 }}
+          transition={{
+            duration: 0.5,
+            scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+          }}
+          className="bg-[#f73b20] text-white px-5 py-2 rounded-md text-base font-medium hover:bg-[#d53018] transition-all"
+        >
+          <Link href="/enquiry">Enquiry</Link>
+        </motion.button>
+      </nav>
 
-            <div className="ctas ">
-              {/* <motion.button
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                whileHover={{ scale: 0.95 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{
-                  duration: 0.5,
-                  scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
-                }}
-                
-                className="_button"
-                data-variant="outline"
+      {/* HERO SECTION */}
+      <header className="relative w-full h-full">
+        {/* Background Video */}
+        <div
+          className={`absolute inset-0 w-full h-full transition-transform duration-500 ease-in-out`}
+          style={{
+            transform: hover ? "scale(1.1)" : "scale(1)",
+          }}
+          onMouseEnter={() => setHover(true)}
+          onMouseLeave={() => setHover(false)}
+        >
+          <video
+            className={`w-full h-full object-cover transition-opacity duration-[1.4s] ease-out ${
+              videoLoaded ? "opacity-100" : "opacity-70"
+            }`}
+            src="/videos/background.mp4"
+            type="video/mp4"
+            loop
+            autoPlay
+            muted
+            playsInline
+            preload="metadata"
+            onLoadedData={() => setVideoLoaded(true)}
+          ></video>
+        </div>
+
+        {/* Gradient overlay for visibility */}
+        <div className="absolute inset-0 bg-black/40 z-10"></div>
+
+        {/* Main Content */}
+        <div className="relative z-20 flex flex-wrap w-full min-h-screen text-white px-[4%] pt-40 pb-48 items-end">
+          {/* Left column */}
+          <div className="flex-1 md:max-w-[50%] flex flex-col justify-end">
+            <h2 className="text-[3rem] sm:text-[4.2rem] md:text-[5rem] lg:text-[6.2rem] font-semibold leading-[1.1]">
+              <span className="block">One app</span>
+              <span className="block">for all needs</span>
+            </h2>
+          </div>
+
+          {/* Right column */}
+          <div className="flex flex-col justify-end md:max-w-[25%] mt-10 md:mt-0 md:ml-[20%] mb-14">
+            <p className="text-lg md:text-xl font-medium leading-snug">
+              Single account for all your payments.
+            </p>
+
+            <div className="flex flex-wrap gap-5 mt-8">
+              {/* App Store */}
+              <a
+                href="https://apps.apple.com/in/app/qviple-your-education-online/id6463501865"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative w-[148px] h-[44px] rounded-md border border-white/30 overflow-hidden backdrop-blur-md hover:scale-105 transition-all duration-300"
               >
-                <a href={"/enquiry"}>Enquiry</a>
-               
-              </motion.button> */}
-              {/* <motion.button
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                whileHover={{ scale: 0.95 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{
-                  duration: 0.5,
-                  scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
-                }}
-                href="/enquiry"
-                className="_button"
-                data-variant="primary"
+                <img
+                  src="/images/app-store-neutral.svg"
+                  alt="App Store"
+                  className="absolute inset-0 w-full h-full object-contain"
+                />
+              </a>
+
+              {/* Google Play */}
+              <Link
+                href="https://play.google.com/store/apps/details?id=com.mithakalminds.qviple"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative w-[148px] h-[44px] rounded-md border border-white/30 overflow-hidden backdrop-blur-md hover:scale-105 transition-all duration-300"
               >
-              Enquiry
-              </motion.button> */}
-              {/* <motion.button
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                whileHover={{ scale: 0.95 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{
-                  duration: 0.5,
-                  scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
-                }}
-                className="_button glow"
-                data-variant="primary"
-              >
-                Enquiry
-              </motion.button> */}
-              <motion.button
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                whileHover={{ scale: 0.95 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{
-                  duration: 0.5,
-                  scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
-                }}
-                href="/enquiry"
-                className="_button"
-                data-variant="primary"
-              >
-               <a href={"/enquiry"}>Enquiry</a>
-              </motion.button>
+                <img
+                  src="/images/google-play-neutral.svg"
+                  alt="Google Play"
+                  className="absolute inset-0 w-full h-full object-contain"
+                />
+              </Link>
             </div>
           </div>
         </div>
-      </nav>
-      <div style={{ position: "relative", zIndex: 1 }}>
-        <header className="_common_header" data-layout="full">
-          {/* Background with hover zoom */}
-          <div
-            className="_background"
-            style={{
-              transition: "transform 0.5s ease-in-out",
-              transform: hover ? "scale(1.1)" : "scale(1)",
-            }}
-            onMouseEnter={() => setHover(true)}
-            onMouseLeave={() => setHover(false)}
-          >
-            <video
-              className={`_video-asset ${videoLoaded ? "show" : ""}`}
-              // src="/videos/56449435.mp4"
-              src="/videos/background.mp4"
-              type="video/mp4"
-              width="3840"
-              height="2160"
-              loop
-              autoPlay
-              muted
-              playsInline
-              preload="metadata"
-              data-media="video"
-              data-intersecting="true"
-              onLoadedData={() => setVideoLoaded(true)}
-              style={{ opacity: 1 }}
-            ></video>
-          </div>
-
-          {/* Main content */}
-          <div className="main-row g-row">
-            <div className="_grow-main-col _xxl-8 _oneAppsForNeedsSection">
-              <h2 className="title-2">
-                <span data-split-text="" data-clip="chars">
-                  <div className="l">
-                    <span className="w">
-                      <span className="c">
-                        <span className="f t">O</span>
-                      </span>
-                      <span className="c">
-                        <span className="f t">n</span>
-                      </span>
-                      <span className="c">
-                        <span className="f t">e</span>
-                      </span>
-                      <span className="c">
-                        <span className="f t"> </span>
-                      </span>
-                    </span>
-                    <span className="w">
-                      <span className="c">
-                        <span className="f t">a</span>
-                      </span>
-                      <span className="c">
-                        <span className="f t">p</span>
-                      </span>
-                      <span className="c">
-                        <span className="f t">p</span>
-                      </span>
-                      <span className="c">
-                        <span className="f t"> </span>
-                      </span>
-                    </span>
-                    <br></br>
-                    <span className="w">
-                      <span className="c">
-                        <span className="f t">f</span>
-                      </span>
-                      <span className="c">
-                        <span className="f t">o</span>
-                      </span>
-                      <span className="c">
-                        <span className="f t">r</span>
-                      </span>
-                      <span className="c">
-                        <span className="f t"> </span>
-                      </span>
-                    </span>
-                    <span className="w">
-                      <span className="c">
-                        <span className="f t">a</span>
-                      </span>
-                      <span className="c">
-                        <span className="f t">l</span>
-                      </span>
-                      <span className="c">
-                        <span className="f t">l</span>
-                      </span>
-                      <span className="c">
-                        <span className="f t"> </span>
-                      </span>
-                    </span>
-                    <span className="w">
-                      <span className="c">
-                        <span className="f t">n</span>
-                      </span>
-                      <span className="c">
-                        <span className="f t">e</span>
-                      </span>
-                      <span className="c">
-                        <span className="f t">e</span>
-                      </span>
-                      <span className="c">
-                        <span className="f t">d</span>
-                      </span>
-                      <span className="c">
-                        <span className="f t">s</span>
-                      </span>
-                    </span>
-                  </div>
-                </span>
-              </h2>
-            </div>
-            <div className="_grow-main-col _xxl-4 xx-offset _oneAppsForNeedsSection">
-              <p className="subhead-2">Single account for all your payments.</p>
-              <div className="btn">
-                <a
-                  href="https://apps.apple.com/in/app/qviple-your-education-online/id6463501865mi"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="_app-button"
-                  data-button=""
-                  data-tone="orange"
-                  data-variant="outline"
-                  aria-label="go to mobile app"
-                >
-                  <div data-button-background=""></div>
-                  <div className="outline"></div>
-                  <img
-                    className="imgess"
-                    src="/images/app-store-neutral.svg"
-                    alt="App Store icon"
-                  />
-                </a>
-
-                <Link
-                  href="https://play.google.com/store/apps/details?id=com.mithakalminds.qviple"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="_app-button"
-                  data-button=""
-                  data-tone="orange"
-                  data-variant="outline"
-                  aria-label="go to mobile app"
-                >
-                  <div data-button-background=""></div>
-                  <div className="outline"></div>
-                  <img
-                    className="imgess"
-                    src="/images/google-play-neutral.svg"
-                    alt="Google Play icon"
-                  />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </header>
-      </div>
+      </header>
     </div>
   );
 }

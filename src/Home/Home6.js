@@ -1,6 +1,6 @@
 "use client";
 
-import "../style/Home3.css";
+import "../style/Home3.css"
 
 import React from "react";
 
