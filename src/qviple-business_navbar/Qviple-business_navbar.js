@@ -162,15 +162,17 @@ export default function QvipleNavbar() {
                             <div className="dropdown-item">
                               <Users className="icon" />
                               <div>
-                                <h4>About Us</h4>
-                                <p>Empowering education with technology</p>
+                                <a href="/about-us">
+                                <h4>General Terms </h4>
+                                <p>Empowering education with technology</p></a>
                               </div>
                             </div>
                             <div className="dropdown-item">
                               <Briefcase className="icon" />
                               <div>
-                                <h4>Careers</h4>
-                                <p>Join a team shaping the future</p>
+                                 <a href="/cookies-policy">
+                                <h4>Cookies Policy</h4>
+                                <p>Join a team shaping the future</p></a>
                               </div>
                             </div>
                             <div className="dropdown-item">

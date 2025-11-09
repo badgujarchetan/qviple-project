@@ -1,0 +1,53 @@
+.about-us-section {
+  margin-top: -5rem;
+}
+.about-us-section .about-main-container {
+  background: url(/images/pattern.webp) no-repeat;
+  background-size: cover;
+  height: 500px;
+  padding-top: 109px;
+}
+
+.about-us-section .container-text {
+  text-align: center;
+}
+
+.about-us-section .container-text-h1 {
+  --tw-text-opacity: 1;
+  color: rgb(34 34 34 / var(--tw-text-opacity, 1));
+  font-weight: 600;
+  font-size: 40px;
+  margin-top: 3.5rem;
+}
+
+.about-us-section .container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 11%;
+  padding-left: 11%;
+
+}
+
+.about-us-section .bg-container {
+  --tw-text-opacity: 1;
+  color: rgb(34 34 34 / var(--tw-text-opacity, 1));
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  border-radius: 0.5rem;
+  margin-top: -15rem;
+}
+
+.about-us-section .container-p {
+  line-height: 37px;
+  font-size: 1.125rem;
+}
+.about-us-section .container-p strong {
+  font-weight: bolder;
+}
