@@ -6,7 +6,7 @@ import Navbar from "@/Navbar/Navbar";
 import "./terms-of-use.css";
 
 export default function PrivacyPage() {
-  const title = "Terms of use";
+  const title = "Terms of use"
 
   return (
     <>
