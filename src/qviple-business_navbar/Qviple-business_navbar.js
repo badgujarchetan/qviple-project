@@ -112,8 +112,10 @@ export default function QvipleNavbar() {
                             <div className="dropdown-item">
                               <Building2 className="icon" />
                               <div>
-                                <h4>College Management</h4>
-                                <p>Automate campus operations efficiently</p>
+                                <a href="/refer-and-earn">
+                                  <h4>Refer and Earn</h4>
+                                  <p>Automate campus operations efficiently</p>
+                                </a>
                               </div>
                             </div>
                             <div className="dropdown-item">
@@ -163,16 +165,18 @@ export default function QvipleNavbar() {
                               <Users className="icon" />
                               <div>
                                 <a href="/about-us">
-                                <h4>General Terms </h4>
-                                <p>Empowering education with technology</p></a>
+                                  <h4>General Terms </h4>
+                                  <p>Empowering education with technology</p>
+                                </a>
                               </div>
                             </div>
                             <div className="dropdown-item">
                               <Briefcase className="icon" />
                               <div>
-                                 <a href="/cookies-policy">
-                                <h4>Cookies Policy</h4>
-                                <p>Join a team shaping the future</p></a>
+                                <a href="/cookies-policy">
+                                  <h4>Cookies Policy</h4>
+                                  <p>Join a team shaping the future</p>
+                                </a>
                               </div>
                             </div>
                             <div className="dropdown-item">
