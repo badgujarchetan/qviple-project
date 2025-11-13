@@ -6,16 +6,18 @@ import Link from "next/link";
 export default function Home1() {
   const [hover, setHover] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
-// bg-gradient-to-b from-[#001A33] via-[#002D62] to-[#0047AB]
+  // bg-gradient-to-b from-[#001A33] via-[#002D62] to-[#0047AB]
   return (
-    <div className="relative w-full min-h-screen overflow-hidden bg-red-600 ">
+    <div className="relative w-full min-h-screen overflow-hidden bg-[#1911c0] ">
       {/* NAVBAR */}
       <nav className="absolute top-0 left-0 w-full z-50 px-[4%] py-5 flex justify-between items-center">
         <a
           href="/"
-          className="relative text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400 text-[1.85rem] font-extrabold tracking-tight"
+          className="text-[1.8rem] font-extrabold tracking-[1px] 
+       bg-gradient-to-r from-[#ff6a00] to-[#ee0979] 
+       bg-clip-text text-transparent"
         >
-          QVIPLE
+          Qviple
         </a>
 
         <motion.button
@@ -27,7 +29,14 @@ export default function Home1() {
             duration: 0.5,
             scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
           }}
-          className="bg-[#f73b20] text-white px-5 py-2 rounded-md text-base font-medium hover:bg-[#d53018] transition-all"
+          className="bg-gradient-to-r from-[#ff6a00] to-[#ee0979]
+  text-white
+  px-[1.3rem] py-[0.5rem]
+  rounded-[30px]
+  font-semibold
+  no-underline
+  transition-all duration-300
+  shadow-[0_2px_10px_rgba(255,105,180,0.2)]"
         >
           <Link href="/enquiry">Enquiry</Link>
         </motion.button>

@@ -164,7 +164,7 @@ export default function QvipleNavbar() {
                             <div className="dropdown-item">
                               <Users className="icon" />
                               <div>
-                                <a href="/about-us">
+                                <a href="/general-terms">
                                   <h4>General Terms </h4>
                                   <p>Empowering education with technology</p>
                                 </a>

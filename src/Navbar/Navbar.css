@@ -1,115 +1,94 @@
-._navbar {
+/* === Modern Premium Navbar === */
+.modern-navbar {
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  padding: 1.5rem 5%;
-  display: flex;
-  justify-content: center;
-  background: linear-gradient(90deg, #f73b20, #ff715b);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
-  z-index: 50;
-  
+  padding: 1rem 6%;
+  background: rgba(193, 170, 170, 0.25);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  transition: all 0.3s ease-in-out;
 }
 
-/* Inner container */
-.nav-container {
+.nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
   max-width: 1280px;
+  margin: 0 auto;
+  color: #fff;
 }
 
-/* Logo */
-.brand-name {
-  font-size: 1.9rem;
+/* === Brand === */
+.brand-logo {
+  font-size: 1.8rem;
   font-weight: 800;
   color: #fff;
-  letter-spacing: 0.5px;
   text-decoration: none;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Navigation links */
-.nav-links {
+/* === Center Nav Links === */
+.nav-center {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2.2rem;
 }
 
-.nav-item {
-  font-size: 1rem;
-  color: #fff;
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #e8e8e8;
   text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
-.nav-item:hover {
-  color: #ffebeb;
+.nav-link:hover {
+  color: #ffffff;
   transform: translateY(-2px);
 }
 
-/* Enquiry button */
-.enquiry-btn {
-  padding: 0.5rem 1.2rem;
-  border: 1px solid white;
-  border-radius: 6px;
-  color: white;
-  background: transparent;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  text-decoration: none;
-}
-
-.enquiry-btn:hover {
-  background: rgba(255, 255, 255, 0.15);
-}
-
-/* Mobile styles */
-.menu-btn {
-  display: none;
-  background: none;
+/* === Enquiry Button === */
+.nav-btn {
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+  color: #fff;
   border: none;
-  color: white;
-  cursor: pointer;
+  padding: 0.5rem 1.3rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(255, 105, 180, 0.2);
 }
 
-/* RESPONSIVE STYLING */
-@media (max-width: 850px) {
-  .menu-btn {
-    display: block;
-  }
+.nav-btn:hover {
+  background: linear-gradient(90deg, #ff7e29, #f81983);
+  box-shadow: 0 4px 18px rgba(255, 105, 180, 0.4);
+}
 
-  .nav-links {
-    position: absolute;
-    top: 72px;
-    right: 0;
-    background: #f73b20;
+/* === Responsive Styling === */
+@media (max-width: 950px) {
+  .nav-inner {
     flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    padding: 1rem 2rem;
-    gap: 1.2rem;
-    transform: translateY(-150%);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.4s ease-in-out;
+    gap: 0.8rem;
   }
 
-  .nav-links.active {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
+  .nav-center {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
   }
 
-  .nav-item {
-    font-size: 1.1rem;
-    width: 100%;
-  }
-
-  .enquiry-btn {
-    width: 100%;
-    text-align: center;
-    border-radius: 8px;
+  .nav-btn {
+    margin-top: 0.5rem;
   }
 }

@@ -249,8 +249,8 @@ const menuItems = [
     ],
   },
   {
-    label: "Business",
-    iconName: "Business",
+    label: "Partnerships",
+    // iconName: "Business",
     href: "/qviple-business",
     external: true,
   },
@@ -260,7 +260,7 @@ const menuItems = [
     drawer: [
       { label: "About", href: "/about" },
       { label: "Newsroom", href: "/newsroom" },
-      { label: "Partnerships", href: "/partnerships" },
+      // { label: "Partnerships", href: "/partnerships" },
     ],
   },
 ];
