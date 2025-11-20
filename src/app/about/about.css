@@ -1,0 +1,249 @@
+:root {
+  --brand-color: #f73b20;
+  --white: #ffffff;
+  --text-color: #f0f0f0;
+}
+
+.about-section {
+  width: 100%;
+  overflow: hidden;
+  margin-top: -1rem;
+}
+
+.hero {
+  position: relative;
+
+  height: 90vh;
+  min-height: 600px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  /* background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7), 
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.0)
+  ); */
+}
+
+/* Content Layer */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 30px;
+
+  padding: 80px 80px 100px 80px;
+  color: var(--white);
+}
+
+.left-text h1 {
+  font-size: clamp(56px, 10vw, 100px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-start; */
+  text-align: start;
+  max-width: 450px;
+  padding-right: 4rem;
+}
+
+.desc {
+  text-align: start;
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.cta {
+  padding: 14px 28px;
+  background: var(--white);
+  color: var(--brand-color);
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.cta:hover {
+  background: var(--white);
+  color: var(--brand-color);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(247, 59, 32, 0.6);
+}
+
+@media (min-width: 1024px) {
+  .hero-content {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .left-text {
+    flex-grow: 1;
+    max-width: 60%;
+  }
+
+  .right-side {
+    align-items: self-start;
+  }
+
+  /* .desc {
+    text-align: right; 
+  } */
+}
+
+.about-section .about-jeton {
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+}
+.about-section .about-row {
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: none;
+  padding-left: var(--grid-padding) !important;
+  padding-right: var(--grid-padding) !important;
+  width: 100%;
+}
+
+.about-section .about-col {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+
+  flex: 0 0 56.25%;
+  max-width: 56.25%;
+  padding-left: 2rem;
+}
+.about-section .about-tag {
+  position: relative;
+  color: var(--color);
+  padding: 4px 15px;
+  width: -moz-max-content;
+  width: max-content;
+  letter-spacing: 0.03em;
+  font-size: 14px;
+  line-height: 1.4;
+  display: inline-block;
+  border: 1px solid red;
+  border-radius: 4rem;
+}
+
+.about-tag[data-tone="orange"] {
+  color: #f73b20;
+}
+
+.about-section .outline-bg {
+  border-radius: 4em;
+  outline: 1px solid var(--color);
+  outline-offset: -1px;
+}
+.about-section .mission-svg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  fill: none;
+  stroke: var(--color);
+  stroke-width: 1px;
+  display: none;
+  overflow: visible;
+}
+
+.about-section .money-title {
+  font-size: clamp(40px, 28.105px + 100vw * 0.0305, 80px);
+  letter-spacing: 0.01em;
+  line-height: 1;
+  font-weight: 500;
+}
+[data-text-block] {
+  white-space: pre-line;
+}
+.about-section .data-text-box {
+  margin-top: 2rem;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  min-width: auto;
+  padding-left: var(--grid-half-gap);
+  padding-right: var(--grid-half-gap);
+  font-size: clamp(19px, 17.518px + 100vw * 0.0038, 24px);
+  font-weight: 500;
+  flex: 0 0 37.5%;
+  max-width: 37.5%;
+}
+
+.about-section .p-block {
+  margin-bottom: 16px;
+  padding-left: 2rem;
+}
+.about-section .about-full-image {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 6rem;
+}
+.about-section .secondary-blocks {
+  margin-top: 6rem;
+}
+.about-section .title-secondary {
+  font-size: 2.5rem;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  font-weight: 500;
+  flex: 0 0 37.5%;
+  max-width: 37.5%;
+}
+.about-section .hidden-fees {
+  flex: 0 0 37.5%;
+  max-width: 37.5%;
+  margin-left: 18.75%;
+}
+
+.about-section .hidden-section {
+  margin-bottom: 2rem;
+  letter-spacing: 0.03em;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 450;
+}
+
+.about-section .hidden-image {
+  margin-top: 10rem;
+  overflow: hidden;
+}
+
+.about-section ._skSection {
+  width: 100%;
+  position: relative;
+  --c1: #fee9e6;
+  --c2: #fff6f5;
+  overflow: hidden;
+}

@@ -5,9 +5,10 @@
   top: 0;
   left: 0;
   padding: 1rem 6%;
-  background: rgba(193, 170, 170, 0.25);
+  /* background: rgba(193, 170, 170, 0.25);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); */
+  background-color:aliceblue;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   z-index: 100;
   transition: all 0.3s ease-in-out;

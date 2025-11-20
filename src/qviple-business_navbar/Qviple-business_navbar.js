@@ -206,7 +206,7 @@ export default function QvipleNavbar() {
                   <a href="https://qvipleweb.web.app/#/log-in" className="btn-login">
                     Login
                   </a>
-                  <a href="/" className="btn-create">
+                  <a href="https://qvipleweb.web.app/#/log-in" className="btn-create">
                     Create Account
                   </a>
                 </div>

@@ -154,7 +154,7 @@ export default function Home4() {
           </a>
 
           <a
-            href="/"
+            href="https://play.google.com/store/apps/details?id=com.mithakalminds.qviple"
             target="_blank"
             rel="noopener noreferrer"
             className="_app-button"

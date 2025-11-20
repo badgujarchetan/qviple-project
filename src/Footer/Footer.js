@@ -1,4 +1,4 @@
-// Improved Professional Footer Component
+
 "use client";
 import Link from "next/link";
 import React from "react";
@@ -24,9 +24,7 @@ export default function Footer() {
   const socialIcons = [
     {
       href: "https://www.instagram.com/qviple/",
-      icon: (
-        <i className="fa-brands fa-instagram text-lg"></i>
-      ),
+      icon: <i className="fa-brands fa-instagram text-lg"></i>,
     },
     {
       href: "https://www.facebook.com/Qviple",
@@ -58,7 +56,9 @@ export default function Footer() {
           className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10"
         >
           <div>
-            <h3 className="font-semibold text-lg mb-3 opacity-90">Get Started</h3>
+            <h3 className="font-semibold text-lg mb-3 opacity-90">
+              Get Started
+            </h3>
             <ul className="flex flex-col gap-2">
               <AnimatedLink href="/signup">Sign Up</AnimatedLink>
               <AnimatedLink href="/login">Login</AnimatedLink>
@@ -99,7 +99,10 @@ export default function Footer() {
             <ul className="flex flex-col gap-2">
               <AnimatedLink href="/faq">FAQ</AnimatedLink>
               <AnimatedLink href="/support">Contact Support</AnimatedLink>
-              <AnimatedLink href="/release-notes">Release Notes</AnimatedLink>
+              <AnimatedLink href="https://admin.qviple.com/">
+                {" "}
+                Manage Affiliation
+              </AnimatedLink>
             </ul>
           </div>
         </motion.div>
@@ -109,8 +112,19 @@ export default function Footer() {
           className="flex flex-col md:flex-row justify-between items-center mt-14 border-t border-white/20 pt-8 gap-6"
         >
           <div className="flex gap-4 flex-wrap">
-            <img src="/images/app-store-neutral.svg" className="h-12 hover:opacity-90" />
-            <img src="/images/google-play-neutral.svg" className="h-12 hover:opacity-90" />
+            <a href="https://apps.apple.com/in/app/qviple-your-education-online/id6463501865">
+              <img
+                src="/images/app-store-neutral.svg"
+                className="h-12 hover:opacity-90"
+              />
+            </a>
+
+            <a href="https://play.google.com/store/apps/details?id=com.mithakalminds.qviple">
+              <img
+                src="/images/google-play-neutral.svg"
+                className="h-12 hover:opacity-90"
+              />
+            </a>
           </div>
 
           <div className="flex gap-4">
@@ -127,8 +141,15 @@ export default function Footer() {
           </div>
         </motion.div>
 
-        <motion.div variants={fadeUp} className="text-center mt-10 text-white/80 text-sm">
-          © {new Date().getFullYear()} <span className="font-semibold text-white">Mithikal Minds Pvt. Ltd</span>. All Rights Reserved.
+        <motion.div
+          variants={fadeUp}
+          className="text-center mt-10 text-white/80 text-sm"
+        >
+          © {new Date().getFullYear()}{" "}
+          <span className="font-semibold text-white">
+            Mithikal Minds Pvt. Ltd
+          </span>
+          . All Rights Reserved.
         </motion.div>
       </motion.div>
     </footer>

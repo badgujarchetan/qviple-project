@@ -99,7 +99,7 @@
   width: 12px;
   height: 12px;
   background: #e0f0ff;
-}
+} 
 
 /* DRAWER LIST */
 ._menu-drawer ul {
@@ -108,7 +108,7 @@
   padding: 0;
 }
 
-._menu-drawer li {
+ ._menu-drawer li {
   margin: 0.45rem 0;
 }
 
@@ -141,8 +141,8 @@
   background: #0a192f;
 }
 
-/* RESPONSIVE */
-@media (max-width: 640px) {
+
+/* @media (max-width: 640px) {
   .menu-bar {
     gap: 0.8rem;
     height: 52px;
@@ -157,4 +157,4 @@
   ._menu-drawer {
     min-width: 150px;
   }
-}
+} */

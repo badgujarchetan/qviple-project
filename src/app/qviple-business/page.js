@@ -247,7 +247,7 @@ export default function page() {
                   <span className="plus">+</span>
                 </div>
                 <div>
-                  <span className="label">Currencies</span>
+                  <span className="qv-label">Currencies</span>
                 </div>
               </div>
               <div className="itemss">

@@ -1,6 +1,5 @@
-.main-wrapper{
+.main-wrapper {
   margin-top: -5rem;
-  
 }
 .qysm {
   background: rgb(25, 17, 192);
@@ -107,8 +106,6 @@
   font-weight: 900;
   line-height: 5.625rem;
 }
-
-
 
 /*  */
 
@@ -311,6 +308,10 @@
 .margin-t {
   margin-top: 4.69rem;
 }
+
+.margin-t :hover {
+  background-color: rgb(150, 200, 216);
+}
 .transpernt {
   background: rgb(139, 166, 216);
   color: rgb(8, 49, 153);
@@ -371,15 +372,14 @@
   color: rgba(97, 152, 204, 0.52);
 }
 
-.label{
-      background: rgb(96, 205, 255);
-    color: rgb(0, 41, 145);
-    padding: 0.5rem 2rem;
-    display: inline-block;
-    border-radius: 1.5rem;
-    text-align: center;
+.qv-label {
+  background: rgb(96, 205, 255);
+  color: rgb(0, 41, 145);
+  padding: 0.5rem 2rem;
+  display: inline-block;
+  border-radius: 1.5rem;
+  text-align: center;
 }
-
 
 .kPkxTt {
   background: black;
@@ -429,7 +429,6 @@
   object-fit: cover;
   margin-top: 5rem;
 }
-
 
 /*  */
 .cIuFrH {
@@ -510,6 +509,6 @@
   margin-top: 3.69rem;
   margin-bottom: 10rem;
 }
-.und{
-        text-decoration-line: underline;
+.und {
+  text-decoration-line: underline;
 }
