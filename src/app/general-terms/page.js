@@ -6,9 +6,7 @@ export default function Page() {
     <div className="mt-[-5rem]">
       <QvipleNavbar />
 
-      <div
-        className="h-[500px] bg-[url('/images/pattern.webp')] bg-cover bg-no-repeat pt-[109px] flex items-start justify-center"
-      >
+      <div className="h-[500px] bg-[url('/images/pattern.webp')] bg-cover bg-no-repeat pt-[109px] flex items-start justify-center">
         <h1 className="text-[40px] font-semibold text-[#222] mt-14 text-center">
           General Terms
         </h1>
@@ -18,7 +16,9 @@ export default function Page() {
       <div className="w-full px-[11%]">
         <div className="bg-white text-[#222] text-lg leading-7 px-24 py-32 rounded-lg -mt-60 shadow-md">
           <p className="leading-[37px] text-lg">
-            <strong className="font-bold">Our agreement for the provision of Jeton Bank Services to you.</strong>
+            <strong className="font-bold">
+              Our agreement for the provision of Jeton Bank Services to you.
+            </strong>
             We (Jeton Bank Limited, a company incorporated in the Commonwealth
             of Dominica with company registration number 2022/C0175 and
             registered address at 1st Floor, 43 Great George Street, Roseau,
@@ -38,7 +38,8 @@ export default function Page() {
             Jetonbank is an entirely new kind of bank.
           </h2>
           <p className="text-white text-xl leading-8 max-w-[450px]">
-            We're all-digital, mission driven, and designed for the way you live.
+            We're all-digital, mission driven, and designed for the way you
+            live.
           </p>
         </div>
       </div>

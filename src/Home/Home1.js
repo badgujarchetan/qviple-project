@@ -8,7 +8,7 @@ export default function Home1() {
   const [videoLoaded, setVideoLoaded] = useState(false);
   // bg-gradient-to-b from-[#001A33] via-[#002D62] to-[#0047AB]
   return (
-    <div className="relative w-full min-h-screen overflow-hidden bg-[#1911c0] ">
+    <div className="relative w-full min-h-screen overflow-hidden bg-red-500 ">
       {/* NAVBAR */}
       <nav className="absolute top-0 left-0 w-full z-50 px-[4%] py-5 flex justify-between items-center">
         <a

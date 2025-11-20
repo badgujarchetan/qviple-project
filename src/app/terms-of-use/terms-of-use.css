@@ -1,14 +1,15 @@
 /* === HEADER SECTION === */
 .conted_privacy_page {
   /* background-color: #F73B20; */
-  background: linear-gradient(
+  /* background: linear-gradient(
   135deg,
   #001F3F,
   #003C78,
   #005BBA,
   #007BFF,
   #5AAEFF
-);
+); */
+background-color: blue;
   margin-top: -1rem;
 }
 

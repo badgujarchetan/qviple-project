@@ -182,15 +182,17 @@ export default function QvipleNavbar() {
                             <div className="dropdown-item">
                               <HelpCircle className="icon" />
                               <div>
-                                <h4>Support</h4>
-                                <p>Get help and customer assistance</p>
+                                <a href="/term-of-use">
+                                <h4>Term of use</h4>
+                                <p>Get help and customer assistance</p></a>
                               </div>
                             </div>
                             <div className="dropdown-item">
                               <PhoneCall className="icon" />
                               <div>
-                                <h4>Contact</h4>
-                                <p>We’d love to hear from you</p>
+                                <a href="/information-security-policy">
+                                <h4>Information-Security-Policy</h4>
+                                <p>We’d love to hear from you</p></a>
                               </div>
                             </div>
                           </div>
@@ -201,7 +203,7 @@ export default function QvipleNavbar() {
                 </ul>
 
                 <div className="buttons">
-                  <a href="/" className="btn-login">
+                  <a href="https://qvipleweb.web.app/#/log-in" className="btn-login">
                     Login
                   </a>
                   <a href="/" className="btn-create">

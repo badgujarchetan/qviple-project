@@ -34,6 +34,17 @@ export default function page() {
           </p>
         </div>
       </div>
+      <div className="w-full px-[12%]">
+        <div className="flex flex-col items-center justify-center text-center bg-[#4888fb] rounded-2xl h-[360px] mt-24 px-6">
+          <h2 className="text-white font-semibold text-[3rem] leading-[56px] max-w-[650px] mb-10">
+            Jetonbank is an entirely new kind of bank.
+          </h2>
+          <p className="text-white text-xl leading-8 max-w-[450px]">
+            We're all-digital, mission driven, and designed for the way you
+            live.
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
