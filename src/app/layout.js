@@ -1,4 +1,4 @@
-import BottomMenu from "@/BottomMenu/BottomMenu";
+// import BottomMenu from "@/BottomMenu/BottomMenu";
 import "./globals.css";
 import { Inter } from "next/font/google";
 // import { Instrument_Sans } from "next/font/google";
@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
           {children}
           <Home4 />
           <Footer />
-          <BottomMenu />
+          {/* <BottomMenu /> */}
         </div>
       </body>
     </html>

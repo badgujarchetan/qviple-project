@@ -1,3 +1,4 @@
+
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -76,7 +77,7 @@ export default function BottomMenu() {
                             initial={{ opacity: 0, x: -8 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: sIdx * 0.05 }}
-                          >
+                          > 
                             <a
                               href={sub.href}
                               className="drawer-link"
