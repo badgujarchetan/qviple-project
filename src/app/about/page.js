@@ -511,3 +511,4 @@ export default function AboutPage() {
     </div>
   );
 }
+// this is about page section
