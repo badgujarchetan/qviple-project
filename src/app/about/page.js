@@ -183,9 +183,9 @@ export default function AboutPage() {
               aria-label="go to mobile app"
             >
               <div data-button-background=""></div>
-              <div class="outline absolute inset-0"></div>
+              <div className="outline absolute inset-0"></div>
               <img
-                class="absolute inset-0"
+                className="absolute inset-0"
                 src="/images/app-store-neutral.svg"
                 alt="App marketplace icon"
               />
@@ -202,7 +202,7 @@ export default function AboutPage() {
               <div data-button-background=""></div>
               <div class="outline absolute inset-0"></div>
               <img
-                class="absolute inset-0"
+                className="absolute inset-0"
                 src="/images/google-play-neutral.svg"
                 alt="App marketplace icon"
               />

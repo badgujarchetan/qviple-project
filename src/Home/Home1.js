@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Home1() {
   const [hover, setHover] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
-  // bg-gradient-to-b from-[#001A33] via-[#002D62] to-[#0047AB]
+
   return (
     <div className="relative w-full min-h-screen overflow-hidden bg-orange-600 ">
       {/* NAVBAR */}
