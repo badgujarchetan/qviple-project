@@ -1,514 +1,225 @@
 "use client";
+
 import Navbar from "@/Navbar/Navbar";
+import { motion } from "framer-motion";
 import React from "react";
-import "./about.css";
-import { useEffect } from "react";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 50 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7 } },
+};
+
+const fade = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { duration: 0.7 } },
+};
 
 export default function AboutPage() {
   return (
-    <div className="about-section">
+    <main>
       <Navbar />
 
-      <header className="hero">
+      <section className="relative  min-h-[85vh] flex items-end pb-24 overflow-hidden">
         <video
-          className="bg-video"
           src="/images/aboutvideo.mp4"
           autoPlay
           muted
           loop
           playsInline
-        ></video>
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 " />
 
-        <div className="bg-overlay"></div>
-
-        <div className="hero-content">
-          <div className="left-text">
-            <h1>
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="relative z-10 mx-auto px-6 md:px-10 lg:px-28 w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-10 md:-py-32"
+        >
+          {/* LEFT TEXT */}
+          <div className="flex-1">
+            <h1 className="text-[clamp(42px,9vw,110px)] font-bold text-white leading-[1.05]">
               Your money.
               <br />
               Your way.
             </h1>
           </div>
 
-          <div className="right-side">
-            <p className="desc">
-              We make finance accessible, easy, friendly, and fun for everyone.
+          {/* RIGHT CONTENT */}
+          <div className="flex-1 max-w-[500px]">
+            <p className="text-[clamp(16px,2vw,22px)] text-gray-300 leading-relaxed">
+              Smart. Simple. Secure. Finance designed for the modern world.
             </p>
-            <button className="cta">Let's connect</button>
-          </div>
-        </div>
-      </header>
-      <section className="about-jeton">
-        <div className="about-row">
-          <div className="about-col">
-            <span className="about-tag" data-tone="orange">
-              <div style={{ display: "none" }} className="outline-bg"></div>
-              Mission
-              <svg
-                className="mission-svg"
-                xmlns="http://www.w3.org/2000/svg"
-                width="70.92500305175781"
-                height="27.600000381469727"
-                viewBox="0 0 70.92500305175781 27.600000381469727"
-                style={{
-                  display: "block",
-                  opacity: 1,
-                  transform: "translate(0px, 0px) scale(1) rotate(0deg)",
-                }}
-              >
-                <rect x="0" y="0" width="100%" height="100%" rx="13.8"></rect>
 
-                <rect
-                  x="0"
-                  y="0"
-                  width="100%"
-                  height="100%"
-                  rx="13.8"
-                  style={{
-                    "--length": "172.79925537109375",
-                    "--p": "1",
-                  }}
-                ></rect>
-              </svg>
-            </span>
-            <h2 className="money-title">Money, but better.</h2>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              className="mt-8 bg-white text-[#f73b20] px-8 py-3 rounded-full font-semibold text-[17px] shadow-lg transition"
+            >
+              Let’s Connect
+            </motion.button>
           </div>
-        </div>
-        <div className="about-row">
-          <div data-text-block className="data-text-box">
-            <p className="p-block">
-              Our goal is to make money better. Whether you’re opening an
-              account with us, sending or receiving money, we make it better for
-              you.{" "}
-            </p>
-          </div>
-        </div>
-        <div className="about-full-image">
-          <img src="/images/aboutImage.jpg"></img>
-        </div>
-        <article className="secondary-blocks about-row ">
-          <h3 className="title-secondary  about-col">
-            We love to make things easier for everyone.
-          </h3>
-          <div className="about-col hidden-fees">
-            <div data-text-block className="hidden-section">
-              <p>
-                No hidden fees, complicated words or complex processes. We make
-                money relatable, effortless, easy to understand and manage. Our
-                goal for each of our users to manage their money with a few
-                taps.{" "}
-              </p>
-            </div>
-            <div className="hidden-image">
-              <div className="_skSection">
-                <img
-                  src="/images/phone-two-man.jpg"
-                  width="2712"
-                  height="1696"
-                  alt="Two people looks at a phone"
-                ></img>
-              </div>
-            </div>
-          </div>
-        </article>
+        </motion.div>
       </section>
-      <section className="jeton-card-s">
-        <div className="about-row div-jeton">
+
+      {/* ================= MISSION ================= */}
+      <section className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-28">
+        <motion.span
+          variants={fade}
+          initial="hidden"
+          whileInView="show"
+          className="block w-fit px-4 py-1 border border-[#f73b20] text-[#f73b20] rounded-full text-sm tracking-wide"
+        >
+          Mission
+        </motion.span>
+
+        <motion.h2
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          className="mt-6 text-[clamp(38px,7vw,90px)] font-semibold leading-tight"
+        >
+          Money, but better.
+        </motion.h2>
+
+        <motion.p
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          className="mt-6 max-w-[550px] text-[clamp(17px,2vw,22px)] text-gray-600 font-medium leading-relaxed"
+        >
+          Your financial world should feel effortless — not overwhelming.
+        </motion.p>
+
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          className="mt-16 rounded-2xl overflow-hidden"
+        >
           <img
-            src="/images/phone-one-girls.png"
-            width="348"
-            height="348"
-            alt="Person using smartphone"
-            className="person-using-phone about-col"
-          ></img>
-        </div>
-        <div className="about-row product-about">
-          <div className="about-col product-div">
-            <span className="product-tag" data-tone="neutral">
-              <div
-                style={{ display: "none" }}
-                className="product-outlline"
-              ></div>
-              Product
-              <svg
-                className="product-svg"
-                xmlns="http://www.w3.org/2000/svg"
-                width="70.92500305175781"
-                height="27.600000381469727"
-                viewBox="0 0 70.92500305175781 27.600000381469727"
-                style={{
-                  display: "block",
-                  opacity: 1,
-                  transform: "translate(0px, 0px) scale(1) rotate(0deg)",
-                }}
-              >
-                <rect x="0" y="0" width="100%" height="100%" rx="13.8"></rect>
-
-                <rect
-                  x="0"
-                  y="0"
-                  width="100%"
-                  height="100%"
-                  rx="13.8"
-                  style={{
-                    "--length": "172.79925537109375",
-                    "--p": "1",
-                  }}
-                ></rect>
-              </svg>
-            </span>
-            <h2 className="your-next-app">Your Next-Gen App</h2>
-          </div>
-        </div>
-        <div className="about-row product-desc">
-          <div className="about-col next-desc">
-            <p className="product-p">
-              Money extends beyond borders and that’s where Jeton comes in. An
-              all-in-one payment app & web app that opens doors to world full of
-              opportunities. With the Jeton App, you can access many features
-              that simplify and improve your every day financial experience, no
-              matter where you are.
-            </p>
-          </div>
-        </div>
-        <div className="about-row produc-btn">
-          <div className="flex-product">
-            <a
-              href="/"
-              target="_blank"
-              className="_product-button"
-              data-button=""
-              data-tone="neutral"
-              data-variant="outline"
-              aria-label="go to mobile app"
-            >
-              <div data-button-background=""></div>
-              <div className="outline absolute inset-0"></div>
-              <img
-                className="absolute inset-0"
-                src="/images/app-store-neutral.svg"
-                alt="App marketplace icon"
-              />
-            </a>
-            <a
-              href="/"
-              target="_blank"
-              className="_product-button"
-              data-button=""
-              data-tone="neutral"
-              data-variant="outline"
-              aria-label="go to mobile app"
-            >
-              <div data-button-background=""></div>
-              <div class="outline absolute inset-0"></div>
-              <img
-                className="absolute inset-0"
-                src="/images/google-play-neutral.svg"
-                alt="App marketplace icon"
-              />
-            </a>
-          </div>
-        </div>
-        <div className="about-row user">
-          <ul className="about-ul about-stats ">
-            <li>
-              <div className="one-millions">1M+</div>
-              <div className="register-user">Registers Users</div>
-            </li>
-            <li>
-              <div className="one-millions">27</div>
-              <div className="register-user">Available Countries</div>
-            </li>
-            <li>
-              <div className="one-millions">50+</div>
-              <div className="register-user">Payment Methods</div>
-            </li>
-          </ul>
-        </div>
-        <div className="_scroll-stack" data-method="transform" style={{}}>
-          <div className="views-slot">
-            <div
-              className="_scroll-stack-view"
-              data-active="true"
-              style={{
-                "--index": 0,
-                transform: "translate3d(0px, -62px, 0px)",
-              }}
-            >
-              <div className="view-inner-container">
-                <div className="view-background view-back"></div>
-                <div className="slot-container grow ">
-                  <article className="g-table g-article" data-layout="text">
-                    <div className="title-multi">
-                      <h3 className="title-multi-h3">
-                        Exchange multi-currencies
-                      </h3>
-                    </div>
-                    <div className="discription-view">
-                      <p className="view-p">
-                        Traveling becomes hassle-free with Jeton. Say goodbye to
-                        the inconvenience of searching for currency exchange
-                        counters during your trips.
-                      </p>
-                    </div>
-                    <div className="text-view">
-                      <p className="about-text-p">
-                        Exchange your money to multi-currencies at competitive
-                        rates, ensuring you always get the best value for your
-                        money.
-                      </p>
-                    </div>
-                    <figure className="laptop-image">
-                      <img
-                        src="/images/mobileandlaptop.jpg"
-                        width="2380"
-                        height="2608"
-                        alt="sitting outside on a laptop"
-                        className="sitting-laptop"
-                      ></img>
-                    </figure>
-                    <figure className="second-img">
-                      <img
-                        src="/images/girls_image.jpg"
-                        width="422"
-                        height="372"
-                        alt="scrolling on a smartphone"
-                        className="scrolling-phone"
-                      ></img>
-                    </figure>
-                  </article>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+            src="/images/aboutImage.jpg"
+            className="w-full object-cover hover:scale-[1.02] transition-all"
+          />
+        </motion.div>
       </section>
-      <section className="about-values">
-        <div className="about-col-values values-section">
-          <span className="values-tag" data-tone="neutral">
-            <div style={{ display: "none" }} className="values-outlline"></div>
-            values
-            <svg
-              className="values-svg"
-              xmlns="http://www.w3.org/2000/svg"
-              width="70.92500305175781"
-              height="27.600000381469727"
-              viewBox="0 0 70.92500305175781 27.600000381469727"
-              style={{
-                display: "block",
-                opacity: 1,
-                transform: "translate(0px, 0px) scale(1) rotate(0deg)",
-              }}
-            >
-              <rect x="0" y="0" width="100%" height="100%" rx="13.8"></rect>
 
-              <rect
-                x="0"
-                y="0"
-                width="100%"
-                height="100%"
-                rx="13.8"
-                style={{
-                  "--length": "172.79925537109375",
-                  "--p": "1",
-                }}
-              ></rect>
-            </svg>
-          </span>
-          <h2 className="values-h2">
-            Working for an all inclusive financial future
-          </h2>
-        </div>
+      {/* ================= WHY SECTION ================= */}
+      <section className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-28 flex flex-col lg:flex-row gap-20">
+        <motion.h3
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          className="text-[clamp(28px,5vw,50px)] font-semibold lg:max-w-[45%] leading-tight"
+        >
+          We make finance intuitive — not intimidating.
+        </motion.h3>
+
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          className="lg:max-w-[45%] space-y-6"
+        >
+          <p className="text-[clamp(16px,2vw,20px)] text-gray-600 leading-relaxed">
+            No jargon. No hidden systems. Just clarity, transparency and
+            control.
+          </p>
+
+          <div className="rounded-2xl overflow-hidden">
+            <img
+              src="/images/phone-two-man.jpg"
+              className="w-full object-cover hover:scale-105 transition"
+            />
+          </div>
+        </motion.div>
       </section>
-      <section>
-        <article className="about-row for-you">
-          <h3 className="about-col for-you-h3">
-            <span className="forspan">
-              01.<span className="foryouu">For you</span>
-            </span>
-          </h3>
-          <p className="about-col foryou-p">
-            Jeton is designed with you at its core. Our goal is to create a
-            product that seamlessly fits into your life, simplifying your
-            finances and make money better for you.
-          </p>
-        </article>
-        <article className="about-row for-you">
-          <h3 className="about-col for-you-h3">
-            <span className="forspan">
-              02.<span className="foryouu">Accessible</span>
-            </span>
-          </h3>
-          <p className="about-col foryou-p">
-            Jeton is designed with you at its core. Our goal is to create a
-            product that seamlessly fits into your life, simplifying your
-            finances and make money better for you.
-          </p>
-        </article>
-        <article className="about-row for-you">
-          <h3 className="about-col for-you-h3">
-            <span className="forspan">
-              03.<span className="foryouu">Transparent</span>
-            </span>
-          </h3>
-          <p className="about-col foryou-p">
-            Jeton is designed with you at its core. Our goal is to create a
-            product that seamlessly fits into your life, simplifying your
-            finances and make money better for you.
-          </p>
-        </article>
-        <div className="we-observerd">
-          <div className="about-col we-observerd-div">
-            <div
-              style={{
-                translate: "none",
-                rotate: "none",
-                scale: "none",
-                opacity: 1,
-                transform: "translate(0px, 0px)",
-              }}
-              className="quote-card"
+
+      {/* ================= VALUES SECTION ================= */}
+      <section className="bg-[#f73b20] text-white py-20 px-6 lg:px-16">
+        <div className="max-w-[1300px] mx-auto space-y-20">
+          {[
+            { num: "01.", title: "For you" },
+            { num: "02.", title: "Accessible" },
+            { num: "03.", title: "Transparent" },
+          ].map((item, i) => (
+            <motion.article
+              key={i}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              className="flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-16"
             >
-              <blockquote className="blockquote">
-                We observed how difficult it was for people to manage their
-                finances. Even the simplest tasks took too long or became
-                extremely intricate. The fact that today’s financial system was
-                not all-inclusive for everyone, ignited our desire to create
-                Jeton. We wanted to offer a human touch and make a positive
-                impact in people's lives. Our mission is to give everyone total
-                control of their assets and easier access to their funds. At the
-                end of the day, it is their money, and they should control it
-                the way their hearts desire.
-              </blockquote>
-              <div className="endorser">
-                <span className="avtar-about">
-                  <span className="hs">H.S</span>
+              <h3 className="font-semibold text-[clamp(24px,4vw,36px)] flex flex-col leading-tight">
+                <span className="opacity-90">{item.num}</span>
+                <span className="text-[clamp(32px,5vw,50px)] font-bold tracking-wide">
+                  {item.title}
                 </span>
+              </h3>
+
+              <p className="text-[clamp(18px,2vw,22px)] text-white/80 leading-relaxed max-w-[600px]">
+                Jeton focuses on human experience — intuitive design, seamless
+                accessibility and complete transparency.
+              </p>
+            </motion.article>
+          ))}
+
+          {/* QUOTE */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            className="flex justify-end"
+          >
+            <div className="max-w-[500px] bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
+              <blockquote className="text-white/90 leading-relaxed text-[clamp(17px,2vw,20px)]">
+                People deserve simple access to financial freedom — without
+                confusion or pressure.”
+              </blockquote>
+
+              <div className="flex items-center gap-3 mt-6">
+                <span className="h-10 w-10 rounded-full bg-white text-[#f73b20] flex items-center justify-center font-semibold">
+                  H.S
+                </span>
+
                 <div>
-                  <div>Harbin S.</div>
-                  <div className="ceo">CEO of Jeton</div>
+                  <p className="font-semibold text-[16px]">Harbin S.</p>
+                  <p className="text-white/70 text-sm">CEO of Jeton</p>
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
-      <section className="_certifications-list">
-        <div className="about-row certification-mb">
-          <div className="about-col award-section">
-            <span className="about-tag" data-tone="orange">
-              <div style={{ display: "none" }} className="outline-bg"></div>
-              Awards & Certifications
-              <svg
-                className="mission-svg"
-                xmlns="http://www.w3.org/2000/svg"
-                width="70.92500305175781"
-                height="27.600000381469727"
-                viewBox="0 0 70.92500305175781 27.600000381469727"
-                style={{
-                  display: "block",
-                  opacity: 1,
-                  transform: "translate(0px, 0px) scale(1) rotate(0deg)",
-                }}
-              >
-                <rect x="0" y="0" width="100%" height="100%" rx="13.8"></rect>
 
-                <rect
-                  x="0"
-                  y="0"
-                  width="100%"
-                  height="100%"
-                  rx="13.8"
-                  style={{
-                    "--length": "172.79925537109375",
-                    "--p": "1",
-                  }}
-                ></rect>
-              </svg>
-            </span>
-            <h2 className="certification-h2">
-              We are here to make money better for you
-            </h2>
-            <p className="certification-p">
-              We work with a passion that returns in achievements and rewards.{" "}
-            </p>
-          </div>
-          <ul className="about-col certification-ul">
-            <li className="certification-li">
-              <h3 className="certification-h3">UKAS Management Systems</h3>
-              <div className="divider"></div>
-            </li>
-            <li className="certification-li">
-              <h3 className="certification-h3">Cyber Essentials Certified</h3>
-              <div className="divider"></div>
-            </li>
-            <li className="certification-li">
-              <h3 className="certification-h3">ISO 27001 Certified</h3>
-              <div className="divider"></div>
-            </li>
-            <li className="certification-li">
-              <h3 className="certification-h3">
-                EBA Associate Member/ EBA Standard Ecosystem Partner of the Euro
-                Banking Association
-              </h3>
-              <div className="divider"></div>
-            </li>
-            <li className="certification-li">
-              <h3 className="certification-h3">
-                FT 1000 Europe's fastest growing companies 2024 & 2025
-              </h3>
-              <div className="divider"></div>
-            </li>
-            <li className="certification-li">
-              <h3 className="certification-h3">
-                Cyber Essentials Certified Plus
-              </h3>
-              <div className="divider"></div>
-            </li>
-          </ul>
-        </div>
-      </section>
-      <section className="_medium-hero">
-        <div className="medium-full">
-          <span className="values-tag" data-tone="neutral">
-            <div style={{ display: "none" }} className="values-outlline"></div>
+      {/* ================= CAREERS CTA ================= */}
+      <section className="py-32 px-6">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          className="bg-[#f73b20] text-white max-w-[900px] mx-auto rounded-3xl py-11 px-6 md:px-16 text-center space-y-6 shadow-2xl"
+        >
+          <span className="w-fit px-4 py-1 border border-white rounded-full mx-auto text-sm tracking-wide">
             Careers
-            <svg
-              className="values-svg"
-              xmlns="http://www.w3.org/2000/svg"
-              width="70.92500305175781"
-              height="27.600000381469727"
-              viewBox="0 0 70.92500305175781 27.600000381469727"
-              style={{
-                display: "block",
-                opacity: 1,
-                transform: "translate(0px, 0px) scale(1) rotate(0deg)",
-              }}
-            >
-              <rect x="0" y="0" width="100%" height="100%" rx="13.8"></rect>
-
-              <rect
-                x="0"
-                y="0"
-                width="100%"
-                height="100%"
-                rx="13.8"
-                style={{
-                  "--length": "172.79925537109375",
-                  "--p": "1",
-                }}
-              ></rect>
-            </svg>
           </span>
-          <h2 className="hero-h2">Job openings</h2>
-          <p className="hero-p">
-            Thanks for your interest in Jeton! There are no open roles at this
-            time — but feel free to send your spontaneous application below!
+
+          <h2 className="text-[clamp(38px,7vw,90px)] font-semibold leading-tight">
+            Job Openings
+          </h2>
+
+          <p className="max-w-[600px] mx-auto text-[clamp(18px,2.5vw,22px)] font-medium leading-snug">
+            No open positions — but talented minds are always welcome.
           </p>
-          <button className="cta">Spontaneous application</button>
-        </div>
+
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            className="px-10 py-3 bg-white text-[#f73b20] rounded-full text-[18px] font-semibold transition shadow-lg"
+          >
+            Send Application
+          </motion.button>
+        </motion.div>
       </section>
-    </div>
+    </main>
   );
 }
-// this is about page section

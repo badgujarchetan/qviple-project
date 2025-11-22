@@ -150,9 +150,217 @@ export default function page() {
           </div>
         </div>
       </div>
-      <div>this is from components</div>
-
-    
+      <div className="form-chain">
+        <div className="form-chain-contianer">
+          <div className="bg-form">
+            <div>
+              <div className="jetonBussiness">
+                <p className="jetonBussiness-p">Jetonbank Business</p>
+              </div>
+              <h2 className="jetonBussiness-h2">
+                Fill out the form for a custom pricing offer for you.
+              </h2>
+              <p className="p-bussiness">
+                Help us offer you the best pricing with three simple questions.
+              </p>
+            </div>
+            <form className="form-enquiry">
+              <input
+                placeholder="Name"
+                type="text"
+                required=""
+                className="form_name"
+                name="name"
+                value=""
+                readOnly
+              ></input>
+              <select
+                name="interestedIn"
+                required=""
+                className="interestedIn select"
+                aria-label="interested-in"
+              >
+                <option disabled="" hidden="" selected="">
+                  Interested in?
+                </option>
+                <option value="digital-wallet-and-fiat-transfers">
+                  Digital Wallet &amp; Fiat Transfers
+                </option>
+                <option value="crypto-products">Crypto Products</option>
+                <option value="other">Other</option>
+              </select>
+              <select
+                name="interestedIn"
+                required=""
+                className="interestedIn select"
+                aria-label="interested-in"
+              >
+                <option disabled="" hidden="" selected="">
+                  What is your expected monthly volume?
+                </option>
+                <option value="digital-wallet-and-fiat-transfers">
+                  Digital Wallet &amp; Fiat Transfers
+                </option>
+                <option value="crypto-products">Crypto Products</option>
+                <option value="other">Other</option>
+              </select>
+              <input
+                placeholder="Your Email"
+                type="email"
+                required=""
+                className="form_name"
+                name="email"
+                value=""
+                readOnly
+              ></input>
+              <div className="check-box">
+                <input
+                  id="terms-conditions"
+                  type="checkbox"
+                  className="checkbox-pointer"
+                  required=""
+                  name="termsConditionsAccept"
+                ></input>
+                <label for="terms-conditions" className="checkbox-labels">
+                  I confirm that I have read and agree with{" "}
+                  <a className="label-a" href="/terms-conditions">
+                    Terms &amp; Conditions{" "}
+                  </a>
+                  and{" "}
+                  <a className="font-medium" href="/privacy-policy">
+                    Privacy Policy
+                  </a>
+                  .
+                </label>
+              </div>
+              <div className="get-offer-button">
+                <button type="submit" className="getbtnsubmit _btnGet_Primary">
+                  Get the Offer
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div className="contorl-erp-section">
+        <div className="control-grid">
+          <div className="grid-col-section">
+            <h2
+              className="contorl-erp-h2
+            "
+            >
+              Easy control with single center
+            </h2>
+            <p className="contorl-erp-p">
+              International transactions are no longer difficult. Grow your
+              business, manage all your transactions from a single center.
+            </p>
+            <div className="control-getStarted">
+              <a
+                href="/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="control-a"
+              >
+                Get Started
+                <img
+                  alt="arrow 1"
+                  loading="lazy"
+                  width="16"
+                  height="14"
+                  decoding="async"
+                  data-nimg="1"
+                  className="control-arrow"
+                  style={{ color: "transparent" }}
+                  src="/images/arrow-right.svg"
+                />
+              </a>
+              <img
+                src="/images/business-box-1.webp"
+                className="business-img-box1"
+                style={{ color: "transparent" }}
+              ></img>
+            </div>
+          </div>
+          <div className="grid-col-section">
+            <h2
+              className="contorl-erp-h2
+            "
+            >
+              {/* Money transfer between businesses */}
+              Safe and secure account
+            </h2>
+            <p className="contorl-erp-p">
+              International transactions are no longer difficult. Grow your
+              business, manage all your transactions from a single center.
+            </p>
+            <div className="control-getStarted">
+              <a
+                href="/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="control-a"
+              >
+                Get Started
+                <img
+                  alt="arrow 1"
+                  loading="lazy"
+                  width="16"
+                  height="14"
+                  decoding="async"
+                  data-nimg="1"
+                  className="control-arrow"
+                  style={{ color: "transparent" }}
+                  src="/images/arrow-right.svg"
+                />
+              </a>
+              <img
+                src="/images/business-box-1.webp"
+                className="business-img-box1"
+                style={{ color: "transparent" }}
+              ></img>
+            </div>
+          </div>
+          <div className="grid-col-section">
+            <h2
+              className="contorl-erp-h2
+            "
+            >
+              {/* Safe and secure account */}Money transfer between businesses
+            </h2>
+            <p className="contorl-erp-p">
+              International transactions are no longer difficult. Grow your
+              business, manage all your transactions from a single center.
+            </p>
+            <div className="control-getStarted">
+              <a
+                href="/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="control-a"
+              >
+                Get Started
+                <img
+                  alt="arrow 1"
+                  loading="lazy"
+                  width="16"
+                  height="14"
+                  decoding="async"
+                  data-nimg="1"
+                  className="control-arrow"
+                  style={{ color: "transparent" }}
+                  src="/images/arrow-right.svg"
+                />
+              </a>
+              <img
+                src="/images/business-box-1.webp"
+                className="business-img-box1"
+                style={{ color: "transparent" }}
+              ></img>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

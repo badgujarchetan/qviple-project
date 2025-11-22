@@ -3,7 +3,7 @@ import "./virtual-card.css";
 import QvipleNavbar from "@/qviple-business_navbar/Qviple-business_navbar";
 export default function page() {
   return (
-    <div className="virtual-card-section">
+    <div className="virtual-card-section mb-14">
       <QvipleNavbar />
       <div className="virtual-card-container">
         <div className="virtual-card-main">

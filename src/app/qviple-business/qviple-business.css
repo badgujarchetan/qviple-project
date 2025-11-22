@@ -1,6 +1,9 @@
 .main-wrapper {
   margin-top: -5rem;
 }
+
+/* ========== HERO (TOP SECTION) ========== */
+
 .qysm {
   background: rgb(25, 17, 192);
   color: white;
@@ -8,19 +11,22 @@
   padding-top: 2.31rem;
   padding-bottom: 2rem;
   position: relative;
+  overflow: hidden;
 }
 
 .custom_container {
-  width: 80.125rem;
+  max-width: 80.125rem;
+  width: 100%;
   margin: 0 auto;
+  padding: 0 1.25rem;
 }
 
 .bg-video {
   position: absolute;
   z-index: 0;
-  left: 0px;
-  top: 0px;
-  height: 72.5625rem;
+  left: 0;
+  top: 0;
+  height: 100%;
   object-fit: cover;
   width: 100%;
   pointer-events: none;
@@ -56,6 +62,7 @@
   justify-content: center;
   gap: 1.25rem;
 }
+
 .container {
   width: 100%;
   margin-right: auto;
@@ -73,7 +80,9 @@
   display: inline-flex;
   align-items: center;
   font-size: 1.125rem;
+  text-decoration: none;
 }
+
 .icon-container {
   background: rgb(8, 49, 153);
   margin-left: 1.69rem;
@@ -90,7 +99,8 @@
   color: white;
 }
 
-/*  */
+/* ========== ALL-IN-ONE SECTION ========== */
+
 .all-in-one-solution {
   background: rgb(96, 205, 255);
   padding-top: 11.44rem;
@@ -107,144 +117,252 @@
   line-height: 5.625rem;
 }
 
-/*  */
+/* ========== CUSTOMER SUPPORT SECTION ========== */
 
 .home3-container {
   position: relative;
+  background: #00258a;
+  color: #ffffff;
+  overflow: hidden;
 }
 
 .background {
   display: flex;
-  height: 100vh;
-  background: rgb(0, 37, 130);
+  min-height: 34rem;
+  background: #00258a;
 }
 
+/* Left visual side (desktop) */
 .left {
-  z-index: 1;
-  width: 100%;
-  background: url(/images/customer-left-bg.webp) 0% 0% / cover no-repeat
-    rgb(0, 37, 130);
+  flex: 1;
+  background: url(/images/customer-left-bg.webp) center / cover no-repeat,
+    #00258a;
 }
+
+/* Right content + video */
 .right {
-  transition: 0.6s ease-out 0.8s;
-  right: 0px;
-  opacity: 1;
-  position: absolute;
-  z-index: 1;
-  width: 45.9%;
-}
-
-.content {
-  position: absolute;
-  top: 5.56rem;
-  z-index: 1;
-  left: -41.3rem;
-}
-
-.center {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.center h2 {
-  transition: 0.6s ease-out 1.2s;
-  opacity: 1;
-}
-.customer-support {
-  color: rgba(220, 231, 250, 0.53);
-  font-size: 1rem;
-  font-weight: 400;
-  /* line-height: 1.6875rem; */
-}
-
-.center h1 {
-  transition: 0.6s ease-out 1.2s;
-  opacity: 1;
-  transform: translate(0px, 0px);
-}
-.dedicated {
-  color: rgb(255, 255, 255);
-  font-size: 4.2875rem;
-  font-weight: 800;
-  line-height: 5rem;
-  margin-top: 2.25rem;
-}
-.content .desc {
-  display: flex;
-  text-align: left;
-  justify-content: start;
-  transition: 0.6s ease-out 2.4s;
-  opacity: 1;
-  transform: translate(0px, 0px);
-  color: rgba(231, 235, 242, 0.78);
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 2rem;
-  margin-top: 1.87rem;
-  width: 100%;
-}
-
-.btn-group {
-  margin-top: 4rem;
-  width: 41.4rem;
-}
-
-.content .btn-group > a {
+  flex: 1;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 3rem;
+  overflow: hidden;
 }
 
-.btn {
-  border-radius: 1.25rem 0px 0px;
-  height: 6rem;
-  padding: 2rem;
-  transition: 0.6s ease-out 3s;
-
-  background: rgb(96, 205, 255);
-  backdrop-filter: blur(7px);
-  padding: 2rem;
-  color: rgb(0, 23, 65);
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 2rem;
-}
-
-.btn-group .btn svg {
-  transition: 0.6s 3.6s;
-  bottom: 0rem;
-  right: -6rem;
-  width: 6.0625rem;
-  height: 6rem;
-  border-top-right-radius: 1.25rem;
-  border-bottom-right-radius: 1.25rem;
-  border-radius: 0px;
-  background: rgb(0, 41, 145);
-  position: absolute;
-}
-.btn-desc {
-  transition: 0.6s ease-out 3.6s;
-  border-radius: 0rem 0rem 1.25rem 1.25rem;
-  background: rgba(36, 68, 127, 0.82);
-  backdrop-filter: blur(7px);
-  padding: 1.31rem 3.19rem;
-  color: rgba(186, 198, 219, 0.63);
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.4375rem;
-}
-
+/* Soft animated video background – ALWAYS visible */
 .video {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   object-fit: cover;
   object-position: center center;
-  vertical-align: middle;
+  opacity: 0.25;
+  mix-blend-mode: screen;
+  pointer-events: none;
 }
+
+/* Text content */
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 26rem;
+}
+
+.customer-support {
+  color: rgba(220, 231, 250, 0.75);
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.dedicated {
+  color: #ffffff;
+  font-size: 3.1rem;
+  font-weight: 800;
+  line-height: 3.5rem;
+  margin-top: 0.25rem;
+}
+
+.content .desc {
+  margin-top: 1.75rem;
+  color: rgba(231, 235, 242, 0.9);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7rem;
+}
+
+/* Card group */
+.btn-group {
+  margin-top: 2.8rem;
+}
+
+/* Whole card clickable */
+.cta-card {
+  display: block;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  text-decoration: none;
+  background: transparent;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+  max-width: 24rem;
+}
+
+/* Top part of card */
+.cta-header {
+  background: #69d2ff;
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.cta-header span {
+  color: #001744;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4rem;
+}
+
+/* Square arrow block */
+.cta-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  background: #002991;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Bottom part of card */
+.cta-body {
+  background: #17357b;
+  padding: 1.25rem 1.75rem 1.6rem;
+  color: rgba(186, 198, 219, 0.9);
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.55rem;
+}
+
+/* Hover state (desktop) */
+.cta-card:hover .cta-header {
+  background: #7edbff;
+}
+
+.cta-card:hover .cta-icon {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* ========= RESPONSIVE FOR THIS SECTION ONLY ========= */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .background {
+    flex-direction: column;
+  }
+
+  .left {
+    display: none;
+  }
+
+  .right {
+    flex: none;
+    width: 100%;
+    padding: 3.5rem 1.75rem 3.75rem;
+  }
+
+  .dedicated {
+    font-size: 2.5rem;
+    line-height: 2.9rem;
+  }
+
+  .content .desc {
+    font-size: 0.98rem;
+  }
+
+  .cta-card {
+    max-width: 100%;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+  .home3-container {
+    background: #00258a;
+  }
+
+  .right {
+    padding: 3rem 1.5rem 3.5rem;
+  }
+
+  /* NOTE: video is NOT hidden now */
+
+  .customer-support {
+    font-size: 0.85rem;
+  }
+
+  .dedicated {
+    font-size: 2.1rem;
+    line-height: 2.4rem;
+  }
+
+  .content .desc {
+    margin-top: 1.4rem;
+    font-size: 0.95rem;
+    line-height: 1.5rem;
+  }
+
+  .btn-group {
+    margin-top: 2.2rem;
+  }
+
+  .cta-header {
+    padding: 1.25rem 1.4rem;
+  }
+
+  .cta-body {
+    padding: 1.1rem 1.4rem 1.4rem;
+    font-size: 0.9rem;
+  }
+
+  .cta-icon {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+}
+
+/* Very small mobiles */
+@media (max-width: 480px) {
+  .right {
+    padding: 2.8rem 1.25rem 3.2rem;
+  }
+
+  .dedicated {
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+  }
+
+  .cta-header span {
+    font-size: 0.95rem;
+  }
+}
+
+/* ========== SECURITY / NUMBERS SECTION ========== */
 
 .WxVrs {
   background: rgb(0, 41, 145);
   color: white;
   height: 65rem;
   position: relative;
+  overflow: hidden;
 }
 
 .back-video {
@@ -260,6 +378,7 @@
   object-fit: cover;
   opacity: 0.4;
 }
+
 .WxVrs .top-section {
   width: 100%;
   height: 100%;
@@ -271,9 +390,12 @@
 .WxVrs .top-section > .container-custom {
   margin-bottom: 10.28rem;
 }
+
 .container-custom {
-  width: 73.125rem;
+  max-width: 73.125rem;
+  width: 100%;
   margin: 0 auto;
+  padding: 0 1.25rem;
 }
 
 .contends {
@@ -312,6 +434,7 @@
 .margin-t :hover {
   background-color: rgb(150, 200, 216);
 }
+
 .transpernt {
   background: rgb(139, 166, 216);
   color: rgb(8, 49, 153);
@@ -321,6 +444,7 @@
   display: inline-flex;
   align-items: center;
   font-size: 1.125rem;
+  text-decoration: none;
 }
 
 .icon-containerss {
@@ -336,7 +460,6 @@
 
 .WxVrs .numbers {
   position: relative;
-  margin-top: 9rem;
   border-radius: 1.5625rem;
   border: 1px solid rgba(168, 183, 212, 0.23);
   background: rgba(106, 106, 106, 0.17);
@@ -365,6 +488,7 @@
   font-weight: 400;
   line-height: 8rem;
 }
+
 .plus {
   font-size: 4.4375rem;
   font-weight: 400;
@@ -381,6 +505,8 @@
   text-align: center;
 }
 
+/* ========== APP DOWNLOAD SECTION ========== */
+
 .kPkxTt {
   background: black;
   color: white;
@@ -388,9 +514,12 @@
 }
 
 .kPkxTt .custom-container {
-  width: 73.125rem;
+  max-width: 73.125rem;
+  width: 100%;
   margin: 0 auto;
+  padding: 0 1.25rem;
 }
+
 .kPkxTt .brand-name {
   color: rgb(139, 166, 216);
   font-size: 1.25rem;
@@ -407,6 +536,7 @@
   line-height: 5.625rem;
   margin-top: 1rem;
 }
+
 .kPkxTt .descrip {
   color: rgba(227, 233, 244, 0.72);
   text-align: center;
@@ -415,11 +545,13 @@
   line-height: 1.6875rem;
   margin-top: 2rem;
 }
+
 .kPkxTt .store-links {
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1.5rem;
   margin-top: 3.19rem;
 }
 
@@ -430,7 +562,8 @@
   margin-top: 5rem;
 }
 
-/*  */
+/* ========== FOOTER CTA SECTION ========== */
+
 .cIuFrH {
   position: relative;
   margin-top: 8.81rem;
@@ -439,13 +572,16 @@
 }
 
 .cIuFrH .custom-container {
-  width: 73.125rem;
+  max-width: 73.125rem;
+  width: 100%;
   margin: 0 auto;
+  padding: 0 1.25rem;
 }
 
 .cIuFrH .footer-hero {
-  padding-bottom: 0px;
+  padding-bottom: 0;
 }
+
 .cIuFrH .footer-hero h2 {
   color: rgb(0, 23, 65);
   text-align: center;
@@ -467,11 +603,7 @@
   padding: 1rem;
   vertical-align: middle;
 }
-.actions {
-  display: flex;
-  justify-content: center;
-  margin-top: 3.5rem;
-}
+
 .bluees {
   background: rgb(0, 41, 145);
   color: white;
@@ -484,13 +616,11 @@
   display: inline-flex;
   align-items: center;
   font-size: 1.125rem;
+  text-decoration: none;
 }
 
 .btn-con {
   background: rgb(69, 118, 243);
-}
-
-.btn-con {
   margin-left: 1.69rem;
   width: 2.75rem;
   height: 2.75rem;
@@ -509,6 +639,264 @@
   margin-top: 3.69rem;
   margin-bottom: 10rem;
 }
+
 .und {
   text-decoration-line: underline;
+}
+
+/* =========================================================
+   GLOBAL RESPONSIVE BREAKPOINTS
+   ========================================================= */
+
+/* Large tablets / small laptops */
+@media (max-width: 1200px) {
+  .top h1 {
+    font-size: 5rem;
+    line-height: 5.2rem;
+    margin-top: 7rem;
+  }
+
+  .all-in-one-solution h2 {
+    font-size: 3.5rem;
+    line-height: 4rem;
+  }
+
+  .WxVrs .top-section .contends h2 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  .num {
+    font-size: 6rem;
+    line-height: 6rem;
+  }
+
+  .kPkxTt h2,
+  .cIuFrH .footer-hero h2 {
+    font-size: 3.5rem;
+    line-height: 4rem;
+  }
+
+  .cIuFrH .footer-hero h2 span {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  .WxVrs {
+    height: auto;
+  }
+}
+
+/* Tablets (portrait) */
+@media (max-width: 992px) {
+  .top h1 {
+    font-size: 3.5rem;
+    line-height: 4rem;
+    margin-top: 6rem;
+  }
+
+  .desc {
+    margin-top: 2.5rem;
+    font-size: 1.05rem;
+  }
+
+  .gfcQZS {
+    font-size: 1rem;
+  }
+
+  .all-in-one-solution {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .all-in-one-solution h2 {
+    font-size: 2.75rem;
+    line-height: 3.2rem;
+  }
+
+  .contends {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .WxVrs .top-section .contends > div,
+  .WxVrs .top-section .contends > div:last-child {
+    width: 100%;
+  }
+
+  .WxVrs {
+    height: auto;
+  }
+
+  .kPkxTt video {
+    height: 24rem;
+  }
+
+  .cIuFrH .footer-hero h2 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  .cIuFrH .footer-hero h2 span {
+    font-size: 2.4rem;
+    line-height: 3rem;
+  }
+}
+
+/* Mobile (general) */
+@media (max-width: 768px) {
+  .main-wrapper {
+    margin-top: 0;
+  }
+
+  .qysm {
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+  }
+
+  .bg-video {
+    height: 100%;
+  }
+
+  .top h1 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    margin-top: 3rem;
+  }
+
+  .desc {
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    padding: 0 0.5rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+  .gfcQZS {
+    width: 100%;
+    justify-content: space-between;
+    max-width: 18rem;
+  }
+
+  .all-in-one-solution {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .all-in-one-solution h2 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  .WxVrs .top-section {
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+  }
+
+  .WxVrs .top-section .contends h2 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  .WxVrs .top-section .description {
+    font-size: 1rem;
+  }
+
+  .WxVrs .numbers {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .num {
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+  }
+
+  .plus {
+    font-size: 2rem;
+  }
+
+  .kPkxTt {
+    padding-top: 5rem;
+  }
+
+  .kPkxTt h2 {
+    font-size: 2.3rem;
+    line-height: 2.6rem;
+  }
+
+  .kPkxTt .descrip {
+    font-size: 1rem;
+  }
+
+  .kPkxTt .store-links {
+    flex-direction: column;
+  }
+
+  .kPkxTt video {
+    height: 18rem;
+    margin-top: 3rem;
+  }
+
+  .cIuFrH {
+    margin-top: 4rem;
+    padding-top: 4rem;
+  }
+
+  .cIuFrH .footer-hero h2 {
+    font-size: 2.2rem;
+    line-height: 2.6rem;
+  }
+
+  .cIuFrH .footer-hero h2 span {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    display: block;
+    margin-top: 0.75rem;
+  }
+
+  .cIuFrH .desc-data {
+    font-size: 1rem;
+    padding: 0 1rem;
+    margin-bottom: 5rem;
+  }
+}
+
+/* Small mobiles */
+@media (max-width: 480px) {
+  .top h1 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  .gfcQZS {
+    max-width: 16rem;
+    padding-left: 1.2rem;
+  }
+
+  .icon-container,
+  .icon-containerss,
+  .btn-con {
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-left: 1.2rem;
+  }
+
+  .kPkxTt h2 {
+    font-size: 2rem;
+  }
+
+  .WxVrs .numbers {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .num {
+    font-size: 3rem;
+  }
 }

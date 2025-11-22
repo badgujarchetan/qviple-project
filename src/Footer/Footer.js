@@ -1,4 +1,3 @@
-
 "use client";
 import Link from "next/link";
 import React from "react";
@@ -45,7 +44,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-gradient-to-br from-[#0b1c42] via-[#133b8a] to-[#0e2664] text-white pt-16 pb-10">
+    <footer className="w-full bg-[#125875] text-white pt-16 pb-10">
       <motion.div
         initial="hidden"
         animate="show"
