@@ -99,8 +99,10 @@ export default function Footer() {
               <AnimatedLink href="/faq">FAQ</AnimatedLink>
               <AnimatedLink href="/support">Contact Support</AnimatedLink>
               <AnimatedLink href="https://admin.qviple.com/">
-                {" "}
                 Manage Affiliation
+              </AnimatedLink>
+              <AnimatedLink href="https://developer.qviple.com/">
+                Api Documentation
               </AnimatedLink>
             </ul>
           </div>

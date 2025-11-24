@@ -19,7 +19,7 @@
 /* Header Section */
 .common-newsroom {
   position: relative;
-  padding: 120px 0 100px;
+  padding: 140px 0 100px;
   background-color: var(--brand-color);
   color: white;
   margin-bottom: 70px;
@@ -157,6 +157,6 @@
 
   .subtext {
     margin: 0 auto;
-    text-align: center;
+    text-align: start;
   }
 }

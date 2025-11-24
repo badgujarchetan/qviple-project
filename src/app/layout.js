@@ -3,7 +3,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 // import { Instrument_Sans } from "next/font/google";
 import Footer from "@/Footer/Footer";
-// import Home4 from "@/Home/Home4";
+ import Home4 from "@/Home/Home4";
 
 const InterFont = Inter({
   subsets: ["latin"],
@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
         {/* <Navbar /> */}
         <div className="mt-[5rem]">
           {children}
-          {/* <Home4 /> */}
+          <Home4 />
           <Footer />
           <BottomMenu />
         </div>

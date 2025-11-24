@@ -1,197 +1,171 @@
-.extra-bold-hero {
-  display: grid;
-  /* margin-top: 4rem; */
-}
+/* Home4.css - improved for large padding + smoother animation */
 
-.extra-bold-hero .users {
-  background-color: #fff;
-  height: 100%;
-  width: 100%;
-  grid-column: 1;
-  grid-row: 1;
-  align-items: center;
-  flex-direction: column;
-  display: flex;
-  text-align: center;
-  color: #f73b20;
-  padding-bottom:15rem;
-  padding-top:15rem ;
-}
-
-.extra-bold-hero .title {
-  font-size:10rem ;
-  letter-spacing: 0;
-  line-height: 0.9;
-  font-weight: 500;
-  width: var(--cols-12);
-}
-
-.extra-bold-hero .subhead-2 {
-  margin-top: 3rem;
-  letter-spacing: 0.01em;
-  line-height: 1.2;
-  font-size: clamp(19px, 17.518px + 100vw * 0.0038, 24px);
-  font-weight: 500;
-  width: var(--cols-10);
-}
-
-.extra-bold-hero .millions {
-  margin-top: 2rem;
-  gap: 1.2rem;
-  display: flex;
-}
-
-[data-button][data-tone="orange"][data-variant="outline"] {
-  --color: #f73b20;
-}
-[data-button][data-tone="orange"] {
-  --color: #fff;
-  --background-color: #f73b20;
-}
-
-._app-button[data-button] {
-  display: inline-block;
-  height: 44px;
-  position: relative;
-  width: 148px;
-}
-
-[data-button] {
-  width: max-content;
-  --height: 48px;
-  align-items: center;
-  border-radius: 12px;
-  display: inline-flex;
-  gap: 8px;
-  height: var(--height);
-  justify-content: center;
-  padding: 0 24px;
-}
-
-.millions a {
-  color: inherit;
-  text-decoration: none;
-}
-._extra-bold-hero [data-button-background] {
-  -webkit-backdrop-filter: unset !important;
-  backdrop-filter: unset !important;
-}
-
-[data-button] > [data-button-background] {
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-  border-radius: inheit;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  position: absolute;
-}
-.extra-bold-hero .millions .outline {
-  position: absolute;
-  height: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-      border-radius: 7px;
-}
-._app-button[data-button] img {
-  z-index: 1;
-}
-
-.extra-bold-hero .millions .imgess {
-  position: absolute;
-  height: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
 /* container */
-._extra-bold-hero,
-._extra-bold-hero.grid-stack,
-._extra-bold-hero.grid-stack .users,
-._extra-bold-hero.grid-stack .bg-layer,
-._extra-bold-hero.grid-stack .fg-layer {
+.extra-bold-hero {
   box-sizing: border-box;
-}
-
-/* base section */
-._extra-bold-hero.grid-stack {
   position: relative;
   overflow: hidden;
 }
 
-/* both layers share size/placement */
-._extra-bold-hero .users,
-._extra-bold-hero .fg-layer,
-._extra-bold-hero .bg-layer {
+/* shared container for layers */
+.extra-bold-hero .users {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 10rem 0;
-  grid-column: 1;
-  grid-row: 1;
+  /* keep your padding intent but make it responsive */
+  padding-top: 12rem;   /* your large padding preserved */
+  padding-bottom: 12rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
-/* foreground (top) */
-._extra-bold-hero .fg-layer {
+/* foreground layer */
+.extra-bold-hero .fg-layer {
   z-index: 2;
-  background-color: #f73b20; /* initial white */
-  color: #fff; /* initial orange text */
-  transition: background-color linear, color linear;
+  color: var(--fg-text, #fff);
+  background: transparent;
+  transition: color 220ms linear, background-color 220ms linear;
   pointer-events: auto;
+  will-change: color;
 }
 
-/* background (clipped) */
-._extra-bold-hero .bg-layer {
+/* background clipped layer */
+.extra-bold-hero .bg-layer {
   z-index: 1;
-  /* position: absolute;
-  inset: 0; */
-  background-color: #fff; /* orange layer */
-  color: #f73b20;
-  -webkit-clip-path: polygon(0% -1%, 100% -1%, 100% 100%, 50% 101%, 50% 101%, 0% 100%);
-  clip-path: polygon(0% -1%, 100% -1%, 100% 100%, 50% 101%, 50% 101%, 0% 100%);
-  transition: clip-path 120ms linear;
-  pointer-events: none; /* keep top interactive */
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  pointer-events: none;
+  will-change: clip-path, background-color, transform;
+  background-color: var(--bg-color, rgb(247,59,32));
+  transform: translateZ(0); 
 }
 
-/* title and paragraph size (tune to your design tokens) */
-._extra-bold-hero .title-1,
-._extra-bold-hero .title {
-  font-size: clamp(40px, 9vw, 96px); /* adapt for responsiveness */
-  line-height: 1;
+/* typography */
+.extra-bold-hero .title {
   margin: 0;
+  font-weight: 600;
+  line-height: 0.95;
+  font-size: clamp(40px, 8vw, 96px); /* a bit bolder for hero */
+  max-width: 1100px;
+  padding: 0 0.5rem;
+  word-break: break-word;
 }
 
-._extra-bold-hero .subhead-2 {
-  margin-top: 1.6rem;
-  font-size: clamp(16px, 2.2vw, 20px);
+.extra-bold-hero .subhead-2 {
+  margin-top: 1rem;
+  font-weight: 500;
+  font-size: clamp(16px, 2.2vw, 22px);
+  max-width: 900px;
+  color: inherit;
+  padding: 0 0.5rem;
 }
 
-/* icon/button placement */
-._extra-bold-hero ._app-button {
-  display: inline-block;
-  height: 44px;
-  width: 148px;
+/* buttons row */
+.extra-bold-hero .millions {
+  margin-top: clamp(1.5rem, 3.5vw, 2.5rem);
+  display: flex;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  align-items: center;
+  justify-content: center;
+}
+
+/* app button */
+.extra-bold-hero ._app-button {
   position: relative;
+  height: 52px;
+  min-width: 150px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.03);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
-._extra-bold-hero ._app-button img {
+.extra-bold-hero ._app-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.extra-bold-hero ._app-button img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  position: absolute;
-  inset: 0;
+  display: block;
+  pointer-events: none;
 }
 
-/* small performance hint */
-._extra-bold-hero .bg-layer,
-._extra-bold-hero .fg-layer {
-  will-change: clip-path, background-color, color;
+.extra-bold-hero ._app-button .btn-bg {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(6px);
+  opacity: 0.06;
+}
+
+/* ensure background layer text lines up visually with fg */
+.extra-bold-hero .bg-layer .title,
+.extra-bold-hero .bg-layer .subhead-2 {
+  opacity: 0.96;
+}
+
+/* responsive adjustments */
+@media (max-width: 920px) {
+  .extra-bold-hero .title {
+    font-size: clamp(32px, 9.5vw, 72px);
+  }
+  .extra-bold-hero ._app-button {
+    height: 46px;
+    min-width: 140px;
+  }
+}
+
+@media (max-width: 520px) {
+  .extra-bold-hero .users {
+    padding-top: 6.5rem;
+    padding-bottom: 6.5rem;
+  }
+  .extra-bold-hero .title {
+    font-size: clamp(22px, 12vw, 40px);
+    line-height: 1.02;
+  }
+  .extra-bold-hero .millions {
+    gap: 0.6rem;
+  }
+  .extra-bold-hero ._app-button {
+    min-width: 120px;
+    height: 40px;
+    border-radius: 10px;
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .extra-bold-hero .bg-layer {
+    transition: none !important;
+    transform: none !important;
+  }
+  .extra-bold-hero ._app-button {
+    transition: none !important;
+  }
+}
+
+/* small utility tokens you can tweak quickly */
+:root {
+  --hero-padding-lg: clamp(6rem, 10vw, 12rem);
+}
+
+/* optional variant */
+.extra-bold-hero.small {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }

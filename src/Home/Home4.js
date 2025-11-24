@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 import "../style/Home4.css";
 
 export default function Home4() {
@@ -8,149 +8,175 @@ export default function Home4() {
   const bgRef = useRef(null);
   const fgRef = useRef(null);
 
+  // easing and lerp helpers
+  const easeInOut = (x) =>
+    x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const lerpArr = (a, b, t) => a.map((v, i) => Math.round(lerp(v, b[i], t)));
+
+  // Calculate progress using section geometry and its padding
+  const calcProgress = useCallback(() => {
+    const section = rootRef.current;
+    if (!section) return 0;
+    const rect = section.getBoundingClientRect();
+    const vh = window.innerHeight;
+
+    // Use section height and padding to determine a more forgiving start/end
+    const sectH = rect.height || (vh * 0.6);
+    const top = rect.top;
+    const startTrigger = vh - Math.min(sectH * 0.25, vh * 0.45); // start when lower part is near viewport bottom
+    const endTrigger = Math.max(vh * 0.08, sectH * 0.08); // end earlier for tall sections
+
+    const raw = (startTrigger - top) / (startTrigger - endTrigger);
+    const clamped = Math.max(0, Math.min(1, raw));
+    return easeInOut(clamped);
+  }, []);
+
   useEffect(() => {
     const section = rootRef.current;
     const bg = bgRef.current;
     const fg = fgRef.current;
     if (!section || !bg || !fg) return;
 
+    // tuned keyframes
     const keyframes = {
       start: {
-        thirdY: 100.0,
-        fourthY: 101.0,
-        sixthY: 100.0,
-        bgRgb: [247, 59, 32],
-        fgTextRgb: [247, 59, 32],
-        fgBgRgb: [255, 255, 255],
+        thirdY: 100,
+        fourthY: 102,
+        sixthY: 100,
+        bgRgb: [247, 59, 32], // orange
+        fgTextRgb: [255, 255, 255], // white
+        bgTranslate: 20, // px - subtle parallax
       },
       mid: {
-        thirdY: 51.5485,
-        fourthY: 14.491,
-        sixthY: 51.5485,
+        thirdY: 60,
+        fourthY: 30,
+        sixthY: 60,
+        bgTranslate: 8,
       },
       end: {
-        thirdY: 0.0,
-        fourthY: 1.0,
-        sixthY: 0.0,
-        bgRgb: [255, 255, 255],
-        fgTextRgb: [247, 59, 32],
-        fgBgRgb: [255, 255, 255],
+        thirdY: 0,
+        fourthY: 1,
+        sixthY: 0,
+        bgRgb: [255, 255, 255], // white
+        fgTextRgb: [247, 59, 32], // orange
+        bgTranslate: 0,
       },
     };
 
-    const lerp = (a, b, t) => a + (b - a) * t;
-    const easeInOut = (x) =>
-      x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
-    const lerpArr = (a, b, t) => a.map((v, i) => Math.round(lerp(v, b[i], t)));
+    let rafId = null;
+    let lastT = -1;
 
-    function getInterpolated(t) {
-      t = Math.max(0, Math.min(1, t));
+    const update = () => {
+      const t = calcProgress();
+
+      // skip unnecessary updates if progress hasn't meaningfully changed
+      if (Math.abs(t - lastT) < 0.0008) {
+        rafId = requestAnimationFrame(update);
+        return;
+      }
+      lastT = t;
+
+      // smoother two-stage interpolation (start -> mid -> end)
+      let thirdY, fourthY, sixthY, bgRgb, fgTextRgb, bgTranslate;
       if (t <= 0.5) {
         const u = t / 0.5;
-        return {
-          thirdY: lerp(keyframes.start.thirdY, keyframes.mid.thirdY, u),
-          fourthY: lerp(keyframes.start.fourthY, keyframes.mid.fourthY, u),
-          sixthY: lerp(keyframes.start.sixthY, keyframes.mid.sixthY, u),
-          bgRgb: lerpArr(keyframes.start.bgRgb, keyframes.end.bgRgb, u * 0.5),
-          fgTextRgb: lerpArr(
-            keyframes.start.fgTextRgb,
-            keyframes.end.fgTextRgb,
-            u * 0.5
-          ),
-        };
+        thirdY = lerp(keyframes.start.thirdY, keyframes.mid.thirdY, u);
+        fourthY = lerp(keyframes.start.fourthY, keyframes.mid.fourthY, u);
+        sixthY = lerp(keyframes.start.sixthY, keyframes.mid.sixthY, u);
+        bgRgb = lerpArr(
+          keyframes.start.bgRgb,
+          keyframes.end.bgRgb,
+          u * 0.5
+        );
+        fgTextRgb = lerpArr(
+          keyframes.start.fgTextRgb,
+          keyframes.end.fgTextRgb || keyframes.start.fgTextRgb,
+          u * 0.5
+        );
+        bgTranslate = lerp(keyframes.start.bgTranslate, keyframes.mid.bgTranslate, u);
       } else {
         const u = (t - 0.5) / 0.5;
-        return {
-          thirdY: lerp(keyframes.mid.thirdY, keyframes.end.thirdY, u),
-          fourthY: lerp(keyframes.mid.fourthY, keyframes.end.fourthY, u),
-          sixthY: lerp(keyframes.mid.sixthY, keyframes.end.sixthY, u),
-          bgRgb: lerpArr(
-            keyframes.start.bgRgb,
-            keyframes.end.bgRgb,
-            0.5 + u * 0.5
-          ),
-          fgTextRgb: lerpArr(
-            keyframes.start.fgTextRgb,
-            keyframes.end.fgTextRgb,
-            0.5 + u * 0.5
-          ),
-        };
+        thirdY = lerp(keyframes.mid.thirdY, keyframes.end.thirdY, u);
+        fourthY = lerp(keyframes.mid.fourthY, keyframes.end.fourthY, u);
+        sixthY = lerp(keyframes.mid.sixthY, keyframes.end.sixthY, u);
+        bgRgb = lerpArr(
+          keyframes.start.bgRgb,
+          keyframes.end.bgRgb,
+          0.5 + u * 0.5
+        );
+        fgTextRgb = lerpArr(
+          keyframes.start.fgTextRgb,
+          keyframes.end.fgTextRgb || keyframes.start.fgTextRgb,
+          0.5 + u * 0.5
+        );
+        bgTranslate = lerp(keyframes.mid.bgTranslate, keyframes.end.bgTranslate, u);
       }
+
+      // Clip path tuned to reduce sudden shape jumps on small screens
+      const clip = `polygon(0% -6%, 100% -6%, 100% ${thirdY}%, 52% ${fourthY}%, 48% ${fourthY}%, 0% ${sixthY}%)`;
+      bg.style.webkitClipPath = clip;
+      bg.style.clipPath = clip;
+
+      // set CSS variables (cheap)
+      const bgColor = `rgb(${bgRgb.join(",")})`;
+      bg.style.setProperty("--bg-color", bgColor);
+
+      const fgTextColor = `rgb(${fgTextRgb.join(",")})`;
+      fg.style.setProperty("--fg-text", fgTextColor);
+
+      // parallax: translateY for bg (transform = cheap)
+      bg.style.transform = `translateY(${Math.round(bgTranslate)}px)`;
+
+      rafId = requestAnimationFrame(update);
+    };
+
+    // kick off animation loop
+    rafId = requestAnimationFrame(update);
+
+    // recalc on resize or font load
+    const onResize = () => {
+      lastT = -1;
+    };
+    const onFontLoad = () => {
+      lastT = -1;
+    };
+
+    window.addEventListener("resize", onResize, { passive: true });
+    // font loading could change layout; attempt to respond if available
+    if (document.fonts && document.fonts.addEventListener) {
+      document.fonts.addEventListener("loadingdone", onFontLoad);
     }
-
-    function calcProgress() {
-      const rect = section.getBoundingClientRect();
-      const vh = window.innerHeight;
-      const startTrigger = vh * 0.98;
-      const endTrigger = vh * 0.12;
-      const raw = (startTrigger - rect.top) / (startTrigger - endTrigger);
-      const clamped = Math.max(0, Math.min(1, raw));
-      return easeInOut(clamped);
-    }
-
-    let ticking = false;
-    function onScroll() {
-      if (ticking) return;
-      ticking = true;
-
-      requestAnimationFrame(() => {
-        const t = calcProgress();
-        const mappedT = t;
-        const k = getInterpolated(mappedT);
-
-        const clip = `polygon(0% -1%, 100% -1%, 100% ${k.thirdY}%, 50% ${k.fourthY}%, 50% ${k.fourthY}%, 0% ${k.sixthY}%)`;
-
-        bg.style.clipPath = clip;
-        bg.style.webkitClipPath = clip;
-
-       
-
-        ticking = false;
-      });
-    }
-
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
 
     return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
+      cancelAnimationFrame(rafId);
+      window.removeEventListener("resize", onResize);
+      if (document.fonts && document.fonts.removeEventListener) {
+        document.fonts.removeEventListener("loadingdone", onFontLoad);
+      }
     };
-  }, []);
+  }, [calcProgress]);
 
   return (
     <section className="extra-bold-hero grid-stack" ref={rootRef}>
-    
-      <div
-        className="flex flex-col items-center text-center py-216-140 users fg-layer"
-        ref={fgRef}
-      >
-        <h2 className="title-1 -medium w-cols-12 sm-w-cols-14 xs-w-cols-16 title">
+      <div className="users fg-layer" ref={fgRef}>
+        <h2 className="title">
           1 million users,
-          <br /> plus you.
+          <br />
+          plus you.
         </h2>
-        <p className="subhead-2 -medium w-cols-10 xs-w-cols-12 mt-64-24">
-          It only takes few seconds to get started.
-        </p>
-        <div className="millions flex gap-24 mt-64-48">
+        <p className="subhead-2">It only takes a few seconds to get started.</p>
+
+        <div className="millions">
           <a
             href="https://apps.apple.com/us/app/jeton/id6499320378"
             target="_blank"
             rel="noopener noreferrer"
             className="_app-button"
-            data-button=""
-            data-tone="orange"
-            data-variant="outline"
-            aria-label="go to mobile app"
+            aria-label="go to App Store"
           >
-            <div data-button-background></div>
-            <div className="outline absolute inset-0"></div>
-            <img
-              className="imgess absolute inset-0"
-              src="/app-store-orange.svg"
-              alt="App Store icon"
-            />
+            <div className="btn-bg" aria-hidden />
+            <img src="/app-store-orange.svg" alt="App Store" />
           </a>
 
           <a
@@ -158,18 +184,10 @@ export default function Home4() {
             target="_blank"
             rel="noopener noreferrer"
             className="_app-button"
-            data-button=""
-            data-tone="orange"
-            data-variant="outline"
-            aria-label="go to mobile app"
+            aria-label="go to Google Play"
           >
-            <div data-button-background=""></div>
-            <div className="outline"></div>
-            <img
-              className="imgess"
-              src="/google-play-orange.svg"
-              alt="Google Play icon"
-            />
+            <div className="btn-bg" aria-hidden />
+            <img src="/google-play-orange.svg" alt="Google Play" />
           </a>
         </div>
       </div>
@@ -177,52 +195,30 @@ export default function Home4() {
       {/* Background (animated polygon layer) */}
       <div
         aria-hidden="true"
-        className="flex flex-col items-center text-center py-216-140 users bg-layer"
+        className="users bg-layer"
         ref={bgRef}
         style={{
-          color: "#fff",
-          backgroundColor: "#f73b20",
-          clipPath:
-            "polygon(0% -1%, 100% -1%, 100% 100%, 50% 101%, 50% 101%, 0% 100%)",
+          // base color controlled by CSS variable for cheaper repaints
+          backgroundColor: "var(--bg-color, rgb(247,59,32))",
         }}
       >
-        <div className="title-1 -medium w-cols-12 sm-w-cols-14 xs-w-cols-16 title">
+        <div className="title" aria-hidden>
           1 million users, plus you.
         </div>
-        <div className="-medium w-cols-10 xs-w-cols-12 mt-64-24 subhead-2">
-          It only takes few seconds to get started.
+        <div className="subhead-2" aria-hidden>
+          It only takes a few seconds to get started.
         </div>
-        <div className="millions flex gap-24 mt-64-48">
-          <span
-            className="_app-button"
-            data-button=""
-            data-tone="orange"
-            data-variant="outline"
-            aria-hidden
-          >
-            <div data-button-background></div>
-            <div className="outline absolute inset-0"></div>
-            <img
-              className="imgess absolute inset-0"
-              src="/app-store-orange.svg"
-              alt="App Store icon"
-            />
+
+        {/* Background placeholders for store badges (mirror) */}
+        <div className="millions" aria-hidden>
+          <span className="_app-button" aria-hidden>
+            <div className="btn-bg" aria-hidden />
+            <img src="/app-store-orange.svg" alt="" />
           </span>
 
-          <span
-            className="_app-button"
-            data-button
-            data-tone="orange"
-            data-variant="outline"
-            aria-hidden
-          >
-            <div data-button-background></div>
-            <div className="outline absolute inset-0"></div>
-            <img
-              className="imgess absolute inset-0"
-              src="/google-play-orange.svg"
-              alt="Google Play icon"
-            />
+          <span className="_app-button" aria-hidden>
+            <div className="btn-bg" aria-hidden />
+            <img src="/google-play-orange.svg" alt="" />
           </span>
         </div>
       </div>

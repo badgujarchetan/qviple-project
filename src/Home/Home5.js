@@ -1,112 +1,86 @@
+"use client";
 import React from "react";
-import "../style/Home5.css";
+import { motion } from "framer-motion";
+
 export default function Home5() {
   return (
-    <section className="_mobile_app_hero">
-      <div className="bg-video-section">
+    <section className="relative w-full flex items-center overflow-hidden">
+
+      {/* Background Video */}
+      <div className="absolute inset-0 -z-20">
         <video
-          className="_video-asset"
-          src="/videos/3dapp-mobile.mp4"
-          type="video/mp4"
-          width="2880"
-          height="2160"
+          className="md:h-full w-full object-cover"
+          src="/videos/currencies-video-bg.mp4"
           autoPlay
-          loop
           muted
-          playsInline
-          preload="metadata"
-          data-media="video"
-          data-intersecting="true"
+          loop
         ></video>
       </div>
-      <div className="_mobile_app_hero-g-row">
-        <div className="_mobile_app_hero-g-col xxl-7 finances-in-one-app">
-          <h2 className="title-3">All your finances, in one app.</h2>
-          <p className="subhead-2">Join 1M+ happy users today. </p>
-          <div className="get_started_button">
-            <a
-              href="/"
-              target="_blank"
-              className="_button no-tap-highlight"
-              data-button=""
-              data-label="true"
-              data-tone="neutral"
-              data-variant="primary"
-            >
-              <div data-button-background=""></div>
-              <span className="label relative body -book">
-                <span data-split-text="" className="whitespace-nowrap">
-                  <span className="c">G</span>
-                  <span className="c">e</span>
-                  <span className="c">t</span>
-                  <span className="c -space"> </span>
-                  <span className="c">S</span>
-                  <span className="c">t</span>
-                  <span className="c">a</span>
-                  <span className="c">r</span>
-                  <span className="c">t</span>
-                  <span className="c">e</span>
-                  <span className="c">d</span>
-                </span>
-                {/* <span
-                  data-split-text=""
-                  className="clone whitespace-nowrap"
-                  aria-hidden="true"
-                >
-                  <span className="c">G</span>
-                  <span className="c">e</span>
-                  <span className="c">t</span>
-                  <span className="c -space"> </span>
-                  <span className="c">S</span>
-                  <span className="c">t</span>
-                  <span className="c">a</span>
-                  <span className="c">r</span>
-                  <span className="c">t</span>
-                  <span className="c">e</span>
-                  <span className="c">d</span>
-                </span> */}
-              </span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div className="btnFinance">
-        <a
-          href="https://apps.apple.com/in/app/qviple-your-education-online/id6463501865"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="_app-buttons"
-          data-button=""
-          data-tone="orange"
-          data-variant="outlines"
-          aria-label="go to mobile app"
+
+      {/* Layer gradient for text clarity */}
+      {/* <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/70 -z-10"></div> */}
+
+      {/* CONTENT */}
+      <div className="max-w-[1400px] w-full mx-auto px-6 md:px-12 lg:px-24 flex flex-col gap-8 py-40 ">
+
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="text-white font-semibold leading-tight text-[clamp(2.6rem,6vw,5rem)] tracking-tight"
         >
-          <div data-button-backgrounds=""></div>
-          <div className="outlines"></div>
-          <img
-            className="imgeess"
-            src="/images/app-store-neutral.svg"
-            alt="App Store icon"
-          />
-        </a>
-        <a
-          href="https://play.google.com/store/apps/details?id=com.mithakalminds.qviple"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="_app-buttons"
-          data-button=""
-          data-tone="orange"
-          data-variant="outlines"
-          aria-label="go to mobile app"
+          All your finances,
+          <br />
+          in one app.
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="text-gray-200 text-[clamp(18px,2vw,24px)] max-w-[550px] leading-relaxed"
         >
-          <div data-button-background=""></div>
-          <div className="outlines"></div>
-          <img
-            className="imgeess"
-            src="/images/google-play-neutral.svg"
-            alt="App Store icon"
-          />
-        </a>
+          Secure. Fast. Built for the future of money.
+        </motion.p>
+
+        {/* CTA Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.25 }}
+          className="flex flex-wrap items-center gap-4 mt-2"
+        >
+          <a
+            href="/"
+            className="px-8 py-3 bg-white text-black rounded-xl font-semibold text-lg hover:scale-[1.04] hover:shadow-xl transition-all duration-200"
+          >
+            Get Started
+          </a>
+        </motion.div>
+
+        {/* Download Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.35 }}
+          className="flex flex-wrap gap-4 mt-6"
+        >
+          {/* App Store */}
+          <a
+            href="https://apps.apple.com/"
+            className="w-[160px] h-[52px] rounded-xl border border-white/20 bg-white/10 backdrop-blur-md flex justify-center items-center hover:bg-white/20 hover:scale-105 transition-all duration-200"
+          >
+            <img src="/images/app-store-neutral.svg" className="w-[80%]" />
+          </a>
+
+          {/* Google Play */}
+          <a
+            href="https://play.google.com/"
+            className="w-[160px] h-[52px] rounded-xl border border-white/20 bg-white/10 backdrop-blur-md flex justify-center items-center hover:bg-white/20 hover:scale-105 transition-all duration-200"
+          >
+            <img src="/images/google-play-neutral.svg" className="w-[80%]" />
+          </a>
+        </motion.div>
       </div>
     </section>
   );

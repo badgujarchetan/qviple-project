@@ -6,9 +6,165 @@ import {
   useAnimation,
   useScroll,
   useTransform,
+  useInView,
 } from "framer-motion";
-import "../style/Home3.css";
+import "../style/Home3.css"
 
+
+
+// check for reduced motion users
+const prefersReducedMotion = () =>
+  typeof window !== "undefined" &&
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const cardVariants = {
+  hiddenDown: (i) => ({
+    opacity: 0,
+    y: 40,
+    scale: 0.97,
+    rotateX: -6,
+    transition: { duration: 0.45, ease: [0.16, 0.84, 0.44, 1], delay: i * 0.05 },
+  }),
+  hiddenUp: (i) => ({
+    opacity: 0,
+    y: -40,
+    scale: 0.97,
+    rotateX: 6,
+    transition: { duration: 0.45, ease: [0.16, 0.84, 0.44, 1], delay: i * 0.05 },
+  }),
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    rotateX: 0,
+    transition: {
+      type: "spring",
+      stiffness: 130,
+      damping: 20,
+      mass: 0.7,
+      delay: i * 0.08,
+    },
+  }),
+};
+
+function AnimatedCard({ card, index, scrollDirection }) {
+  const controls = useAnimation();
+  const ref = useRef(null);
+  const liRef = useRef(null);
+  const inView = useInView(ref, { amount: 0.5 });
+
+  // 3D hover tilt
+  useEffect(() => {
+    if (prefersReducedMotion()) return;
+    const el = liRef.current;
+
+    const handleMove = (e) => {
+      const rect = el.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = (e.clientY - rect.top) / rect.height;
+
+      el.style.setProperty("--rx", `${-(y - 0.5) * 12}deg`);
+      el.style.setProperty("--ry", `${(x - 0.5) * 12}deg`);
+      el.style.setProperty("--tz", "12px");
+    };
+
+    const resetTilt = () => {
+      el.style.setProperty("--rx", "0deg");
+      el.style.setProperty("--ry", "0deg");
+      el.style.setProperty("--tz", "0px");
+    };
+
+    el.addEventListener("mousemove", handleMove);
+    el.addEventListener("mouseleave", resetTilt);
+
+    return () => {
+      el.removeEventListener("mousemove", handleMove);
+      el.removeEventListener("mouseleave", resetTilt);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (inView) controls.start("visible");
+    else controls.start(scrollDirection === "down" ? "hiddenDown" : "hiddenUp");
+  }, [inView, scrollDirection]);
+
+  return (
+    <motion.li
+      ref={ref}
+      className="card_wrapper"
+      custom={index}
+      variants={cardVariants}
+      initial="hiddenDown"
+      animate={controls}
+    >
+      <div className="card_inner" ref={liRef}>
+        <motion.div className="card_li" whileHover={{ scale: 1.015 }}>
+          <p>{card.title}</p>
+          <p className="opacity-cards">{card.text}</p>
+
+          <div className="opacity-cards_div">
+            <span className="opacity-cards_div-span">
+              <span className="opacity-cards_div-span_inside-span">
+                {card.initials}
+              </span>
+            </span>
+            <span>{card.name}</span>
+          </div>
+        </motion.div>
+      </div>
+    </motion.li>
+  );
+}
+
+export default function Home3() {
+  const [scrollDirection, setScrollDirection] = useState("down");
+  const sectionRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  const bgY = useTransform(scrollYProgress, [0, 1], [-60, 60]);
+
+  useEffect(() => {
+    let last = window.scrollY;
+    const onScroll = () => {
+      if (window.scrollY > last) setScrollDirection("down");
+      else setScrollDirection("up");
+      last = window.scrollY;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <section className="_client_testimonial" ref={sectionRef}>
+      <div className="background">
+        <motion.img
+          src="/images/bg_image.jpg"
+          className="our_client_image"
+          style={{ y: bgY }}
+        />
+      </div>
+
+      <div className="color-orange">
+        <h2 className="h2_text">Hear it from our clients</h2>
+      </div>
+
+      <ul className="cards">
+        {cards.map((card, i) => (
+          <AnimatedCard
+            key={i}
+            index={i}
+            card={card}
+            scrollDirection={scrollDirection}
+          />
+        ))}
+      </ul>
+    </section>
+  );
+}
 const cards = [
   {
     title: "Recommended",
@@ -23,7 +179,7 @@ const cards = [
     name: "Leonie A.",
   },
   {
-    title: "The best payment solution for German customers",
+    title: "The best payment solution",
     text: "I've been a Jeton user for a few years! The support was always great and I'm always able to make my payments to the websites I want with no problem.",
     initials: "KR",
     name: "Karl R.",
@@ -35,156 +191,3 @@ const cards = [
     name: "Dennis P.",
   },
 ];
-
-// CARD ANIMATION VARIANTS
-const cardVariants = {
-  hiddenDown: (i) => ({
-    opacity: 0,
-    y: 30,
-    scale: 0.97,
-    rotateX: -6,
-    transition: {
-      duration: 0.45,
-      ease: [0.16, 0.84, 0.44, 1],
-      delay: i * 0.04,
-    },
-  }),
-  hiddenUp: (i) => ({
-    opacity: 0,
-    y: -30,
-    scale: 0.97,
-    rotateX: 6,
-    transition: {
-      duration: 0.45,
-      ease: [0.16, 0.84, 0.44, 1],
-      delay: i * 0.04,
-    },
-  }),
-  visible: (i) => ({
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    rotateX: 0,
-    transition: {
-      type: "spring",
-      stiffness: 120,
-      damping: 18,
-      mass: 0.8,
-      delay: i * 0.09,
-    },
-  }),
-};
-
-function AnimatedCard({ card, index, scrollDirection }) {
-  const controls = useAnimation();
-
-  // Scroll direction ke hisaab se starting direction set
-  useEffect(() => {
-    controls.set(scrollDirection === "down" ? "hiddenDown" : "hiddenUp");
-  }, [controls, scrollDirection]);
-
-  return (
-    <motion.li
-      className="card_wrapper"
-      custom={index}
-      variants={cardVariants}
-      initial={false}
-      animate={controls}
-      whileInView="visible"
-      viewport={{ amount: 0.5, once: false }}
-      onViewportLeave={() => {
-        controls.start(
-          scrollDirection === "down" ? "hiddenDown" : "hiddenUp"
-        );
-      }}
-    >
-      <motion.div
-        className="card_li"
-        whileHover={{
-          y: -4,
-          scale: 1.01,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 180,
-          damping: 18,
-          mass: 0.6,
-        }}
-      >
-        <p>{card.title}</p>
-        <p className="opacity-cards">{card.text}</p>
-        <div className="opacity-cards_div">
-          <span className="opacity-cards_div-span">
-            <span className="opacity-cards_div-span_inside-span">
-              {card.initials}
-            </span>
-          </span>
-          <span>{card.name}</span>
-        </div>
-      </motion.div>
-    </motion.li>
-  );
-}
-
-export default function Home6() {
-  const [scrollDirection, setScrollDirection] = useState("down");
-  const sectionRef = useRef(null);
-
-  // Section ke andar parallax background
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-
-  const bgY = useTransform(scrollYProgress, [0, 1], [-40, 40]);
-
-  useEffect(() => {
-    let lastY = window.scrollY;
-
-    const handleScroll = () => {
-      const currentY = window.scrollY;
-
-      // chhota movement ignore (direction flicker kam)
-      if (Math.abs(currentY - lastY) < 2) return;
-
-      if (currentY > lastY) {
-        setScrollDirection("down");
-      } else if (currentY < lastY) {
-        setScrollDirection("up");
-      }
-
-      lastY = currentY;
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  return (
-    <section ref={sectionRef} className="_client_testimonial">
-      <div className="background">
-        <motion.img
-          className="our_client_image"
-          src="/images/bg_image.jpg"
-          alt="Client background"
-          style={{ y: bgY }}
-        />
-      </div>
-
-      <div className="color-orange">
-        <h2 className="h2_text">Hear it from our clients</h2>
-      </div>
-
-      <ul className="cards">
-        {cards.map((card, index) => (
-          <AnimatedCard
-            key={card.name}
-            card={card}
-            index={index}
-            scrollDirection={scrollDirection}
-          />
-        ))}
-      </ul>
-    </section>
-  );
-}

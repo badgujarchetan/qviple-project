@@ -116,7 +116,7 @@ export default function QvipleNavbar() {
 
                 {/* Action Buttons */}
                 <div className="flex items-center gap-4">
-                  <a className="px-5 h-10 flex items-center justify-center border border-[#2e21de33] rounded-lg hover:bg-[#1114b1] hover:text-white transition cursor-pointer">
+                  <a href="https://qvipleweb.web.app/#/login" className="px-5 h-10 flex items-center justify-center border border-[#2e21de33] rounded-lg hover:bg-[#1114b1] hover:text-white transition cursor-pointer">
                     Login
                   </a>
                   <a className="px-5 h-10 flex items-center justify-center bg-[#1114b1] text-white rounded-lg hover:scale-105 transition shadow-lg cursor-pointer">
@@ -184,9 +184,9 @@ export default function QvipleNavbar() {
                       </li>
                     ))}
 
-                    <button className="w-full bg-[#1114b1] text-white py-3 rounded-lg hover:scale-105 transition">
+                    <a href="https://qvipleweb.web.app/#/login" className="w-[50px] font-bold text-black py-2  hover:scale-105 transition">
                       Login
-                    </button>
+                    </a>
                   </ul>
                 </motion.div>
               )}

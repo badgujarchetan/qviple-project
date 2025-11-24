@@ -3,7 +3,7 @@
 import Navbar from "@/Navbar/Navbar";
 import { motion } from "framer-motion";
 import React from "react";
-
+import "./about.css";
 const fadeUp = {
   hidden: { opacity: 0, y: 50 },
   show: { opacity: 1, y: 0, transition: { duration: 0.7 } },
@@ -16,7 +16,7 @@ const fade = {
 
 export default function AboutPage() {
   return (
-    <main>
+    <main className="about-main">
       <Navbar />
 
       <section className="relative  min-h-[85vh] flex items-end pb-24 overflow-hidden">
@@ -204,7 +204,7 @@ export default function AboutPage() {
             Careers
           </span>
 
-          <h2 className="text-[clamp(38px,7vw,90px)] font-semibold leading-tight">
+          <h2 className="text-[clamp(38px,7vw,90px)] font-semibold leading-tight my-2">
             Job Openings
           </h2>
 
