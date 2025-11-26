@@ -1,8 +1,8 @@
-
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Home, User, Briefcase, Info, ChevronDown } from "lucide-react";
+import Link from "next/link";
 import "./BottomMenu.css";
 
 export default function BottomMenu() {
@@ -77,8 +77,8 @@ export default function BottomMenu() {
                             initial={{ opacity: 0, x: -8 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: sIdx * 0.05 }}
-                          > 
-                            <a
+                          >
+                            <Link
                               href={sub.href}
                               className="drawer-link"
                               target={sub.external ? "_blank" : "_self"}
@@ -86,7 +86,7 @@ export default function BottomMenu() {
                             >
                               <div className="dot" />
                               <div className="label">{sub.label}</div>
-                            </a>
+                            </Link>
                           </motion.li>
                         ))}
                       </ul>
@@ -95,7 +95,7 @@ export default function BottomMenu() {
                 </AnimatePresence>
               </>
             ) : (
-              <a
+              <Link
                 href={item.href}
                 className="_menu-button"
                 target={item.external ? "_blank" : "_self"}
@@ -103,7 +103,7 @@ export default function BottomMenu() {
               >
                 {IconMap[item.iconName]}
                 <span>{item.label}</span>
-              </a>
+              </Link>
             )}
           </li>
         ))}

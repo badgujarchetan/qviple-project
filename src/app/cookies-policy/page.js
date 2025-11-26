@@ -1,31 +1,41 @@
+"use client";
+
 import React from "react";
-import "./cookies-policy.css";
 import QvipleNavbar from "@/qviple-business_navbar/Qviple-business_navbar";
-export default function page() {
+
+export default function CookiesPolicy() {
   return (
-    <div className="cookies-section">
+    <div className="relative -mt-20 ">
       <QvipleNavbar />
-      <div className="hero-cookis">
-        <div className="hero-container">
-          <h1 className="h1">Cookies Policy</h1>
-        </div>
-      </div>
-      <div className="main-conatiner">
-        <div className="bg">
-          <h3 className="h3">Necessary Cookies</h3>
-          <p className="bg-p">
+
+      {/* ===== HERO SECTION ===== */}
+      <section className="w-full bg-[url('/images/pattern.webp')] bg-cover bg-center min-h-[300px] md:min-h-[450px] md:pt-24 flex items-center justify-center">
+        <h1 className="text-[clamp(28px,6vw,52px)] font-semibold text-gray-900 text-center ">
+          Cookies Policy
+        </h1>
+      </section>
+
+      {/* ===== MAIN CONTENT BOX ===== */}
+      <div className="w-full md:max-w-[1200px] mx-auto px-2 md:px-10 lg:px-20 -mt-24">
+        <div className="bg-white shadow-xl rounded-2xl p-6 sm:p-10 md:p-16 text-gray-800 leading-7 text-[15px] md:text-lg">
+          <h3 className="text-lg font-semibold my-4">Necessary Cookies</h3>
+          <p className="text-[18px] leading-[34px] my-4">
             We need to use these cookies to make our website work. These are all
             necessary for us to function and cannot be switched off in our
             systems. They are for setting responses to actions made by you, such
             as setting your privacy preferences, logging in or filling forms.
           </p>
-          <h3 className="jeton-bank-h3">Jeton Bank Limited Cookies Policy</h3>
-          <p className="bg-p">
+
+          <h3 className="text-lg font-semibold my-6">
+            Jeton Bank Limited Cookies Policy
+          </h3>
+          <p className="text-[18px] leading-[34px] my-4">
             These cookies allow us to count visits and traffic sources so we can
             measure and improve the performance of our site. All information
             that our cookies collect is aggregated and anonymous.
           </p>
-          <p className="bg-p">
+
+          <p className="text-[18px] leading-[34px] my-4">
             These also allow us to see the pages and links you have visited so
             we can prevent relevant ads. We don't store directly personal
             information but identify your browser and internet device. If you do
@@ -34,17 +44,23 @@ export default function page() {
           </p>
         </div>
       </div>
-      <div className="w-full px-[12%]">
-        <div className="flex flex-col items-center justify-center text-center bg-[#4888fb] rounded-2xl h-[360px] mt-24 px-6">
-          <h2 className="text-white font-semibold text-[3rem] leading-[56px] max-w-[650px] mb-10">
+
+      {/* ===== BOTTOM CTA BANNER ===== */}
+      <section className="w-full px-4 md:px-[16%]">
+        <div className="bg-[#4888fb] rounded-2xl text-center py-16 md:py-24 mt-4 px-6 flex flex-col items-center">
+          <h2 className="text-white font-semibold text-[clamp(28px,6vw,50px)] leading-tight max-w-[750px]">
             Jetonbank is an entirely new kind of bank.
           </h2>
-          <p className="text-white text-xl leading-8 max-w-[450px]">
+          <p className="text-white text-[15px] md:text-xl leading-7 max-w-[500px] mt-4">
             We're all-digital, mission driven, and designed for the way you
             live.
           </p>
+
+          <button className="md:mt-6 mt-[1rem] px-8 cursor-pointer py-3 text-lg bg-white text-[#4888fb] font-semibold rounded-lg shadow hover:scale-105 transition-all">
+            Learn More
+          </button>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

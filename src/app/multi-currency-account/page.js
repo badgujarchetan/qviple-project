@@ -1,202 +1,138 @@
-
-"use client"
-import React from "react";
-import "./multi-currency-account.css";
-import { useState } from "react";
+"use client";
+import React, { useState } from "react";
 import QvipleNavbar from "@/qviple-business_navbar/Qviple-business_navbar";
-export default function page() {
+
+export default function Page() {
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
   return (
-    <div className="multi-currency-main">
+    <div className="-mt-[5rem]">
       <QvipleNavbar />
-      <div className="account-bg">
+
+      {/* ---------- HERO SECTION ---------- */}
+      <div className="relative pt-[120px] pb-[80px]">
         <img
           alt="Hero Background"
-          fetchPriority="high"
-          loading="eager"
-          width="2560"
-          height="880"
-          decoding="async"
-          data-nimg="1"
-          className="account-img"
-          style={{ color: "transparent" }}
+          className="absolute inset-0 w-full h-full object-cover -z-10"
           src="/images/grow-hero-bg.webp"
-        ></img>
-        <div className="account-container">
-          <div className="account-main-contend">
-            <div>
-              <h1 className="account-h1">
-                Multi Currency <br></br> Account
-              </h1>
-              <p className="account-p">
-                Manage your finances accross multiple currencies
-              </p>
-              <a
-                className="account-a"
-                href="/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GET STARTED
-              </a>
-            </div>
-          </div>
+        />
+
+        <div className="w-full max-w-[1200px] mx-auto px-6 text-center">
+          <h1 className="text-[40px] md:text-[64px] font-bold leading-tight text-[#222]">
+            Multi Currency <br className="hidden md:block" /> Account
+          </h1>
+
+          <p className="text-[16px] md:text-[20px] text-[#666] mt-4 md:mt-5 mb-6">
+            Manage your finances across multiple currencies
+          </p>
+
+          <a
+            href="/"
+            className="inline-block bg-[#4888FB] text-white text-[16px] md:text-[18px] font-medium rounded-md py-[14px] px-6 md:px-10"
+          >
+            GET STARTED
+          </a>
         </div>
       </div>
-      <picture className="account-picture">
+
+      {/* ---------- MID IMAGE ---------- */}
+      <div className="w-full flex justify-center px-4">
         <img
-          alt="Your Digital Partner in Banking"
-          className="account-imgss"
-          loading="eager"
-          width="973"
-          height="732"
           src="/images/jtn-ui-2.webp"
-        ></img>
-      </picture>
+          className="w-full max-w-[900px] rounded-lg mt-10"
+          alt="ui"
+        />
+      </div>
 
-      <div className="manage-linear spy-16">
-        <div className="manage-page-container max-wi">
-          <div className="divide-2-section">
-            <div>
-              <h2 className="global-transactions">
-                Manage over 30 currencies in one account and simplify global
-                transactions with ease.
-              </h2>
-              <div className="global-transactions-image">
-                <div className="global-transactions-bg">
-                  <img
-                    alt="Move your business to digital"
-                    loading="lazy"
-                    width="59"
-                    height="44"
-                    decoding="async"
-                    data-nimg="1"
-                    className="cloud-images"
-                    style={{ color: "transparent" }}
-                    src="/images/cloud-money.svg"
-                  ></img>
-                </div>
-                <div>
-                  <h2 className="competitive-title">Competitive FX Rates</h2>
-                  <p className="enhance-text">
-                    Enhance your FX experience with our streamlined solutions,
-                    enabling real-time transactions at competitive rates.
-                  </p>
-                </div>
-              </div>
-              <div className="global-transactions-image">
-                <div className="global-transactions-bg">
-                  <img
-                    alt="Move your business to digital"
-                    loading="lazy"
-                    width="59"
-                    height="44"
-                    decoding="async"
-                    data-nimg="1"
-                    className="cloud-images"
-                    style={{ color: "transparent" }}
-                    src="/images/cloud-money.svg"
-                  ></img>
-                </div>
-                <div>
-                  <h2 className="competitive-title fx-rates">
-                    Competitive FX Rates
-                  </h2>
-                  <p className="enhance-text">
-                    Enhance your FX experience with our streamlined solutions,
-                    enabling real-time transactions at competitive rates.
-                  </p>
-                </div>
-              </div>
-              <div className="global-transactions-image">
-                <div className="global-transactions-bg">
-                  <img
-                    alt="Move your business to digital"
-                    loading="lazy"
-                    width="59"
-                    height="44"
-                    decoding="async"
-                    data-nimg="1"
-                    className="cloud-images"
-                    style={{ color: "transparent" }}
-                    src="/images/cloud-money.svg"
-                  ></img>
-                </div>
-                <div>
-                  <h2 className="competitive-title fx-rates">
-                    Competitive FX Rates
-                  </h2>
-                  <p className="enhance-text">
-                    Enhance your FX experience with our streamlined solutions,
-                    enabling real-time transactions at competitive rates.
-                  </p>
-                </div>
-              </div>
-              <div className="global-transactions-image">
-                <div className="global-transactions-bg">
-                  <img
-                    alt="Move your business to digital"
-                    loading="lazy"
-                    width="59"
-                    height="44"
-                    decoding="async"
-                    data-nimg="1"
-                    className="cloud-images"
-                    style={{ color: "transparent" }}
-                    src="/images/cloud-money.svg"
-                  ></img>
-                </div>
-                <div>
-                  <h2 className="competitive-title fx-rates">
-                    Competitive FX Rates
-                  </h2>
-                  <p className="enhance-text">
-                    Enhance your FX experience with our streamlined solutions,
-                    enabling real-time transactions at competitive rates.
-                  </p>
-                </div>
-              </div>
-            </div>
+      <div className="relative py-16 md:py-28 mt-10 bg-[#111B37]">
+        <div className="w-full max-w-[1300px] mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+          {/* LEFT CONTENT */}
+          <div>
+            <h2 className="text-white text-[30px] md:text-[42px] font-bold leading-[1.3] mb-10">
+              Manage over 30 currencies in one account and simplify global
+              transactions with ease.
+            </h2>
 
+            {/* FEATURES LOOP */}
+            {features.map((feature, i) => (
+              <div
+                key={i}
+                className="group flex gap-6 pb-6 mb-6 border-b border-white/10 hover:border-[#4b8bff] transition-all duration-300"
+              >
+                {/* <div
+                  className="
+    bg-[#1b2a52]
+    w-[70px] h-[70px] 
+    md:w-[90px] md:h-[90px] 
+    flex justify-center items-center
+    rounded-2xl
+    shadow-[0_8px_25px_rgba(0,0,0,0.25)]
+    transition-all duration-300 ease-out
+    group-hover:scale-110 group-hover:shadow-[0_12px_35px_rgba(11,94,255,0.4)]
+  "
+                >
+                  <img
+                    src={feature.icon}
+                    alt="icon"
+                    className="w-[34px] h-[34px] md:w-[42px] md:h-[42px] transition-transform duration-300 group-hover:scale-110"
+                  />
+                </div> */}
+
+                <div>
+                  <h3 className="text-white text-[20px] md:text-[24px] font-semibold mb-2 group-hover:text-[#4b8bff] transition-colors">
+                    {feature.title}
+                  </h3>
+                  <p className="text-[#9fb2d1] text-[14px] md:text-[16px] leading-[1.7]">
+                    {feature.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* RIGHT IMAGE */}
+          <div className="flex justify-center">
             <img
-              alt="Competitive FX Rates"
-              loading="lazy"
-              width="464"
-              height="500"
-              decoding="async"
-              data-nimg="1"
-              className="competitive-imges"
-              style={{ color: "transparent" }}
               src="/images/mdc.webp"
-            ></img>
+              className="w-full max-w-[520px] drop-shadow-2xl rounded-xl transition-all duration-500 hover:scale-[1.03]"
+              alt="ui"
+            />
           </div>
         </div>
       </div>
 
-      <div className="faq-container">
+      {/* ---------- FAQ SECTION ---------- */}
+      <div className="max-w-[1000px] mx-auto py-16 px-6">
         {faqs.map((item, index) => (
-          <div key={index} className="faq-item">
+          <div key={index} className="border-b border-gray-200">
             <button
-              className={`faq-question ${openIndex === index ? "open" : ""}`}
               onClick={() => toggle(index)}
+              className="w-full py-5 flex justify-between items-center text-left text-[18px] font-medium text-[#0f172a]"
             >
-              <span>{item.question}</span>
-              <span className="faq-icon">
+              {item.question}
+              <span
+                className={`text-[24px] transition-transform ${
+                  openIndex === index ? "rotate-180" : ""
+                }`}
+              >
                 {openIndex === index ? "−" : "+"}
               </span>
             </button>
 
             <div
-              className="faq-answer"
-              style={{
-                maxHeight: openIndex === index ? "200px" : "0",
-              }}
+              className={`transition-all overflow-hidden ${
+                openIndex === index
+                  ? "max-h-[200px] opacity-100"
+                  : "max-h-0 opacity-0"
+              }`}
             >
-              <p>{item.answer}</p>
+              <p className="text-[#6b7280] text-[15px] pb-5 leading-[1.6]">
+                {item.answer}
+              </p>
             </div>
           </div>
         ))}
@@ -209,26 +145,47 @@ const faqs = [
   {
     question: "Which currencies are supported?",
     answer:
-      "A multi-currency account allows businesses to hold, manage, and transact in multiple currencies within a single account. It simplifies international payments and helps avoid unnecessary conversion fees.",
+      "A multi-currency account allows businesses to hold and transact in multiple currencies to avoid unnecessary conversion fees.",
   },
   {
     question: "Who can open a multi-currency account?",
-    answer:
-      "Anyone who meets our verification requirements — individuals or businesses — can open an account.",
+    answer: "Any verified individual or business can open this account.",
   },
   {
     question: "How can I benefit from competitive exchange rates?",
     answer:
-      "We provide real-time market-based exchange rates, helping you save on international transfers.",
+      "You get real-time market exchange rates, allowing affordable international transfers.",
   },
   {
     question: "Can I send and receive payments in different currencies?",
     answer:
-      "Yes, you can easily send and receive funds in multiple currencies from one account.",
+      "Yes, you can send and receive money in different currencies inside one account.",
   },
   {
     question: "Is there a fee for currency conversion?",
     answer:
-      "A small conversion fee applies depending on the currency pair. Check our fee schedule for details.",
+      "A small fee applies depending on the currency pair. View our pricing page for full details.",
+  },
+];
+const features = [
+  {
+    title: "Competitive FX Rates",
+    desc: "Enhance your FX experience with our streamlined solutions, enabling real-time transactions at competitive rates.",
+    // icon: "/images/cloud-money.svg",
+  },
+  {
+    title: "International Transactions",
+    desc: "Effortlessly hold and manage multiple currencies, including USD, EUR, GBP, and more. Simplify international transactions while reducing the risks associated with currency fluctuations.",
+    // icon: "/images/cloud-money.svg",
+  },
+  {
+    title: "Easy Account Management",
+    desc: "Manage all your currencies from a single account with ease. Our intuitive platform gives you a clear overview of your balances and transaction history, helping you stay in control of your finances.",
+    // icon: "/images/cloud-money.svg",
+  },
+  {
+    title: "Competitive FX Rates",
+    desc: "Enhance your FX experience with our streamlined solutions, enabling real-time transactions at competitive rates.",
+    // icon: "/images/cloud-money.svg",
   },
 ];

@@ -1,54 +1,17 @@
 "use client";
 import QvipleNavbar from "@/qviple-business_navbar/Qviple-business_navbar";
 import React, { useState } from "react";
-import "./refer-and-earn.css";
+
 export default function Page() {
   const [openIndex, setOpenIndex] = useState(null);
   const toggle = (index) => setOpenIndex(openIndex === index ? null : index);
 
   return (
-    <div className="mt-[-5rem] overflow-x-hidden">
+    <div className="overflow-x-hidden bg-white">
       <QvipleNavbar />
 
-      {/* <div className="relative pt-[109px] bg-gradient-to-br from-[#f8faff] to-[#eef4ff] overflow-hidden">
-        <img
-          src="/images/pattern.webp"
-          alt="Hero Background"
-          className="absolute inset-0 w-full h-full object-cover -z-10 opacity-25"
-        />
-
-        <div className="container mx-auto px-[12%] py-[180px] flex flex-col lg:flex-row justify-between items-center relative gap-10">
-         
-          <div className="max-w-[540px] z-10">
-            <h1 className="text-[56px] md:text-[64px] font-semibold text-[#222] leading-[1.1]">
-              Refer and Earn
-            </h1>
-            <p className="text-[#555] text-[18px] md:text-[20px] my-7 leading-[1.7]">
-              Invite your friends to{" "}
-              <span className="font-semibold text-[#4888FB]">Jetonbank</span>{" "}
-              and start earning. Share the benefits and get rewarded for every
-              successful referral you make.
-            </p>
-            <a
-              href="#"
-              className="inline-block bg-[#4888FB] hover:bg-[#2f6ee8] transition-all text-white px-8 py-3 rounded-md text-[18px] font-medium shadow-md hover:shadow-lg"
-            >
-              Create Account
-            </a>
-          </div>
-
-          <div className="relative flex justify-center lg:justify-end w-full lg:w-[100%]">
-            <div className="w-full flex justify-center lg:justify-end pr-0 lg:pr-[4rem] xl:pr-[8rem]">
-              <img
-                src="/images/refer-hero.webp"
-                alt="Refer and Earn Illustration"
-                className="w-[100%] max-w-[950px] lg:max-w-[1000px] xl:max-w-[1100px] object-contain drop-shadow-2xl scale-[1.05] lg:scale-[1.15] transition-transform duration-500"
-              />
-            </div>
-          </div>
-        </div>
-      </div> */}
-      <div className=" relative pt-[109px]">
+      {/* HERO */}
+      <header className="relative pt-20 lg:pt-[109px]">
         <img
           alt="Hero Background"
           fetchPriority="high"
@@ -56,137 +19,182 @@ export default function Page() {
           height="839"
           decoding="async"
           data-nimg="1"
-          className="absolute -z-10 w-full h-full left-0 top-0 object-cover"
+          className="absolute -z-10 inset-0 w-full h-full object-cover pointer-events-none"
           style={{ color: "transparent" }}
           src="/images/pattern.webp"
-        ></img>
-        <div className=" w-[100%] mr-auto ml-auto pr-[20px] pl-[20px]">
-          <div className="pl-[12%]  items-center justify-center relative pt-[207px] pb-[263px]">
-            <div className=" max-w-[540px]">
-              <h1 className="text-[64px] text-primary font-semibold leading-[60px]">Refer and Earn</h1>
-              <p className="text-secondary text-[20px] my-7 leading-[26px] ">Invite your friends to Jetonbank and start earning. Our referral program is designed to make it easy for you to share the benefits of Jetonbank while getting rewarded for every successful referral.</p>
-              <a className="sign-up-create" href="#" target="_blank">Create Account</a>
+        />
+
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+          <div className="relative flex flex-col-reverse lg:flex-row items-start lg:items-center gap-8 lg:gap-0">
+            {/* Left: text */}
+            <div className="w-full lg:w-1/2 lg:pl-[12%]">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-semibold text-[#222] leading-snug lg:leading-[60px]">
+                Refer and Earn
+              </h1>
+
+              <p className="mt-4 text-sm sm:text-base md:text-lg text-[#666] leading-relaxed max-w-xl">
+                Invite your friends to Jetonbank and start earning. Our referral
+                program is built so you can share benefits and get rewarded for
+                every successful referral — simple and transparent.
+              </p>
+
+              <a
+                href="#"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-block mt-6 rounded-md bg-[#4888FB] text-white px-6 py-3 text-base font-medium shadow-md hover:shadow-lg transition"
+              >
+                Create Account
+              </a>
             </div>
-            <img
-              alt="Refer and Earn"
-              loading="lazy"  
-              width="1132"
-              height="755"
-              decoding="async"
-              data-nimg="1"
-              className="max-w-[1132px] w-full absolute bottom-0 -right-[13rem]  pr-[12%] "
-              style={{ color: "transparent" }}
-              src="/images/refer-hero.webp"
-            ></img>
+
+            {/* Right: image - desktop absolute like before, mobile stacked below */}
+            <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+              <img
+                alt="Refer and Earn"
+                loading="lazy"
+                width="1132"
+                height="755"
+                decoding="async"
+                data-nimg="1"
+                src="/images/refer-hero.webp"
+                style={{ color: "transparent" }}
+                className="w-full max-w-md md:max-w-lg lg:max-w-[1132px] object-contain"
+              />
+            </div>
           </div>
         </div>
-      </div>
+      </header>
 
       {/* === EARN UP TO SECTION === */}
-      <div className="px-5">
-        <h2 className="text-center text-[#222] font-semibold text-5xl mt-32">
-          Earn up to 30%
-        </h2>
-        <h3 className="text-center text-[#444] font-medium text-3xl mt-3 mb-20">
-          Start Earning in 3 Easy Steps
-        </h3>
-
-        <div className="flex flex-col gap-16 px-[11%]">
-          {/* STEP 1 */}
-          <div className="flex flex-col lg:flex-row justify-between bg-[#f6f6f6] rounded-2xl p-10 items-center hover:shadow-xl transition-all duration-300">
-            <div className="max-w-[570px] py-10">
-              <h3 className="text-[#222] text-[40px] font-semibold leading-[45px] mb-5">
-                <span className="text-[#4888FB]">Step 1</span> <br /> Invite
-                Your Friends
-              </h3>
-              <p className="text-[#666] text-[18px] leading-7">
-                Share your unique invitation link and have your friends sign up.
-                To qualify, they must complete onboarding and submit any
-                required application fee.
-              </p>
-            </div>
-            <img
-              src="/images/refer-phone.webp"
-              alt="Invite Your Friends"
-              className="max-w-[329px] w-full mt-[-1rem]"
-            />
-          </div>
-
-          {/* STEP 2 */}
-          <div className="flex flex-col lg:flex-row justify-between items-center bg-[#f6f6f6] rounded-2xl px-10 py-8 hover:shadow-xl transition-all duration-300">
-            <img
-              src="/images/refer-rewards.webp"
-              alt="Earn Monthly Rewards"
-              className="max-w-[456px] w-full mb-5 lg:mb-0"
-            />
-            <div className="max-w-[472px]">
-              <h3 className="text-[#222] text-[40px] font-semibold leading-[45px] mb-5">
-                <span className="text-[#4888FB]">Step 2</span> <br /> Earn
-                Monthly Rewards
-              </h3>
-              <p className="text-[#666] text-[18px] leading-7">
-                Referral bonuses are paid out monthly in EUR. Make sure your own
-                onboarding is complete to unlock EUR-denominated rewards.
-              </p>
-            </div>
-          </div>
-
-          {/* STEP 3 */}
-          <div className="flex flex-col lg:flex-row justify-between bg-[#f6f6f6] rounded-2xl p-10 items-center hover:shadow-xl transition-all duration-300">
-            <div className="max-w-[570px] py-10">
-              <h3 className="text-[#222] text-[40px] font-semibold leading-[45px] mb-5">
-                <span className="text-[#4888FB]">Step 3</span> <br /> Tier Based
-                Rewards
-              </h3>
-              <p className="text-[#666] text-[18px] leading-7">
-                Your reward percentage depends on your referrals’ monthly
-                transaction volume — higher activity means bigger rewards.
-              </p>
-            </div>
-            <img
-              src="/images/refer-chart.webp"
-              alt="Tier Based Rewards"
-              className="max-w-[520px] w-full"
-            />
-          </div>
+      <section className="pt-10 lg:pt-16 px-5 sm:px-6 lg:px-20">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-[#222]">
+            Earn up to <span className="text-[#4888FB]">30%</span>
+          </h2>
+          <h3 className="mt-3 text-sm sm:text-lg lg:text-2xl text-[#444] font-medium">
+            Start Earning in 3 Easy Steps
+          </h3>
         </div>
-      </div>
 
-      {/* === FAQ SECTION === */}
-      <div className="mt-28 px-5 mb-28">
-        <h2 className="text-center text-[#0e1a2c] text-[40px] font-semibold mb-12">
-          Frequently Asked Questions
-        </h2>
 
-        <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg">
-          {faqs.map((item, index) => (
-            <div key={index} className="border-b border-gray-200">
-              <button
-                className={`w-full flex justify-between items-center text-left py-6 px-6 md:px-10 font-medium text-[#0f172a] text-[18px] transition-all duration-300 ${
-                  openIndex === index
-                    ? "bg-[#f9f9f9] text-[#4888FB]"
-                    : "bg-white hover:bg-gray-50"
-                }`}
-                onClick={() => toggle(index)}
-              >
-                <span>{item.question}</span>
-                <span className="text-[22px] font-bold text-[#4888FB]">
-                  {openIndex === index ? "−" : "+"}
-                </span>
-              </button>
-              <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  openIndex === index ? "max-h-40" : "max-h-0"
-                }`}
-              >
-                <p className="px-6 md:px-10 text-[#6b7280] text-[15px] leading-relaxed pb-5">
-                  {item.answer}
+
+        <div className="max-w-6xl mx-auto mt-8 lg:mt-12 grid gap-6 md:gap-8 ">
+          <article className="bg-[#f6f6f6] rounded-2xl p-5 sm:p-6 md:p-8 hover:shadow-lg transition">
+            <div className="flex flex-col md:px-[5rem] md:flex-row items-center gap-6 md:gap-36">
+              <img
+                src="/images/refer-phone.webp"
+                alt="Invite Your Friends"
+                className="w-full max-w-xs mx-auto md:mx-0 md:w-40 lg:w-72"
+              />
+              <div className="text-center md:text-left">
+                <h3 className="text-xl sm:text-2xl lg:text-[40px] font-semibold text-[#222] leading-tight">
+                  <span className="text-[#4888FB]">Step 1</span>
+                  <br />
+                  Invite Your Friends
+                </h3>
+                <p className="mt-3 text-sm sm:text-base text-[#666] leading-7 max-w-md mx-auto md:mx-0">
+                  Share your unique invitation link and have your friends sign
+                  up. To qualify, they must complete onboarding and submit any
+                  required application fee.
                 </p>
               </div>
             </div>
-          ))}
+          </article>
+
+          {/* STEP 2 */}
+          <article className="bg-[#f6f6f6] rounded-2xl p-5 sm:p-6 md:p-8 hover:shadow-lg transition">
+            <div className="flex flex-col md:flex-row-reverse items-center md:px-[5rem] gap-6 md:gap-36">
+              <img
+                src="/images/refer-rewards.webp"
+                alt="Earn Monthly Rewards"
+                className="w-full max-w-xs mx-auto md:mx-0 md:w-40 lg:w-72"
+              />
+              <div className="text-center md:text-left">
+                <h3 className="text-xl sm:text-2xl lg:text-[40px] font-semibold text-[#222] leading-tight">
+                  <span className="text-[#4888FB]">Step 2</span>
+                  <br />
+                  Earn Monthly Rewards
+                </h3>
+                <p className="mt-3 text-sm sm:text-base text-[#666] leading-7 max-w-md mx-auto md:mx-0">
+                  Referral bonuses are paid out monthly in EUR. Make sure your
+                  own onboarding is complete to unlock EUR-denominated rewards.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          {/* STEP 3 */}
+          <article className="bg-[#f6f6f6] rounded-2xl p-5 sm:p-6 md:p-8 hover:shadow-lg transition">
+            <div className="flex flex-col md:flex-row items-center md:px-[5rem] gap-6 md:gap-36">
+              <img
+                src="/images/refer-chart.webp"
+                alt="Tier Based Rewards"
+                className="w-full max-w-xs mx-auto md:mx-0 md:w-40 lg:w-72"
+              />
+              <div className="text-center md:text-left">
+                <h3 className="text-xl sm:text-2xl lg:text-[40px] font-semibold text-[#222] leading-tight">
+                  <span className="text-[#4888FB]">Step 3</span>
+                  <br />
+                  Tier Based Rewards
+                </h3>
+                <p className="mt-3 text-sm sm:text-base text-[#666] leading-7 max-w-md mx-auto md:mx-0">
+                  Your reward percentage depends on your referrals’ monthly
+                  transaction volume — higher activity means bigger rewards.
+                </p>
+              </div>
+            </div>
+          </article>
         </div>
-      </div>
+      </section>
+
+      {/* === FAQ SECTION === */}
+      <section className="mt-10 lg:mt-20 px-5 sm:px-6 lg:px-20 mb-24">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-center text-[#0e1a2c] text-2xl sm:text-3xl lg:text-[40px] font-semibold mb-6">
+            Frequently Asked Questions
+          </h2>
+
+          <div className="bg-white rounded-xl shadow-lg divide-y divide-gray-200 overflow-hidden">
+            {faqs.map((item, index) => {
+              const open = openIndex === index;
+              return (
+                <div key={index} className="">
+                  <button
+                    onClick={() => toggle(index)}
+                    aria-expanded={open}
+                    aria-controls={`faq-${index}`}
+                    className={`w-full flex items-center justify-between px-4 sm:px-6 py-4 sm:py-5 text-left text-[#0f172a] transition-colors duration-200 ${
+                      open
+                        ? "bg-[#f9fafb] text-[#4888FB]"
+                        : "bg-white hover:bg-gray-50"
+                    }`}
+                    style={{ minHeight: 56 }}
+                  >
+                    <span className="text-base sm:text-[18px] font-medium">
+                      {item.question}
+                    </span>
+                    <span className="ml-4 text-[20px] font-bold text-[#4888FB]">
+                      {open ? "−" : "+"}
+                    </span>
+                  </button>
+
+                  <div
+                    id={`faq-${index}`}
+                    className={`px-4 sm:px-6 overflow-hidden transition-all duration-300 ${
+                      open ? "max-h-[400px] py-4" : "max-h-0"
+                    }`}
+                  >
+                    <p className="text-[#6b7280] text-sm sm:text-[15px] leading-relaxed">
+                      {item.answer}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

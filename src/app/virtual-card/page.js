@@ -1,376 +1,131 @@
 import React from "react";
-import "./virtual-card.css";
 import QvipleNavbar from "@/qviple-business_navbar/Qviple-business_navbar";
-export default function page() {
+
+export default function Page() {
   return (
-    <div className="virtual-card-section mb-14">
+    <div className="-mt-[5rem]">
       <QvipleNavbar />
-      <div className="virtual-card-container">
-        <div className="virtual-card-main">
-          <div className="virtual-card-hero">
-            <h1 className="virtual-card-h1">
-              Jetonbank <br></br>
-              Virtual Card
+
+      {/* HERO SECTION */}
+      <div className="md:h-[900px] h-[600px] bg-[url('/images/virtual-card-hero-bg.png')] bg-top bg-cover">
+        <div className="w-[90%] lg:w-[73.125rem] mx-auto py-10 ">
+          <div className="pt-28 md:pt-40 text-white flex flex-col gap-6 md:gap-10">
+            <h1 className="text-[2.5rem] md:text-[4.75rem] font-semibold leading-tight md:leading-[5rem]">
+              Jetonbank <br /> Virtual Card
             </h1>
-            <div className="virtual-card-desc">
-              Manage your business expenses <br></br> effortlessly with the
-              Jetonbank <br></br> Virtual Debit Card.
+
+            <div className="md:max-w-[550px] text-[1.25rem] md:text-[2rem] leading-snug md:leading-[2.5rem]">
+              Manage your business expenses effortlessly with the Jetonbank
+              Virtual Debit Card
             </div>
-            <div className="virtual-card-sub-desc">
-              Make secure online payments, track transactions <br></br>
-              in real time, and enjoy global accessibility—all <br></br>
-              from one powerful platform.
+
+            <div className="md:max-w-[600px] text-[1rem] md:text-[1.5rem] leading-relaxed">
+              Make secure online payments, track transactions in real time, and
+              enjoy global accessibility— all from one platform.
             </div>
-            <div className="virtual-card-actions">
-              <a href="/" target="_blank">
-                <div className="circle"></div>
-                <span>Get Your Virtual Card</span>
-              </a>
-            </div>
+
+            <a
+              href="/"
+              target="_blank"
+              className="mt-4 relative inline-block w-full md:w-[19.6875rem] bg-white text-[#131E3D] font-medium text-[1rem] md:text-[1.125rem] text-center rounded-md py-[0.88rem] overflow-hidden group"
+            >
+              <div className="circle absolute w-0 h-0 opacity-0 rounded-full bg-[#E3E3E3] top-5 left-1/2 transition-all duration-500 ease-out group-hover:w-[200%] group-hover:h-[500%] group-hover:opacity-100 group-hover:-top-[70px] group-hover:-left-[8.75rem]" />
+              <span className="relative z-[1]">Get Your Virtual Card</span>
+            </a>
           </div>
         </div>
       </div>
-      <div className="custome-container">
-        <div className="what-is-container">
-          <div className="left-section">
-            <h2 className="left-h2">
+
+      {/* WHAT IS SECTION */}
+      <div className="w-[90%] lg:w-[73.125rem] mx-auto">
+        <div className="flex flex-col lg:flex-row justify-between gap-10 pt-[3rem] lg:pt-[5.25rem]">
+          <div className="lg:w-[60%] md:py-[10rem] lg:py-[12rem]">
+            <h2 className="text-[2rem] md:text-[3rem] font-semibold leading-tight md:leading-[3.75rem] text-[#181D27] mb-6 md:mb-8">
               What is the Jetonbank <br></br> Virtual Card?
             </h2>
-            <p className="left-p">
-              The <b>Jetonbank Virtual Card</b> is a digital debit card designed
-              for businesses, enabling seamless online transactions without the
-              need for a physical card.
+            <p className="text-[1.25rem] md:text-[2rem] leading-[2rem] text-[#535862]">
+              The <b>Jetonbank Virtual Card</b> is a digital debit card made for
+              businesses.
             </p>
-            <br></br>
-            <p className="left-p">
-              Use it for <b>business purchases, subscriptions, payments, </b>and
-              more—while maintaining complete control over your spending.
+            <br />
+            <p className="text-[1.25rem] md:text-[2rem] leading-[2.8rem] text-[#535862]">
+              Use it for <b>business purchases, subscriptions, payments,</b> and
+              more.
             </p>
           </div>
-          <div className="right-section">
-            <img src="/images/virtual-card-what-is.png" alt=""></img>
+
+          <div className="lg:w-[40%] flex justify-center">
+            <img
+              src="/images/virtual-card-what-is.png"
+              alt="virtual-card-what-is.png"
+              className="w-[18rem] flex justify-center items-center md:w-[30rem] lg:w-[40rem] [mask-image:linear-gradient(black_25%,transparent_80%)]"
+            />
           </div>
         </div>
       </div>
-      <div className="key-benefits-section">
-        <div className="key-benefits-container">
-          <h2 className="key-benefits-h2">Key Benefits</h2>
-          <div className="key-benefits-desc">
-            The <b>Jetonbank Virtual Card</b> is a digital debit card designed
-            for <br></br> businesses, enabling seamless online transactions
-            without the need for a physical card.
-          </div>
-          <div className="cols-with-phone">
-            <div className="cols">
-              <div className="col">
-                <svg
-                  width="100"
-                  height="100"
-                  viewBox="0 0 100 100"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+
+      {/* BENEFITS SECTION */}
+      <div className="mt-10 bg-[url('/images/virtual-card-key-benefits-bg.png')] bg-cover bg-top bg-no-repeat bg-[#101932] text-white pt-[4rem] md:pt-[6.25rem] pb-[6.25rem]">
+        <div className="w-[90%] lg:w-[73.125rem] mx-auto">
+          <h2 className="text-center text-[2.2rem] md:text-[3rem] font-bold mb-6 md:mb-[2.5rem]">
+            Key Benefits
+          </h2>
+
+          <p className="text-center text-[1.2rem] md:text-[2rem] leading-relaxed mb-10 md:mb-[7.5rem]">
+            The <b>Jetonbank Virtual Card</b> enables seamless
+            transactions—without a physical card.
+          </p>
+
+          <div className="flex flex-col lg:flex-row justify-evenly gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
+              {[1, 2, 3, 4].map((_, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl bg-[#F4F6F8] text-[#535862] py-4 md:py-6 px-6 md:px-6 flex flex-col gap-6 w-full"
                 >
-                  <rect
-                    x="0.78125"
-                    y="0.78125"
-                    width="98.4375"
-                    height="98.4375"
-                    rx="49.2188"
-                    stroke="#131E3D"
-                    strokeWidth="1.5625"
-                  ></rect>
-                  <mask id="mask0" fill="white">
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M66.6421 64.0241V76.4916C66.6421 77.8008 66.1069 78.9906 65.2448 79.8527C64.3826 80.7148 63.1929 81.25 61.8844 81.25H38.1156C36.8064 81.25 35.6166 80.7148 34.7545 79.8527C33.8924 78.9906 33.3572 77.8008 33.3572 76.4916V64.0241H29.7865C28.932 64.0241 28.156 63.675 27.5937 63.1127C27.0315 62.5505 26.6823 61.7744 26.6823 60.9199V39.0787C26.6823 38.2242 27.0315 37.4481 27.5937 36.8859C28.156 36.3236 28.932 35.9745 29.7865 35.9745H33.3579V23.5077C33.3579 22.1985 33.8931 21.0094 34.7552 20.1473C35.6173 19.2852 36.8071 18.75 38.1162 18.75H61.8844C63.1936 18.75 64.3833 19.2852 65.2448 20.1473C66.1069 21.0094 66.6421 22.1992 66.6421 23.5077V35.9752H70.2135C71.0679 35.9752 71.844 36.3243 72.4062 36.8866C72.9685 37.4488 73.3177 38.2249 73.3177 39.0794V60.9213C73.3177 61.7758 72.9685 62.5512 72.4062 63.1141C71.844 63.6764 71.0679 64.0255 70.2135 64.0255H66.6421V64.0241Z"
-                    />
-                  </mask>
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M66.6421 64.0241V76.4916C66.6421 77.8008 66.1069 78.9906 65.2448 79.8527C64.3826 80.7148 63.1929 81.25 61.8844 81.25H38.1156C36.8064 81.25 35.6166 80.7148 34.7545 79.8527C33.8924 78.9906 33.3572 77.8008 33.3572 76.4916V64.0241H29.7865C28.932 64.0241 28.156 63.675 27.5937 63.1127C27.0315 62.5505 26.6823 61.7744 26.6823 60.9199V39.0787C26.6823 38.2242 27.0315 37.4481 27.5937 36.8859C28.156 36.3236 28.932 35.9745 29.7865 35.9745H33.3579V23.5077C33.3579 22.1985 33.8931 21.0094 34.7552 20.1473C35.6173 19.2852 36.8071 18.75 38.1162 18.75H61.8844C63.1936 18.75 64.3833 19.2852 65.2448 20.1473C66.1069 21.0094 66.6421 22.1992 66.6421 23.5077V35.9752H70.2135C71.0679 35.9752 71.844 36.3243 72.4062 36.8866C72.9685 37.4488 73.3177 38.2249 73.3177 39.0794V60.9213C73.3177 61.7758 72.9685 62.5512 72.4062 63.1141C71.844 63.6764 71.0679 64.0255 70.2135 64.0255H66.6421V64.0241Z"
-                    stroke="black"
-                    strokeWidth="3.125"
-                    mask="url(#mask0)"
-                  />
-                </svg>
-                <div>
-                  <div className="title">Instant Access</div>
-                  <p className="get">
-                    Get your virtual card within minutes and start making
-                    payments immediately.
+                  <h3 className="text-[#181D27] text-xl md:text-3xl font-medium">
+                    Instant Access
+                  </h3>
+                  <p className="text-[1rem] md:text-xl leading-7">
+                    Get your virtual card instantly and start using it.The
+                    Jetonbank Virtual Card is a digital debit card made for
+                    businesses.The <b>Jetonbank Virtual Card</b> enables
+                    seamless transactions—without a physical card.
                   </p>
                 </div>
-              </div>
-              <div className="col">
-                <svg
-                  width="100"
-                  height="100"
-                  viewBox="0 0 100 100"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    x="0.78125"
-                    y="0.78125"
-                    width="98.4375"
-                    height="98.4375"
-                    rx="49.2188"
-                    stroke="#131E3D"
-                    strokeWidth="1.5625"
-                  ></rect>
-                  <mask id="mask0" fill="white">
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M66.6421 64.0241V76.4916C66.6421 77.8008 66.1069 78.9906 65.2448 79.8527C64.3826 80.7148 63.1929 81.25 61.8844 81.25H38.1156C36.8064 81.25 35.6166 80.7148 34.7545 79.8527C33.8924 78.9906 33.3572 77.8008 33.3572 76.4916V64.0241H29.7865C28.932 64.0241 28.156 63.675 27.5937 63.1127C27.0315 62.5505 26.6823 61.7744 26.6823 60.9199V39.0787C26.6823 38.2242 27.0315 37.4481 27.5937 36.8859C28.156 36.3236 28.932 35.9745 29.7865 35.9745H33.3579V23.5077C33.3579 22.1985 33.8931 21.0094 34.7552 20.1473C35.6173 19.2852 36.8071 18.75 38.1162 18.75H61.8844C63.1936 18.75 64.3833 19.2852 65.2448 20.1473C66.1069 21.0094 66.6421 22.1992 66.6421 23.5077V35.9752H70.2135C71.0679 35.9752 71.844 36.3243 72.4062 36.8866C72.9685 37.4488 73.3177 38.2249 73.3177 39.0794V60.9213C73.3177 61.7758 72.9685 62.5512 72.4062 63.1141C71.844 63.6764 71.0679 64.0255 70.2135 64.0255H66.6421V64.0241Z"
-                    />
-                  </mask>
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M66.6421 64.0241V76.4916C66.6421 77.8008 66.1069 78.9906 65.2448 79.8527C64.3826 80.7148 63.1929 81.25 61.8844 81.25H38.1156C36.8064 81.25 35.6166 80.7148 34.7545 79.8527C33.8924 78.9906 33.3572 77.8008 33.3572 76.4916V64.0241H29.7865C28.932 64.0241 28.156 63.675 27.5937 63.1127C27.0315 62.5505 26.6823 61.7744 26.6823 60.9199V39.0787C26.6823 38.2242 27.0315 37.4481 27.5937 36.8859C28.156 36.3236 28.932 35.9745 29.7865 35.9745H33.3579V23.5077C33.3579 22.1985 33.8931 21.0094 34.7552 20.1473C35.6173 19.2852 36.8071 18.75 38.1162 18.75H61.8844C63.1936 18.75 64.3833 19.2852 65.2448 20.1473C66.1069 21.0094 66.6421 22.1992 66.6421 23.5077V35.9752H70.2135C71.0679 35.9752 71.844 36.3243 72.4062 36.8866C72.9685 37.4488 73.3177 38.2249 73.3177 39.0794V60.9213C73.3177 61.7758 72.9685 62.5512 72.4062 63.1141C71.844 63.6764 71.0679 64.0255 70.2135 64.0255H66.6421V64.0241Z"
-                    stroke="black"
-                    strokeWidth="3.125"
-                    mask="url(#mask0)"
-                  />
-                </svg>
-                <div>
-                  <div className="title">Instant Access</div>
-                  <p className="get">
-                    Get your virtual card within minutes and start making
-                    payments immediately.
-                  </p>
-                </div>
-              </div>
-              <div className="col">
-                <svg
-                  width="100"
-                  height="100"
-                  viewBox="0 0 100 100"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    x="0.78125"
-                    y="0.78125"
-                    width="98.4375"
-                    height="98.4375"
-                    rx="49.2188"
-                    stroke="#131E3D"
-                    strokeWidth="1.5625"
-                  ></rect>
-                  <mask id="mask0" fill="white">
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M66.6421 64.0241V76.4916C66.6421 77.8008 66.1069 78.9906 65.2448 79.8527C64.3826 80.7148 63.1929 81.25 61.8844 81.25H38.1156C36.8064 81.25 35.6166 80.7148 34.7545 79.8527C33.8924 78.9906 33.3572 77.8008 33.3572 76.4916V64.0241H29.7865C28.932 64.0241 28.156 63.675 27.5937 63.1127C27.0315 62.5505 26.6823 61.7744 26.6823 60.9199V39.0787C26.6823 38.2242 27.0315 37.4481 27.5937 36.8859C28.156 36.3236 28.932 35.9745 29.7865 35.9745H33.3579V23.5077C33.3579 22.1985 33.8931 21.0094 34.7552 20.1473C35.6173 19.2852 36.8071 18.75 38.1162 18.75H61.8844C63.1936 18.75 64.3833 19.2852 65.2448 20.1473C66.1069 21.0094 66.6421 22.1992 66.6421 23.5077V35.9752H70.2135C71.0679 35.9752 71.844 36.3243 72.4062 36.8866C72.9685 37.4488 73.3177 38.2249 73.3177 39.0794V60.9213C73.3177 61.7758 72.9685 62.5512 72.4062 63.1141C71.844 63.6764 71.0679 64.0255 70.2135 64.0255H66.6421V64.0241Z"
-                    />
-                  </mask>
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M66.6421 64.0241V76.4916C66.6421 77.8008 66.1069 78.9906 65.2448 79.8527C64.3826 80.7148 63.1929 81.25 61.8844 81.25H38.1156C36.8064 81.25 35.6166 80.7148 34.7545 79.8527C33.8924 78.9906 33.3572 77.8008 33.3572 76.4916V64.0241H29.7865C28.932 64.0241 28.156 63.675 27.5937 63.1127C27.0315 62.5505 26.6823 61.7744 26.6823 60.9199V39.0787C26.6823 38.2242 27.0315 37.4481 27.5937 36.8859C28.156 36.3236 28.932 35.9745 29.7865 35.9745H33.3579V23.5077C33.3579 22.1985 33.8931 21.0094 34.7552 20.1473C35.6173 19.2852 36.8071 18.75 38.1162 18.75H61.8844C63.1936 18.75 64.3833 19.2852 65.2448 20.1473C66.1069 21.0094 66.6421 22.1992 66.6421 23.5077V35.9752H70.2135C71.0679 35.9752 71.844 36.3243 72.4062 36.8866C72.9685 37.4488 73.3177 38.2249 73.3177 39.0794V60.9213C73.3177 61.7758 72.9685 62.5512 72.4062 63.1141C71.844 63.6764 71.0679 64.0255 70.2135 64.0255H66.6421V64.0241Z"
-                    stroke="black"
-                    strokeWidth="3.125"
-                    mask="url(#mask0)"
-                  />
-                </svg>
-                <div>
-                  <div className="title">Instant Access</div>
-                  <p className="get">
-                    Get your virtual card within minutes and start making
-                    payments immediately.
-                  </p>
-                </div>
-              </div>
-              <div className="col">
-                <svg
-                  width="100"
-                  height="100"
-                  viewBox="0 0 100 100"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    x="0.78125"
-                    y="0.78125"
-                    width="98.4375"
-                    height="98.4375"
-                    rx="49.2188"
-                    stroke="#131E3D"
-                    strokeWidth="1.5625"
-                  ></rect>
-                  <mask id="mask0" fill="white">
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M66.6421 64.0241V76.4916C66.6421 77.8008 66.1069 78.9906 65.2448 79.8527C64.3826 80.7148 63.1929 81.25 61.8844 81.25H38.1156C36.8064 81.25 35.6166 80.7148 34.7545 79.8527C33.8924 78.9906 33.3572 77.8008 33.3572 76.4916V64.0241H29.7865C28.932 64.0241 28.156 63.675 27.5937 63.1127C27.0315 62.5505 26.6823 61.7744 26.6823 60.9199V39.0787C26.6823 38.2242 27.0315 37.4481 27.5937 36.8859C28.156 36.3236 28.932 35.9745 29.7865 35.9745H33.3579V23.5077C33.3579 22.1985 33.8931 21.0094 34.7552 20.1473C35.6173 19.2852 36.8071 18.75 38.1162 18.75H61.8844C63.1936 18.75 64.3833 19.2852 65.2448 20.1473C66.1069 21.0094 66.6421 22.1992 66.6421 23.5077V35.9752H70.2135C71.0679 35.9752 71.844 36.3243 72.4062 36.8866C72.9685 37.4488 73.3177 38.2249 73.3177 39.0794V60.9213C73.3177 61.7758 72.9685 62.5512 72.4062 63.1141C71.844 63.6764 71.0679 64.0255 70.2135 64.0255H66.6421V64.0241Z"
-                    />
-                  </mask>
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M66.6421 64.0241V76.4916C66.6421 77.8008 66.1069 78.9906 65.2448 79.8527C64.3826 80.7148 63.1929 81.25 61.8844 81.25H38.1156C36.8064 81.25 35.6166 80.7148 34.7545 79.8527C33.8924 78.9906 33.3572 77.8008 33.3572 76.4916V64.0241H29.7865C28.932 64.0241 28.156 63.675 27.5937 63.1127C27.0315 62.5505 26.6823 61.7744 26.6823 60.9199V39.0787C26.6823 38.2242 27.0315 37.4481 27.5937 36.8859C28.156 36.3236 28.932 35.9745 29.7865 35.9745H33.3579V23.5077C33.3579 22.1985 33.8931 21.0094 34.7552 20.1473C35.6173 19.2852 36.8071 18.75 38.1162 18.75H61.8844C63.1936 18.75 64.3833 19.2852 65.2448 20.1473C66.1069 21.0094 66.6421 22.1992 66.6421 23.5077V35.9752H70.2135C71.0679 35.9752 71.844 36.3243 72.4062 36.8866C72.9685 37.4488 73.3177 38.2249 73.3177 39.0794V60.9213C73.3177 61.7758 72.9685 62.5512 72.4062 63.1141C71.844 63.6764 71.0679 64.0255 70.2135 64.0255H66.6421V64.0241Z"
-                    stroke="black"
-                    strokeWidth="3.125"
-                    mask="url(#mask0)"
-                  />
-                </svg>
-                <div>
-                  <div className="title">Instant Access</div>
-                  <p className="get">
-                    Get your virtual card within minutes and start making
-                    payments immediately.
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
-            <div className="phones">
+
+            <div className="flex justify-center">
               <img
                 src="/images/virtual-card-key-benefits-phone.png"
-                alt="virtual-card-key-benefits-phone.png"
-              ></img>
-            </div>
-          </div>
-          <div className="how-is-work">
-            <div className="how-left">
-              <h3>How It Works</h3>
-              <p className="how-p">
-                With the Jetonbank Virtual Card, handle your business payments
-                securely, flexibly, and with full control—experience simple,
-                fast, and seamless transactions with Jetonbank!
-              </p>
-            </div>
-            <div className="how-right">
-              <div className="how-right-div">
-                <div>
-                  <svg
-                    width="80"
-                    height="80"
-                    viewBox="0 0 80 80"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle cx="40" cy="40" r="39.5" stroke="white" />
-                    <path
-                      d="M31.168 42.9334C31.447 42.6544 32.0049 42.6544 32.3537 42.9334C32.4234 43.0031 32.5629 43.1426 32.5629 43.3518H33.6091C33.6091 42.8636 33.3998 42.4452 33.0511 42.1662C32.8419 41.957 32.5629 41.8872 32.2839 41.8175V41.0503H31.2378V41.8175C30.9588 41.8872 30.6798 42.0267 30.4706 42.1662C30.1219 42.4452 29.9126 42.9334 29.9126 43.3518C29.9126 43.84 30.1219 44.2585 30.4706 44.5375C30.8193 44.8164 31.2378 45.0257 31.726 45.0257C31.9352 45.0257 32.1444 45.0954 32.2839 45.2349C32.3537 45.3047 32.4932 45.4441 32.4932 45.6534C32.4932 45.8626 32.3537 46.0021 32.2839 46.0718C32.0049 46.3508 31.447 46.3508 31.0983 46.0718C31.0285 46.0021 30.889 45.8626 30.889 45.6534H29.8429C29.8429 46.1416 30.0521 46.56 30.4008 46.839C30.6101 47.0482 30.8891 47.118 31.168 47.1877V47.9549H32.2142V47.1877C32.4932 47.118 32.7721 46.9785 32.9814 46.839C33.3301 46.56 33.5393 46.0718 33.5393 45.6534C33.5393 45.1652 33.3301 44.7467 32.9814 44.4677C32.6326 44.1888 32.2142 43.9795 31.726 43.9795C31.5167 43.9795 31.3075 43.9098 31.168 43.7703C31.0983 43.7005 30.9588 43.5611 30.9588 43.3518C30.9588 43.1426 31.0285 43.0031 31.168 42.9334Z"
-                      fill="white"
-                    />
-                    <path
-                      d="M39.0491 39.6554V39.1672H24.403V39.6554C24.403 41.2595 23.0778 42.5847 21.4737 42.5847H20.9158V46.4206H21.404C23.0081 46.4206 24.3332 47.7457 24.3332 49.3498V49.838H38.9794V49.3498C38.9794 47.7457 40.3045 46.4206 41.9086 46.4206H42.3968V42.5847H41.9086C40.3742 42.5847 39.0491 41.2595 39.0491 39.6554ZM41.4901 45.3744C39.6768 45.5836 38.2819 47.0483 38.0727 48.7919H25.3794C25.1701 46.9785 23.7055 45.5836 21.9619 45.3744V43.5611C23.7753 43.3519 25.1701 41.8872 25.3794 40.1436H38.003C38.2122 41.957 39.6768 43.3519 41.4204 43.5611V45.3744H41.4901Z"
-                      fill="white"
-                    />
-                    <path
-                      d="M60.4604 30.5889L59.8327 31.4258C61.2276 32.4022 62.0645 34.076 62.0645 35.7499C62.0645 38.6791 59.6932 41.0504 56.764 41.0504H48.0461V38.6094H45.6748V35.8894H30.4009C31.0984 33.5878 33.6091 33.2391 33.6789 33.2391L34.1671 33.1694V32.6812C34.1671 31.2165 34.725 29.8914 35.7712 28.8453C36.8173 27.7991 38.1425 27.2412 39.6768 27.2412C41.3507 27.0319 42.8153 28.2873 42.8153 28.2873L43.3035 28.7058L43.5825 28.0781C44.4891 26.195 46.3025 25.0791 48.3948 25.0791V24.033C46.163 24.033 44.1404 25.2186 42.9548 27.1017C42.2573 26.6832 41.002 26.0555 39.6071 26.195C37.8635 26.195 36.2594 26.8924 35.0738 28.0781C33.9579 29.194 33.3302 30.6586 33.1907 32.193C31.8655 32.4719 29.9127 33.4483 29.3548 35.8196H17.7773V52.9068H20.4973V55.2781H48.0461V42.0268H56.764C60.2512 42.0268 63.1107 39.1673 63.1107 35.6801C63.1107 33.7273 62.1343 31.8442 60.4604 30.5889ZM18.8235 37.0053H44.6286V52.0001H18.8235V37.0053ZM46.9999 54.3714H21.5435V53.0463H45.6748V39.7253H46.9999V54.3714Z"
-                      fill="white"
-                    />
-                    <path
-                      d="M36.1896 32.123L37.166 32.402C37.5844 31.0071 39.0491 30.1702 40.5137 30.5886L40.7927 29.6122C38.8398 29.0543 36.7475 30.1702 36.1896 32.123ZM54.3229 30.0307L53.5557 29.2635L51.9516 30.8676V26.1948H50.9055V30.8676L49.3014 29.2635L48.6039 30.0307L51.4634 32.8204L54.3229 30.0307ZM50.9055 24.1722H51.9516V25.2184H50.9055V24.1722ZM50.9055 22.2892H51.9516V23.3353H50.9055V22.2892ZM56.6942 23.5445V28.2174H57.7403V23.5445L59.3444 25.1486L60.0419 24.3815L57.1824 21.522L54.3229 24.3815L55.0901 25.1486L56.6942 23.5445ZM56.6942 29.2635H57.7403V30.3097H56.6942V29.2635ZM56.6942 31.0768H57.7403V32.123H56.6942V31.0768Z"
-                      fill="white"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <p className="apply">Apply for a Virtual Card</p>
-                  <p className="sign-up-activate">
-                    Sign up and activate your Jetonbank Virtual Card in minutes.
-                  </p>
-                </div>
-              </div>
-              <div className="how-right-div">
-                <div>
-                  <svg
-                    width="80"
-                    height="80"
-                    viewBox="0 0 80 80"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle cx="40" cy="40" r="39.5" stroke="white" />
-                    <path
-                      d="M31.168 42.9334C31.447 42.6544 32.0049 42.6544 32.3537 42.9334C32.4234 43.0031 32.5629 43.1426 32.5629 43.3518H33.6091C33.6091 42.8636 33.3998 42.4452 33.0511 42.1662C32.8419 41.957 32.5629 41.8872 32.2839 41.8175V41.0503H31.2378V41.8175C30.9588 41.8872 30.6798 42.0267 30.4706 42.1662C30.1219 42.4452 29.9126 42.9334 29.9126 43.3518C29.9126 43.84 30.1219 44.2585 30.4706 44.5375C30.8193 44.8164 31.2378 45.0257 31.726 45.0257C31.9352 45.0257 32.1444 45.0954 32.2839 45.2349C32.3537 45.3047 32.4932 45.4441 32.4932 45.6534C32.4932 45.8626 32.3537 46.0021 32.2839 46.0718C32.0049 46.3508 31.447 46.3508 31.0983 46.0718C31.0285 46.0021 30.889 45.8626 30.889 45.6534H29.8429C29.8429 46.1416 30.0521 46.56 30.4008 46.839C30.6101 47.0482 30.8891 47.118 31.168 47.1877V47.9549H32.2142V47.1877C32.4932 47.118 32.7721 46.9785 32.9814 46.839C33.3301 46.56 33.5393 46.0718 33.5393 45.6534C33.5393 45.1652 33.3301 44.7467 32.9814 44.4677C32.6326 44.1888 32.2142 43.9795 31.726 43.9795C31.5167 43.9795 31.3075 43.9098 31.168 43.7703C31.0983 43.7005 30.9588 43.5611 30.9588 43.3518C30.9588 43.1426 31.0285 43.0031 31.168 42.9334Z"
-                      fill="white"
-                    />
-                    <path
-                      d="M39.0491 39.6554V39.1672H24.403V39.6554C24.403 41.2595 23.0778 42.5847 21.4737 42.5847H20.9158V46.4206H21.404C23.0081 46.4206 24.3332 47.7457 24.3332 49.3498V49.838H38.9794V49.3498C38.9794 47.7457 40.3045 46.4206 41.9086 46.4206H42.3968V42.5847H41.9086C40.3742 42.5847 39.0491 41.2595 39.0491 39.6554ZM41.4901 45.3744C39.6768 45.5836 38.2819 47.0483 38.0727 48.7919H25.3794C25.1701 46.9785 23.7055 45.5836 21.9619 45.3744V43.5611C23.7753 43.3519 25.1701 41.8872 25.3794 40.1436H38.003C38.2122 41.957 39.6768 43.3519 41.4204 43.5611V45.3744H41.4901Z"
-                      fill="white"
-                    />
-                    <path
-                      d="M60.4604 30.5889L59.8327 31.4258C61.2276 32.4022 62.0645 34.076 62.0645 35.7499C62.0645 38.6791 59.6932 41.0504 56.764 41.0504H48.0461V38.6094H45.6748V35.8894H30.4009C31.0984 33.5878 33.6091 33.2391 33.6789 33.2391L34.1671 33.1694V32.6812C34.1671 31.2165 34.725 29.8914 35.7712 28.8453C36.8173 27.7991 38.1425 27.2412 39.6768 27.2412C41.3507 27.0319 42.8153 28.2873 42.8153 28.2873L43.3035 28.7058L43.5825 28.0781C44.4891 26.195 46.3025 25.0791 48.3948 25.0791V24.033C46.163 24.033 44.1404 25.2186 42.9548 27.1017C42.2573 26.6832 41.002 26.0555 39.6071 26.195C37.8635 26.195 36.2594 26.8924 35.0738 28.0781C33.9579 29.194 33.3302 30.6586 33.1907 32.193C31.8655 32.4719 29.9127 33.4483 29.3548 35.8196H17.7773V52.9068H20.4973V55.2781H48.0461V42.0268H56.764C60.2512 42.0268 63.1107 39.1673 63.1107 35.6801C63.1107 33.7273 62.1343 31.8442 60.4604 30.5889ZM18.8235 37.0053H44.6286V52.0001H18.8235V37.0053ZM46.9999 54.3714H21.5435V53.0463H45.6748V39.7253H46.9999V54.3714Z"
-                      fill="white"
-                    />
-                    <path
-                      d="M36.1896 32.123L37.166 32.402C37.5844 31.0071 39.0491 30.1702 40.5137 30.5886L40.7927 29.6122C38.8398 29.0543 36.7475 30.1702 36.1896 32.123ZM54.3229 30.0307L53.5557 29.2635L51.9516 30.8676V26.1948H50.9055V30.8676L49.3014 29.2635L48.6039 30.0307L51.4634 32.8204L54.3229 30.0307ZM50.9055 24.1722H51.9516V25.2184H50.9055V24.1722ZM50.9055 22.2892H51.9516V23.3353H50.9055V22.2892ZM56.6942 23.5445V28.2174H57.7403V23.5445L59.3444 25.1486L60.0419 24.3815L57.1824 21.522L54.3229 24.3815L55.0901 25.1486L56.6942 23.5445ZM56.6942 29.2635H57.7403V30.3097H56.6942V29.2635ZM56.6942 31.0768H57.7403V32.123H56.6942V31.0768Z"
-                      fill="white"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <p className="apply">Apply for a Virtual Card</p>
-                  <p className="sign-up-activate">
-                    Sign up and activate your Jetonbank Virtual Card in minutes.
-                  </p>
-                </div>
-              </div>
-              <div className="how-right-div">
-                <div>
-                  <svg
-                    width="80"
-                    height="80"
-                    viewBox="0 0 80 80"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle cx="40" cy="40" r="39.5" stroke="white" />
-                    <path
-                      d="M31.168 42.9334C31.447 42.6544 32.0049 42.6544 32.3537 42.9334C32.4234 43.0031 32.5629 43.1426 32.5629 43.3518H33.6091C33.6091 42.8636 33.3998 42.4452 33.0511 42.1662C32.8419 41.957 32.5629 41.8872 32.2839 41.8175V41.0503H31.2378V41.8175C30.9588 41.8872 30.6798 42.0267 30.4706 42.1662C30.1219 42.4452 29.9126 42.9334 29.9126 43.3518C29.9126 43.84 30.1219 44.2585 30.4706 44.5375C30.8193 44.8164 31.2378 45.0257 31.726 45.0257C31.9352 45.0257 32.1444 45.0954 32.2839 45.2349C32.3537 45.3047 32.4932 45.4441 32.4932 45.6534C32.4932 45.8626 32.3537 46.0021 32.2839 46.0718C32.0049 46.3508 31.447 46.3508 31.0983 46.0718C31.0285 46.0021 30.889 45.8626 30.889 45.6534H29.8429C29.8429 46.1416 30.0521 46.56 30.4008 46.839C30.6101 47.0482 30.8891 47.118 31.168 47.1877V47.9549H32.2142V47.1877C32.4932 47.118 32.7721 46.9785 32.9814 46.839C33.3301 46.56 33.5393 46.0718 33.5393 45.6534C33.5393 45.1652 33.3301 44.7467 32.9814 44.4677C32.6326 44.1888 32.2142 43.9795 31.726 43.9795C31.5167 43.9795 31.3075 43.9098 31.168 43.7703C31.0983 43.7005 30.9588 43.5611 30.9588 43.3518C30.9588 43.1426 31.0285 43.0031 31.168 42.9334Z"
-                      fill="white"
-                    />
-                    <path
-                      d="M39.0491 39.6554V39.1672H24.403V39.6554C24.403 41.2595 23.0778 42.5847 21.4737 42.5847H20.9158V46.4206H21.404C23.0081 46.4206 24.3332 47.7457 24.3332 49.3498V49.838H38.9794V49.3498C38.9794 47.7457 40.3045 46.4206 41.9086 46.4206H42.3968V42.5847H41.9086C40.3742 42.5847 39.0491 41.2595 39.0491 39.6554ZM41.4901 45.3744C39.6768 45.5836 38.2819 47.0483 38.0727 48.7919H25.3794C25.1701 46.9785 23.7055 45.5836 21.9619 45.3744V43.5611C23.7753 43.3519 25.1701 41.8872 25.3794 40.1436H38.003C38.2122 41.957 39.6768 43.3519 41.4204 43.5611V45.3744H41.4901Z"
-                      fill="white"
-                    />
-                    <path
-                      d="M60.4604 30.5889L59.8327 31.4258C61.2276 32.4022 62.0645 34.076 62.0645 35.7499C62.0645 38.6791 59.6932 41.0504 56.764 41.0504H48.0461V38.6094H45.6748V35.8894H30.4009C31.0984 33.5878 33.6091 33.2391 33.6789 33.2391L34.1671 33.1694V32.6812C34.1671 31.2165 34.725 29.8914 35.7712 28.8453C36.8173 27.7991 38.1425 27.2412 39.6768 27.2412C41.3507 27.0319 42.8153 28.2873 42.8153 28.2873L43.3035 28.7058L43.5825 28.0781C44.4891 26.195 46.3025 25.0791 48.3948 25.0791V24.033C46.163 24.033 44.1404 25.2186 42.9548 27.1017C42.2573 26.6832 41.002 26.0555 39.6071 26.195C37.8635 26.195 36.2594 26.8924 35.0738 28.0781C33.9579 29.194 33.3302 30.6586 33.1907 32.193C31.8655 32.4719 29.9127 33.4483 29.3548 35.8196H17.7773V52.9068H20.4973V55.2781H48.0461V42.0268H56.764C60.2512 42.0268 63.1107 39.1673 63.1107 35.6801C63.1107 33.7273 62.1343 31.8442 60.4604 30.5889ZM18.8235 37.0053H44.6286V52.0001H18.8235V37.0053ZM46.9999 54.3714H21.5435V53.0463H45.6748V39.7253H46.9999V54.3714Z"
-                      fill="white"
-                    />
-                    <path
-                      d="M36.1896 32.123L37.166 32.402C37.5844 31.0071 39.0491 30.1702 40.5137 30.5886L40.7927 29.6122C38.8398 29.0543 36.7475 30.1702 36.1896 32.123ZM54.3229 30.0307L53.5557 29.2635L51.9516 30.8676V26.1948H50.9055V30.8676L49.3014 29.2635L48.6039 30.0307L51.4634 32.8204L54.3229 30.0307ZM50.9055 24.1722H51.9516V25.2184H50.9055V24.1722ZM50.9055 22.2892H51.9516V23.3353H50.9055V22.2892ZM56.6942 23.5445V28.2174H57.7403V23.5445L59.3444 25.1486L60.0419 24.3815L57.1824 21.522L54.3229 24.3815L55.0901 25.1486L56.6942 23.5445ZM56.6942 29.2635H57.7403V30.3097H56.6942V29.2635ZM56.6942 31.0768H57.7403V32.123H56.6942V31.0768Z"
-                      fill="white"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <p className="apply">Apply for a Virtual Card</p>
-                  <p className="sign-up-activate">
-                    Sign up and activate your Jetonbank Virtual Card in minutes.
-                  </p>
-                </div>
-              </div>
+                className="w-[15rem] md:w-[30rem] lg:w-[80rem]"
+              />
             </div>
           </div>
         </div>
       </div>
-      <div className="get-your-card-section">
-        <div className="get-custome-container">
-          <div>
-            <h1 className="h1">
-              Experience Hassle - <br></br> Free Business Payments
-            </h1>
-          </div>
-          <div>
-            <p className="p">
-              Get your <span className="card">Jetonbank Virtual Card</span>{" "}
-              today and simplify your business <br></br> transactions with
-              security, flexibility and total control.
-            </p>
-          </div>
-          <div className="get-custome-actions">
-            <a href="/" target="_blank">
-              <div className="circle"></div>
-              <span>Get Your Virtual Card Now</span>
+
+      {/* CTA SECTION */}
+      <div className="mt-[2rem] flex justify-center">
+        <div className="w-[95%]  lg:w-[60rem] h-auto px-3 py-16 md:py-24 text-white text-center rounded-[1.125rem] bg-[url('/images/virtual-card-get-your-bg.png')] bg-center bg-cover bg-[#131E3D] bg-blend-multiply">
+          <h1 className="text-[2rem] md:text-[3.75rem] font-bold leading-[2.5rem]">
+            Experience Hassle-Free Payments
+          </h1>
+
+          <p className="mt-4 text-[1rem] md:text-[1.25rem] leading-relaxed">
+            Get your <b>Jetonbank Virtual Card</b> and streamline business
+            transactions.
+          </p>
+
+          <div className="flex justify-center mt-6 mb-6">
+            <a
+              href="/"
+              target="_blank"
+              className="relative  inline-block w-[300px] md:w-[19.6875rem] bg-white text-[#131E3D] text-[1rem] md:text-[1.125rem] font-medium py-[0.88rem] rounded-md overflow-hidden group"
+            >
+              <div className="absolute w-0 h-0 opacity-0 bg-[#E3E3E3] rounded-full transition-all duration-500 ease-out group-hover:w-[200%] group-hover:h-[500%] group-hover:opacity-100 group-hover:-top-[70px] group-hover:-left-[8.75rem]" />
+              <span className="relative z-10 ">Get Your Virtual Card Now</span>
             </a>
           </div>
         </div>

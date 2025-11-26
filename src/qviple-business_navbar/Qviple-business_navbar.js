@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import {
   LayoutDashboard,
   Users,
@@ -50,9 +51,13 @@ export default function QvipleNavbar() {
           <div className="max-w-[1200px] mx-auto px-4">
             <header className="bg-white/90 backdrop-blur-xl h-[4.6rem] rounded-xl shadow-lg flex justify-between items-center px-6 transition-all duration-300">
               {/* Logo */}
-              <a href="/" className="flex items-center">
-                <img src="/images/logo-qviple.svg" alt="Qviple" className="h-9" />
-              </a>
+              <Link href="/" className="flex items-center">
+                <img
+                  src="/images/logo-qviple.svg"
+                  alt="Qviple"
+                  className="h-9"
+                />
+              </Link>
 
               {/* Desktop Menu */}
               <div className="hidden lg:flex items-center gap-6">
@@ -91,7 +96,7 @@ export default function QvipleNavbar() {
                             className="absolute top-16 left-0 min-w-[25rem] bg-white shadow-xl rounded-xl p-4 grid grid-cols-2 gap-4 border border-gray-100"
                           >
                             {items.map(({ icon: Icon, title, desc, link }) => (
-                              <a
+                              <Link
                                 key={title}
                                 href={link}
                                 className="flex gap-3 p-3 rounded-lg hover:bg-[#1114b120] transition transform hover:-translate-y-1"
@@ -105,7 +110,7 @@ export default function QvipleNavbar() {
                                     {desc}
                                   </p>
                                 </div>
-                              </a>
+                              </Link>
                             ))}
                           </motion.div>
                         )}
@@ -116,7 +121,10 @@ export default function QvipleNavbar() {
 
                 {/* Action Buttons */}
                 <div className="flex items-center gap-4">
-                  <a href="https://qvipleweb.web.app/#/login" className="px-5 h-10 flex items-center justify-center border border-[#2e21de33] rounded-lg hover:bg-[#1114b1] hover:text-white transition cursor-pointer">
+                  <a
+                    href="https://qvipleweb.web.app/#/login"
+                    className="px-5 h-10 flex items-center justify-center border border-[#2e21de33] rounded-lg hover:bg-[#1114b1] hover:text-white transition cursor-pointer"
+                  >
                     Login
                   </a>
                   <a className="px-5 h-10 flex items-center justify-center bg-[#1114b1] text-white rounded-lg hover:scale-105 transition shadow-lg cursor-pointer">
@@ -126,7 +134,10 @@ export default function QvipleNavbar() {
               </div>
 
               {/* Mobile Menu Button */}
-              <button className="lg:hidden" onClick={() => setMobileOpen(!mobileOpen)}>
+              <button
+                className="lg:hidden"
+                onClick={() => setMobileOpen(!mobileOpen)}
+              >
                 {mobileOpen ? <X size={26} /> : <Menu size={26} />}
               </button>
             </header>
@@ -146,14 +157,18 @@ export default function QvipleNavbar() {
                       <li key={key}>
                         <button
                           onClick={() =>
-                            setMobileDropdown(mobileDropdown === key ? null : key)
+                            setMobileDropdown(
+                              mobileDropdown === key ? null : key
+                            )
                           }
                           className="flex justify-between w-full font-semibold text-base md:text-[1.1rem] text-[#001741]"
                         >
                           {key === "offer" ? "What we offer" : "Who we are"}
 
                           <motion.span
-                            animate={{ rotate: mobileDropdown === key ? 180 : 0 }}
+                            animate={{
+                              rotate: mobileDropdown === key ? 180 : 0,
+                            }}
                             transition={{ duration: 0.3 }}
                           >
                             ▼
@@ -169,14 +184,14 @@ export default function QvipleNavbar() {
                               className="pl-4 mt-3 flex flex-col gap-3"
                             >
                               {items.map(({ icon: Icon, title, link }) => (
-                                <a
+                                <Link
                                   key={title}
                                   href={link}
                                   className="flex items-center gap-3 py-2 text-[#1114b1]"
                                 >
                                   <Icon size={20} />
                                   {title}
-                                </a>
+                                </Link>
                               ))}
                             </motion.div>
                           )}
@@ -184,7 +199,10 @@ export default function QvipleNavbar() {
                       </li>
                     ))}
 
-                    <a href="https://qvipleweb.web.app/#/login" className="w-[50px] font-bold text-black py-2  hover:scale-105 transition">
+                    <a
+                      href="https://qvipleweb.web.app/#/login"
+                      className="w-[50px] font-bold text-black py-2  hover:scale-105 transition"
+                    >
                       Login
                     </a>
                   </ul>
@@ -198,21 +216,71 @@ export default function QvipleNavbar() {
   );
 }
 
-/* -------------- MENU DATA -------------- */
+
 const menuItems = {
   offer: [
-    { icon: LayoutDashboard, title: "Business Banking", desc: "Complete academic management system", link: "/erp-dashbord" },
-    { icon: FileText, title: "Multi Currency Account", desc: "Streamlined digital admission process", link: "/multi-currency-account" },
-    { icon: GraduationCap, title: "Your Banking Manager", desc: "Track attendance, fees & academics", link: "/your-banking-manger" },
-    { icon: Building2, title: "Refer and Earn", desc: "Automate campus operations efficiently", link: "/refer-and-earn" },
-    { icon: Building2, title: "Dedicated IBAN", desc: "Automate campus operations efficiently", link: "/dedicated-iban" },
-    { icon: Building2, title: "Virtual Card", desc: "Automate campus operations efficiently", link: "/virtual-card" },
+    {
+      icon: LayoutDashboard,
+      title: "Business Banking",
+      desc: "Complete academic management system",
+      link: "/erp-dashbord",
+    },
+    {
+      icon: FileText,
+      title: "Multi Currency Account",
+      desc: "Streamlined digital admission process",
+      link: "/multi-currency-account",
+    },
+    {
+      icon: GraduationCap,
+      title: "Your Banking Manager",
+      desc: "Track attendance, fees & academics",
+      link: "/your-banking-manger",
+    },
+    {
+      icon: Building2,
+      title: "Refer and Earn",
+      desc: "Automate campus operations efficiently",
+      link: "/refer-and-earn",
+    },
+    {
+      icon: Building2,
+      title: "Dedicated IBAN",
+      desc: "Automate campus operations efficiently",
+      link: "/dedicated-iban",
+    },
+    {
+      icon: Building2,
+      title: "Virtual Card",
+      desc: "Automate campus operations efficiently",
+      link: "/virtual-card",
+    },
   ],
 
   who: [
-    { icon: Users, title: "General Terms", desc: "Empowering education with technology", link: "/general-terms" },
-    { icon: Briefcase, title: "Cookies Policy", desc: "Join a team shaping the future", link: "/cookies-policy" },
-    { icon: HelpCircle, title: "Terms of Use", desc: "Get help and customer assistance", link: "/term-of-use" },
-    { icon: PhoneCall, title: "Information Security Policy", desc: "We’d love to hear from you", link: "/information-security-policy" },
+    {
+      icon: Users,
+      title: "General Terms",
+      desc: "Empowering education with technology",
+      link: "/general-terms",
+    },
+    {
+      icon: Briefcase,
+      title: "Cookies Policy",
+      desc: "Join a team shaping the future",
+      link: "/cookies-policy",
+    },
+    {
+      icon: HelpCircle,
+      title: "Terms of Use",
+      desc: "Get help and customer assistance",
+      link: "/term-of-use",
+    },
+    {
+      icon: PhoneCall,
+      title: "Information Security Policy",
+      desc: "We’d love to hear from you",
+      link: "/information-security-policy",
+    },
   ],
 };
