@@ -2,8 +2,9 @@ import BottomMenu from "@/BottomMenu/BottomMenu";
 import "./globals.css";
 import { Inter } from "next/font/google";
 // import { Instrument_Sans } from "next/font/google";
+
 import Footer from "@/Footer/Footer";
- import Home4 from "@/Home/Home4";
+import Home4 from "@/Home/Home4";
 
 const InterFont = Inter({
   subsets: ["latin"],

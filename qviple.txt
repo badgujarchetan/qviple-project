@@ -398,3 +398,172 @@ home4 animation
 //     </section>
 //   );
 // }
+
+
+// "use client";
+// import React, { useState, useEffect } from "react";
+// import { motion, AnimatePresence } from "framer-motion";
+// import { Home, User, Briefcase, Info, ChevronDown } from "lucide-react";
+// import Link from "next/link";
+
+// export default function BottomMenu() {
+//   const [hoveredIndex, setHoveredIndex] = useState(null);
+//   const [isVisible, setIsVisible] = useState(true);
+//   const [lastScrollY, setLastScrollY] = useState(0);
+//   const [openMobileIndex, setOpenMobileIndex] = useState(null);
+//   const [isMobile, setIsMobile] = useState(false);
+
+//   useEffect(() => {
+//     const mm = window.matchMedia("(max-width: 768px)");
+//     const handler = (e) => setIsMobile(e.matches);
+//     setIsMobile(mm.matches);
+//     mm.addEventListener?.("change", handler);
+//     if (!mm.addEventListener) mm.addListener(handler);
+//     return () => {
+//       mm.removeEventListener?.("change", handler);
+//       if (!mm.removeEventListener) mm.removeListener(handler);
+//     };
+//   }, []);
+
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       const currentScrollY = window.scrollY;
+//       setIsVisible(!(currentScrollY > lastScrollY && currentScrollY > 80));
+//       setLastScrollY(currentScrollY);
+//     };
+//     window.addEventListener("scroll", handleScroll, { passive: true });
+//     return () => window.removeEventListener("scroll", handleScroll);
+//   }, [lastScrollY]);
+
+//   const handleClickMobile = (idx) => {
+//     setOpenMobileIndex(openMobileIndex === idx ? null : idx);
+//   };
+
+//   return (
+//     <motion.nav
+//       className="fixed bottom-[2.5vh] left-1/2 -translate-x-1/2 z-[999] pointer-events-none w-[93%] sm:w-auto"
+//       animate={{ y: isVisible ? 0 : 140 }}
+//       transition={{ duration: 0.45 }}
+//     >
+//       <motion.ul
+//         className="flex gap-2 sm:gap-4 px-5 sm:px-7 py-3 backdrop-blur-xl bg-[rgba(15,25,50,0.75)] border border-white/15 shadow-[0_10px_30px_rgba(0,0,0,0.3)] rounded-[2.8rem] pointer-events-auto"
+//         initial={{ y: 60, opacity: 0 }}
+//         animate={{ y: 0, opacity: 1 }}
+//         transition={{ type: "spring", stiffness: 110, damping: 17 }}
+//       >
+//         {menuItems.map((item, idx) => (
+//           <li
+//             key={idx}
+//             className="relative"
+//             onMouseEnter={() =>
+//               !isMobile && item.drawer && setHoveredIndex(idx)
+//             }
+//             onMouseLeave={() => !isMobile && setHoveredIndex(null)}
+//           >
+//             {item.drawer ? (
+//               <>
+//                 <button
+//                   onClick={() => isMobile && handleClickMobile(idx)}
+//                   className="flex items-center gap-1 sm:gap-2 text-white font-medium text-sm sm:text-[15px] px-3 py-2 rounded-[1.6rem] hover:bg-white/10 transition-all active:scale-95"
+//                 >
+//                   {!isMobile && (IconMap[item.iconName] ?? IconMap.Default)}
+//                   {item.label}
+//                   <ChevronDown
+//                     size={15}
+//                     className={`transition-all ${
+//                       openMobileIndex === idx || hoveredIndex === idx
+//                         ? "rotate-180"
+//                         : ""
+//                     }`}
+//                   />
+//                 </button>
+
+//                 {!isMobile && (
+//                   <AnimatePresence>
+//                     {hoveredIndex === idx && (
+//                       <motion.div
+//                         className="absolute bottom-[62px] left-1/2 -translate-x-1/2 bg-white/95 shadow-xl backdrop-blur-md rounded-xl p-3 min-w-[170px]"
+//                         initial={{ opacity: 0, y: 15, scale: 0.96 }}
+//                         animate={{ opacity: 1, y: 0, scale: 1 }}
+//                         exit={{ opacity: 0, y: 10, scale: 0.97 }}
+//                       >
+//                         <ul className="space-y-1">
+//                           {item.drawer.map((sub, sIdx) => (
+//                             <li key={sIdx}>
+//                               <Link
+//                                 href={sub.href}
+//                                 className="text-[15px] flex items-center gap-2 text-[#0a192f] hover:translate-x-1 transition-all py-2"
+//                               >
+//                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+//                                 {sub.label}
+//                               </Link>
+//                             </li>
+//                           ))}
+//                         </ul>
+//                       </motion.div>
+//                     )}
+//                   </AnimatePresence>
+//                 )}
+
+//                 {isMobile && (
+//                   <AnimatePresence>
+//                     {openMobileIndex === idx && (
+//                       <motion.div
+//                         className="absolute bottom-[60px] left-0 right-0 bg-white rounded-xl shadow-xl overflow-hidden"
+//                         initial={{ height: 0, opacity: 0 }}
+//                         animate={{ height: "auto", opacity: 1 }}
+//                         exit={{ height: 0, opacity: 0 }}
+//                         transition={{ duration: 0.35 }}
+//                       >
+//                         <ul className="p-3 space-y-1">
+//                           {item.drawer.map((sub, sIdx) => (
+//                             <li key={sIdx}>
+//                               <Link
+//                                 href={sub.href}
+//                                 className="text-[15px] block py-2 text-[#0a192f]"
+//                                 onClick={() => setOpenMobileIndex(null)}
+//                               >
+//                                 {sub.label}
+//                               </Link>
+//                             </li>
+//                           ))}
+//                         </ul>
+//                       </motion.div>
+//                     )}
+//                   </AnimatePresence>
+//                 )}
+//               </>
+//             ) : (
+//               <Link
+//                 href={item.href}
+//                 className="flex gap-1 sm:gap-2 items-center text-white text-sm sm:text-[15px] font-medium px-3 py-2 rounded-[1.6rem] hover:bg-white/10 transition-all active:scale-95"
+//               >
+//                 {!isMobile && (IconMap[item.iconName] ?? IconMap.Default)}
+//                 {item.label}
+//               </Link>
+//             )}
+//           </li>
+//         ))}
+//       </motion.ul>
+//     </motion.nav>
+//   );
+// }
+
+// const menuItems = [
+//   { label: "Home", href: "/", iconName: "Home" },
+//   { label: "Partnerships", href: "/qviple-business" },
+//   {
+//     label: "Company",
+//     iconName: "Company",
+//     drawer: [
+//       { label: "About Us", href: "/about" },
+//       { label: "Newsroom", href: "/newsroom" },
+//     ],
+//   },
+// ];
+
+// const IconMap = {
+//   Home: <Home size={18} />,
+//   Company: <Briefcase size={18} />,
+//   Default: <Info size={18} />,
+// };

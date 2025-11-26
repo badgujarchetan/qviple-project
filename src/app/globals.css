@@ -7,7 +7,7 @@
 }
 :root {
   --100vw: calc(100vw - var(--sbw, 0px));
-  --viewport-margin: clamp(8px, 7.415px + 100vw * .0015, 10px);
+  --viewport-margin: clamp(8px, 7.415px + 100vw * 0.0015, 10px);
 }
 
 @theme inline {
@@ -30,5 +30,4 @@ body {
   font-weight: 400;
   color: #f73b20;
   line-height: 1;
-
 }

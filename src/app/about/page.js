@@ -54,7 +54,7 @@ export default function AboutPage() {
 
             <motion.button
               whileHover={{ scale: 1.05 }}
-              className="mt-8 bg-white text-[#f73b20] px-8 py-3 rounded-full font-semibold text-[17px] shadow-lg transition"
+              className="mt-8 bg-white cursor-pointer text-[#f73b20] px-8 py-3 rounded-full font-semibold text-[17px] shadow-lg transition"
             >
               Let’s Connect
             </motion.button>
@@ -214,7 +214,7 @@ export default function AboutPage() {
 
           <motion.button
             whileHover={{ scale: 1.05 }}
-            className="px-10 py-3 bg-white text-[#f73b20] rounded-full text-[18px] font-semibold transition shadow-lg"
+            className="px-10 py-3 cursor-pointer bg-white text-[#f73b20] rounded-full text-[18px] font-semibold transition shadow-lg"
           >
             Send Application
           </motion.button>

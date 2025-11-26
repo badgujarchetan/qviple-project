@@ -22,7 +22,7 @@ export default function Home4() {
     const vh = window.innerHeight;
 
     // Use section height and padding to determine a more forgiving start/end
-    const sectH = rect.height || (vh * 0.6);
+    const sectH = rect.height || vh * 0.6;
     const top = rect.top;
     const startTrigger = vh - Math.min(sectH * 0.25, vh * 0.45); // start when lower part is near viewport bottom
     const endTrigger = Math.max(vh * 0.08, sectH * 0.08); // end earlier for tall sections
@@ -84,17 +84,17 @@ export default function Home4() {
         thirdY = lerp(keyframes.start.thirdY, keyframes.mid.thirdY, u);
         fourthY = lerp(keyframes.start.fourthY, keyframes.mid.fourthY, u);
         sixthY = lerp(keyframes.start.sixthY, keyframes.mid.sixthY, u);
-        bgRgb = lerpArr(
-          keyframes.start.bgRgb,
-          keyframes.end.bgRgb,
-          u * 0.5
-        );
+        bgRgb = lerpArr(keyframes.start.bgRgb, keyframes.end.bgRgb, u * 0.5);
         fgTextRgb = lerpArr(
           keyframes.start.fgTextRgb,
           keyframes.end.fgTextRgb || keyframes.start.fgTextRgb,
           u * 0.5
         );
-        bgTranslate = lerp(keyframes.start.bgTranslate, keyframes.mid.bgTranslate, u);
+        bgTranslate = lerp(
+          keyframes.start.bgTranslate,
+          keyframes.mid.bgTranslate,
+          u
+        );
       } else {
         const u = (t - 0.5) / 0.5;
         thirdY = lerp(keyframes.mid.thirdY, keyframes.end.thirdY, u);
@@ -110,7 +110,11 @@ export default function Home4() {
           keyframes.end.fgTextRgb || keyframes.start.fgTextRgb,
           0.5 + u * 0.5
         );
-        bgTranslate = lerp(keyframes.mid.bgTranslate, keyframes.end.bgTranslate, u);
+        bgTranslate = lerp(
+          keyframes.mid.bgTranslate,
+          keyframes.end.bgTranslate,
+          u
+        );
       }
 
       // Clip path tuned to reduce sudden shape jumps on small screens
@@ -169,7 +173,7 @@ export default function Home4() {
 
         <div className="millions">
           <a
-            href="https://apps.apple.com/us/app/jeton/id6499320378"
+            href="https://apps.apple.com/in/app/qviple-your-education-online/id6463501865"
             target="_blank"
             rel="noopener noreferrer"
             className="_app-button"
@@ -213,6 +217,7 @@ export default function Home4() {
         <div className="millions" aria-hidden>
           <span className="_app-button" aria-hidden>
             <div className="btn-bg" aria-hidden />
+
             <img src="/app-store-orange.svg" alt="" />
           </span>
 
