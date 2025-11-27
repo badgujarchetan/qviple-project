@@ -1,8 +1,8 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   LayoutDashboard,
   Users,
@@ -22,20 +22,15 @@ export default function QvipleNavbar() {
   const [activeMenu, setActiveMenu] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileDropdown, setMobileDropdown] = useState(null);
-  const [loadingRoute, setLoadingRoute] = useState(null);
 
-  // NEW: whether the mobile view is ready to show the mobile menu
-  const [isMobileReady, setIsMobileReady] = useState(false);
-  const loadTimeoutRef = useRef(null);
-
+  // Navigation animation logic
+  const [navFx, setNavFx] = useState(false);
   const router = useRouter();
 
-  const handleNav = (href) => {
-    setLoadingRoute(href);
-
-    setTimeout(() => {
-      router.push(href);
-    }, 250);
+  const goTo = (link) => {
+    setNavFx(true);
+    setTimeout(() => router.push(link), 200);
+    setTimeout(() => setNavFx(false), 600);
   };
 
   useEffect(() => {
@@ -47,52 +42,6 @@ export default function QvipleNavbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScroll]);
-
-  // NEW: manage mobile load state
-  useEffect(() => {
-    if (!mobileOpen) {
-      // ensure mobileReady reset when closed
-      setIsMobileReady(false);
-      if (loadTimeoutRef.current) {
-        window.clearTimeout(loadTimeoutRef.current);
-        loadTimeoutRef.current = null;
-      }
-      return;
-    }
-
-    const onLoad = () => {
-      setIsMobileReady(true);
-      if (loadTimeoutRef.current) {
-        window.clearTimeout(loadTimeoutRef.current);
-        loadTimeoutRef.current = null;
-      }
-      window.removeEventListener("load", onLoad);
-    };
-
-    if (typeof window !== "undefined" && document.readyState === "complete") {
-      // small delay so the overlay is visible briefly (prevents instant flicker)
-      loadTimeoutRef.current = window.setTimeout(
-        () => setIsMobileReady(true),
-        150
-      );
-    } else {
-      window.addEventListener("load", onLoad);
-
-      loadTimeoutRef.current = window.setTimeout(() => {
-        setIsMobileReady(true);
-        window.removeEventListener("load", onLoad);
-        loadTimeoutRef.current = null;
-      }, 1500);
-    }
-
-    return () => {
-      window.removeEventListener("load", onLoad);
-      if (loadTimeoutRef.current) {
-        window.clearTimeout(loadTimeoutRef.current);
-        loadTimeoutRef.current = null;
-      }
-    };
-  }, [mobileOpen]);
 
   const dropdownAnimation = {
     hidden: { opacity: 0, y: -8, scale: 0.97 },
@@ -113,10 +62,7 @@ export default function QvipleNavbar() {
           <div className="max-w-[1200px] mx-auto px-4">
             <header className="bg-white/90 backdrop-blur-xl h-[4.6rem] rounded-xl shadow-lg flex justify-between items-center px-6 transition-all duration-300">
               {/* Logo */}
-              <Link
-                href="/"
-                className="flex items-center active:scale-95 transition"
-              >
+              <Link href="/" className="flex items-center">
                 <img
                   src="/images/logo-qviple.svg"
                   alt="Qviple"
@@ -134,7 +80,7 @@ export default function QvipleNavbar() {
                       onMouseEnter={() => setActiveMenu(key)}
                       onMouseLeave={() => setActiveMenu(null)}
                     >
-                      <button className="group font-semibold text-[1.1rem] hover:text-[#1114b1] transition flex items-center gap-1 active:scale-95">
+                      <button className="group font-semibold text-[1.1rem] hover:text-[#1114b1] transition flex items-center gap-1">
                         {key === "offer" ? "What we offer" : "Who we are"}
                         <motion.span
                           animate={{ rotate: activeMenu === key ? 180 : 0 }}
@@ -162,20 +108,24 @@ export default function QvipleNavbar() {
                             {items.map(({ icon: Icon, title, desc, link }) => (
                               <button
                                 key={title}
-                                onClick={() => handleNav(link)}
-                                className="flex gap-3 p-3 rounded-lg hover:bg-[#1114b120] transition transform hover:-translate-y-1 active:scale-95 text-left"
+                                onClick={() => goTo(link)}
+                                className={`nav-click flex gap-3 w-full text-left p-3 rounded-lg hover:bg-[#1114b120] transition transform hover:-translate-y-1 ${
+                                  navFx ? "page-transition" : ""
+                                }`}
                               >
                                 <Icon className="text-[#1114b1] w-[22px]" />
                                 <div>
                                   <h4 className="font-semibold text-[1rem]">
-                                    {loadingRoute === link
-                                      ? "Loading..."
-                                      : title}
+                                    {title}
                                   </h4>
                                   <p className="text-sm text-[#6679a4] mt-1">
                                     {desc}
                                   </p>
                                 </div>
+
+                                {navFx && (
+                                  <div className="ml-auto w-3 h-3 border-2 border-[#1114b1] border-t-transparent animate-spin rounded-full"></div>
+                                )}
                               </button>
                             ))}
                           </motion.div>
@@ -187,151 +137,90 @@ export default function QvipleNavbar() {
 
                 {/* Action Buttons */}
                 <div className="flex items-center gap-4">
-                  <button
-                    onClick={() =>
-                      handleNav("https://qvipleweb.web.app/#/login")
-                    }
-                    className="px-5 h-10 flex items-center justify-center border border-[#2e21de33] rounded-lg hover:bg-[#1114b1] hover:text-white transition cursor-pointer active:scale-95"
+                  <a
+                    href="https://qvipleweb.web.app/#/login"
+                    className="px-5 h-10 flex items-center justify-center border border-[#2e21de33] rounded-lg hover:bg-[#1114b1] hover:text-white transition cursor-pointer"
                   >
                     Login
-                  </button>
-
-                  <button className="px-5 h-10 flex items-center justify-center bg-[#1114b1] text-white rounded-lg hover:scale-105 transition shadow-lg cursor-pointer active:scale-95">
+                  </a>
+                  <a className="px-5 h-10 flex items-center justify-center bg-[#1114b1] text-white rounded-lg hover:scale-105 transition shadow-lg cursor-pointer">
                     Create Account
-                  </button>
+                  </a>
                 </div>
               </div>
 
               {/* Mobile Menu Button */}
               <button
-                className="lg:hidden active:scale-90"
-                onClick={() => {
-                  // toggle mobile open; when opening, we will show loading overlay until ready
-                  setMobileOpen((s) => !s);
-                }}
-                aria-expanded={mobileOpen}
-                aria-controls="qviple-mobile-menu"
+                className="lg:hidden"
+                onClick={() => setMobileOpen(!mobileOpen)}
               >
                 {mobileOpen ? <X size={26} /> : <Menu size={26} />}
               </button>
             </header>
 
-          
+            {/* Mobile Menu */}
             <AnimatePresence>
               {mobileOpen && (
-             
                 <motion.div
-                  id="qviple-mobile-menu"
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.25 }}
-                  className="lg:hidden relative"
+                  className="lg:hidden bg-white border border-gray-200 mt-2 rounded-xl shadow-md overflow-hidden"
                 >
-                  
-                  {!isMobileReady && (
-                    <div
-                      className="absolute inset-0 z-40 flex items-center justify-center bg-white/80 backdrop-blur-sm rounded-xl p-6"
-                      aria-live="polite"
-                    >
-                      <div className="flex flex-col items-center gap-3">
-                        {/* simple accessible spinner */}
-                        <svg
-                          className="animate-spin w-10 h-10"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          role="img"
-                          aria-hidden="true"
-                        >
-                          <circle
-                            className="opacity-25"
-                            cx="12"
-                            cy="12"
-                            r="10"
-                            stroke="currentColor"
-                            strokeWidth="4"
-                          ></circle>
-                          <path
-                            className="opacity-75"
-                            fill="currentColor"
-                            d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
-                          ></path>
-                        </svg>
-                        <div className="text-sm font-medium text-[#001741]">
-                          Loading mobile view...
-                        </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Actual mobile menu: only render when ready */}
-                  {isMobileReady && (
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      className="bg-white border border-gray-200 mt-2 rounded-xl shadow-md overflow-hidden z-30"
-                    >
-                      <ul className="flex flex-col p-4 gap-4">
-                        {Object.entries(menuItems).map(([key, items]) => (
-                          <li key={key}>
-                            <button
-                              onClick={() =>
-                                setMobileDropdown(
-                                  mobileDropdown === key ? null : key
-                                )
-                              }
-                              className="flex justify-between w-full font-semibold text-base md:text-[1.1rem] text-[#001741] active:scale-95"
-                            >
-                              {key === "offer" ? "What we offer" : "Who we are"}
-                              <motion.span
-                                animate={{
-                                  rotate: mobileDropdown === key ? 180 : 0,
-                                }}
-                                transition={{ duration: 0.3 }}
-                              >
-                                ▼
-                              </motion.span>
-                            </button>
-
-                            <AnimatePresence>
-                              {mobileDropdown === key && (
-                                <motion.div
-                                  initial={{ opacity: 0, height: 0 }}
-                                  animate={{ opacity: 1, height: "auto" }}
-                                  exit={{ opacity: 0, height: 0 }}
-                                  className="pl-4 mt-3 flex flex-col gap-3"
-                                >
-                                  {items.map(({ icon: Icon, title, link }) => (
-                                    <button
-                                      key={title}
-                                      onClick={() => handleNav(link)}
-                                      className="flex items-center gap-3 py-2 text-[#1114b1] active:scale-95 transition"
-                                    >
-                                      <Icon size={20} />
-                                      {loadingRoute === link
-                                        ? "Loading..."
-                                        : title}
-                                    </button>
-                                  ))}
-                                </motion.div>
-                              )}
-                            </AnimatePresence>
-                          </li>
-                        ))}
-
+                  <ul className="flex flex-col p-4 gap-4">
+                    {Object.entries(menuItems).map(([key, items]) => (
+                      <li key={key}>
                         <button
                           onClick={() =>
-                            handleNav("https://qvipleweb.web.app/#/login")
+                            setMobileDropdown(
+                              mobileDropdown === key ? null : key
+                            )
                           }
-                          className="font-bold text-black py-2 hover:scale-105 transition active:scale-95"
+                          className="flex justify-between w-full font-semibold text-base md:text-[1.1rem] text-[#001741]"
                         >
-                          Login
+                          {key === "offer" ? "What we offer" : "Who we are"}
+
+                          <motion.span
+                            animate={{
+                              rotate: mobileDropdown === key ? 180 : 0,
+                            }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            ▼
+                          </motion.span>
                         </button>
-                      </ul>
-                    </motion.div>
-                  )}
+
+                        <AnimatePresence>
+                          {mobileDropdown === key && (
+                            <motion.div
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: "auto" }}
+                              exit={{ opacity: 0, height: 0 }}
+                              className="pl-4 mt-3 flex flex-col gap-3"
+                            >
+                              {items.map(({ icon: Icon, title, link }) => (
+                                <button
+                                  key={title}
+                                  onClick={() => goTo(link)}
+                                  className={`nav-click flex items-center gap-3 py-2 w-full text-left text-[#1114b1] ${
+                                    navFx ? "page-transition" : ""
+                                  }`}
+                                >
+                                  <Icon size={20} />
+                                  {title}
+
+                                  {navFx && (
+                                    <span className="ml-auto w-3 h-3 border-2 border-[#1114b1] border-t-transparent animate-spin rounded-full"></span>
+                                  )}
+                                </button>
+                              ))}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </li>
+                    ))}
+                  </ul>
                 </motion.div>
               )}
             </AnimatePresence>
@@ -347,37 +236,37 @@ const menuItems = {
     {
       icon: LayoutDashboard,
       title: "Business Banking",
-      desc: "Complete banking system",
+      desc: "Complete academic management system",
       link: "/erp-dashbord",
     },
     {
       icon: FileText,
       title: "Multi Currency Account",
-      desc: "Account with multiple currencies",
+      desc: "Streamlined digital admission process",
       link: "/multi-currency-account",
     },
     {
       icon: GraduationCap,
       title: "Your Banking Manager",
-      desc: "Handle everything easily",
+      desc: "Track attendance, fees & academics",
       link: "/your-banking-manger",
     },
     {
       icon: Building2,
       title: "Refer and Earn",
-      desc: "Earn rewards",
+      desc: "Automate campus operations efficiently",
       link: "/refer-and-earn",
     },
     {
       icon: Building2,
       title: "Dedicated IBAN",
-      desc: "Custom IBAN solution",
+      desc: "Automate campus operations efficiently",
       link: "/dedicated-iban",
     },
     {
       icon: Building2,
       title: "Virtual Card",
-      desc: "Secure online payments",
+      desc: "Automate campus operations efficiently",
       link: "/virtual-card",
     },
   ],
@@ -386,25 +275,25 @@ const menuItems = {
     {
       icon: Users,
       title: "General Terms",
-      desc: "Understand rules",
+      desc: "Empowering education with technology",
       link: "/general-terms",
     },
     {
       icon: Briefcase,
       title: "Cookies Policy",
-      desc: "We use cookies",
+      desc: "Join a team shaping the future",
       link: "/cookies-policy",
     },
     {
       icon: HelpCircle,
       title: "Terms of Use",
-      desc: "Legal terms",
+      desc: "Get help and customer assistance",
       link: "/term-of-use",
     },
     {
       icon: PhoneCall,
       title: "Information Security Policy",
-      desc: "Security protection",
+      desc: "We’d love to hear from you",
       link: "/information-security-policy",
     },
   ],

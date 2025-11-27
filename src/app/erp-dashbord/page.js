@@ -10,7 +10,7 @@ export default function page() {
         <img
           className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none"
           src="/images/private-hero-pattern.webp"
-          alt=""
+          alt="private-hero-pattern.webp"
         />
 
         {/* WRAPPER */}
@@ -232,8 +232,9 @@ export default function page() {
                 aria-label="interested-in"
                 className="w-full border border-gray-300 rounded-md py-3 px-3 text-gray-600 text-sm font-medium"
                 required
+                defaultValue=""
               >
-                <option hidden selected>
+                <option value="" hidden>
                   Interested in?
                 </option>
                 <option value="digital-wallet-and-fiat-transfers">

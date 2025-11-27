@@ -31,3 +31,41 @@ body {
   color: #f73b20;
   line-height: 1;
 }
+
+.nav-click {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-click::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: rgba(17, 20, 177, 0.18);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.35s ease-out;
+}
+
+.nav-click:active::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+
+.page-transition {
+  animation: fadeOut 0.25s ease forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.25;
+    filter: blur(3px);
+  }
+}
