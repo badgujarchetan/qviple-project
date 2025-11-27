@@ -35,37 +35,21 @@ body {
 .nav-click {
   position: relative;
   overflow: hidden;
+  border-radius: 12px;
+  transition: all 0.28s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.nav-click::after {
-  content: "";
+.ripple {
   position: absolute;
-  width: 200%;
-  height: 200%;
-  background: rgba(17, 20, 177, 0.18);
+  background: rgba(17, 20, 177, 0.22);
   border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  transition: transform 0.35s ease-out;
+  transform: scale(0);
+  animation: ripple-effect 0.55s ease-out forwards;
 }
 
-.nav-click:active::after {
-  transform: translate(-50%, -50%) scale(1);
-}
-
-
-
-.page-transition {
-  animation: fadeOut 0.25s ease forwards;
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
+@keyframes ripple-effect {
   to {
-    opacity: 0.25;
-    filter: blur(3px);
+    transform: scale(4);
+    opacity: 0;
   }
 }

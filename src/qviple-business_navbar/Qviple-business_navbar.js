@@ -22,15 +22,43 @@ export default function QvipleNavbar() {
   const [activeMenu, setActiveMenu] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileDropdown, setMobileDropdown] = useState(null);
-
-  // Navigation animation logic
+  const [locked, setLocked] = useState(false);
   const [navFx, setNavFx] = useState(false);
+  const [clickedItem, setClickedItem] = useState(null);
+
   const router = useRouter();
 
-  const goTo = (link) => {
+  const goTo = (e, link, title) => {
+    if (locked || clickedItem === title) return;
+
+    setClickedItem(title);
+
+    const button = e.currentTarget;
+    const rect = button.getBoundingClientRect();
+    const ripple = document.createElement("span");
+
+    const size = Math.max(rect.width, rect.height);
+    ripple.style.width = ripple.style.height = `${size}px`;
+    ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
+    ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
+    ripple.className = "ripple";
+    button.appendChild(ripple);
+
+    setTimeout(() => ripple.remove(), 500);
+
+    setLocked(true);
     setNavFx(true);
-    setTimeout(() => router.push(link), 200);
-    setTimeout(() => setNavFx(false), 600);
+
+    document.body.style.opacity = "0.5";
+
+    setTimeout(() => router.push(link), 350);
+
+    setTimeout(() => {
+      setNavFx(false);
+      document.body.style.opacity = "1";
+      setLocked(false);
+      setClickedItem(null);
+    }, 1200);
   };
 
   useEffect(() => {
@@ -40,6 +68,7 @@ export default function QvipleNavbar() {
       setLastScroll(currentScroll);
     };
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScroll]);
 
@@ -61,13 +90,8 @@ export default function QvipleNavbar() {
         >
           <div className="max-w-[1200px] mx-auto px-4">
             <header className="bg-white/90 backdrop-blur-xl h-[4.6rem] rounded-xl shadow-lg flex justify-between items-center px-6 transition-all duration-300">
-              {/* Logo */}
               <Link href="/" className="flex items-center">
-                <img
-                  src="/images/logo-qviple.svg"
-                  alt="Qviple"
-                  className="h-9"
-                />
+                <img src="/images/logo-qviple.svg" alt="Qviple" className="h-9" />
               </Link>
 
               {/* Desktop Menu */}
@@ -77,11 +101,12 @@ export default function QvipleNavbar() {
                     <li
                       key={key}
                       className="relative group"
-                      onMouseEnter={() => setActiveMenu(key)}
-                      onMouseLeave={() => setActiveMenu(null)}
+                      onMouseEnter={() => !locked && setActiveMenu(key)}
+                      onMouseLeave={() => !locked && setActiveMenu(null)}
                     >
                       <button className="group font-semibold text-[1.1rem] hover:text-[#1114b1] transition flex items-center gap-1">
                         {key === "offer" ? "What we offer" : "Who we are"}
+
                         <motion.span
                           animate={{ rotate: activeMenu === key ? 180 : 0 }}
                           transition={{ duration: 0.25 }}
@@ -95,7 +120,6 @@ export default function QvipleNavbar() {
                         {key === "offer" ? "Our services" : "Our legacy"}
                       </span>
 
-                      {/* Desktop Dropdown */}
                       <AnimatePresence>
                         {activeMenu === key && (
                           <motion.div
@@ -108,24 +132,23 @@ export default function QvipleNavbar() {
                             {items.map(({ icon: Icon, title, desc, link }) => (
                               <button
                                 key={title}
-                                onClick={() => goTo(link)}
-                                className={`nav-click flex gap-3 w-full text-left p-3 rounded-lg hover:bg-[#1114b120] transition transform hover:-translate-y-1 ${
-                                  navFx ? "page-transition" : ""
+                                disabled={locked}
+                                onClick={(e) => goTo(e, link, title)}
+                                className={`nav-click flex gap-3 w-full text-left p-3 rounded-lg transition ${
+                                  locked
+                                    ? "opacity-50 cursor-not-allowed"
+                                    : "hover:bg-[#1114b120] hover:-translate-y-1"
+                                } ${
+                                  clickedItem === title
+                                    ? "scale-[0.97] bg-[#1114b115]"
+                                    : ""
                                 }`}
                               >
                                 <Icon className="text-[#1114b1] w-[22px]" />
                                 <div>
-                                  <h4 className="font-semibold text-[1rem]">
-                                    {title}
-                                  </h4>
-                                  <p className="text-sm text-[#6679a4] mt-1">
-                                    {desc}
-                                  </p>
+                                  <h4 className="font-semibold text-[1rem]">{title}</h4>
+                                  <p className="text-sm text-[#6679a4] mt-1">{desc}</p>
                                 </div>
-
-                                {navFx && (
-                                  <div className="ml-auto w-3 h-3 border-2 border-[#1114b1] border-t-transparent animate-spin rounded-full"></div>
-                                )}
                               </button>
                             ))}
                           </motion.div>
@@ -135,30 +158,27 @@ export default function QvipleNavbar() {
                   ))}
                 </ul>
 
-                {/* Action Buttons */}
+                {/* Buttons */}
                 <div className="flex items-center gap-4">
-                  <a
-                    href="https://qvipleweb.web.app/#/login"
+                  <Link
+                    href="/login"
                     className="px-5 h-10 flex items-center justify-center border border-[#2e21de33] rounded-lg hover:bg-[#1114b1] hover:text-white transition cursor-pointer"
                   >
                     Login
-                  </a>
-                  <a className="px-5 h-10 flex items-center justify-center bg-[#1114b1] text-white rounded-lg hover:scale-105 transition shadow-lg cursor-pointer">
+                  </Link>
+                  <button className="px-5 h-10 bg-[#1114b1] text-white rounded-lg hover:scale-105 transition shadow-lg cursor-pointer">
                     Create Account
-                  </a>
+                  </button>
                 </div>
               </div>
 
-              {/* Mobile Menu Button */}
-              <button
-                className="lg:hidden"
-                onClick={() => setMobileOpen(!mobileOpen)}
-              >
+              {/* Mobile Toggle */}
+              <button className="lg:hidden" onClick={() => setMobileOpen(!mobileOpen)}>
                 {mobileOpen ? <X size={26} /> : <Menu size={26} />}
               </button>
             </header>
 
-            {/* Mobile Menu */}
+            {/* MOBILE MENU */}
             <AnimatePresence>
               {mobileOpen && (
                 <motion.div
@@ -172,19 +192,15 @@ export default function QvipleNavbar() {
                     {Object.entries(menuItems).map(([key, items]) => (
                       <li key={key}>
                         <button
+                          className="flex justify-between w-full font-semibold text-base text-[#001741]"
                           onClick={() =>
-                            setMobileDropdown(
-                              mobileDropdown === key ? null : key
-                            )
+                            setMobileDropdown(mobileDropdown === key ? null : key)
                           }
-                          className="flex justify-between w-full font-semibold text-base md:text-[1.1rem] text-[#001741]"
                         >
                           {key === "offer" ? "What we offer" : "Who we are"}
 
                           <motion.span
-                            animate={{
-                              rotate: mobileDropdown === key ? 180 : 0,
-                            }}
+                            animate={{ rotate: mobileDropdown === key ? 180 : 0 }}
                             transition={{ duration: 0.3 }}
                           >
                             ▼
@@ -202,17 +218,18 @@ export default function QvipleNavbar() {
                               {items.map(({ icon: Icon, title, link }) => (
                                 <button
                                   key={title}
-                                  onClick={() => goTo(link)}
-                                  className={`nav-click flex items-center gap-3 py-2 w-full text-left text-[#1114b1] ${
-                                    navFx ? "page-transition" : ""
+                                  disabled={locked}
+                                  onClick={(e) => {
+                                    goTo(e, link, title);
+                                    setMobileOpen(false);
+                                  }}
+                                  className={`nav-click flex items-center gap-3 py-2 text-left text-[#1114b1] ${
+                                    clickedItem === title
+                                      ? "scale-[0.96] bg-[#1114b120]"
+                                      : ""
                                   }`}
                                 >
-                                  <Icon size={20} />
-                                  {title}
-
-                                  {navFx && (
-                                    <span className="ml-auto w-3 h-3 border-2 border-[#1114b1] border-t-transparent animate-spin rounded-full"></span>
-                                  )}
+                                  <Icon size={20} /> {title}
                                 </button>
                               ))}
                             </motion.div>
@@ -231,6 +248,7 @@ export default function QvipleNavbar() {
   );
 }
 
+/* MENU DATA */
 const menuItems = {
   offer: [
     {
