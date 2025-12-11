@@ -5,7 +5,6 @@ import React, { useState } from "react";
 export default function Page() {
   const [openIndex, setOpenIndex] = useState(null);
   const toggle = (index) => setOpenIndex(openIndex === index ? null : index);
-
   return (
     <div className="overflow-x-hidden bg-white">
       <QvipleNavbar />
@@ -76,8 +75,6 @@ export default function Page() {
             Start Earning in 3 Easy Steps
           </h3>
         </div>
-
-
 
         <div className="max-w-6xl mx-auto mt-8 lg:mt-12 grid gap-6 md:gap-8 ">
           <article className="bg-[#f6f6f6] rounded-2xl p-5 sm:p-6 md:p-8 hover:shadow-lg transition">
@@ -164,7 +161,7 @@ export default function Page() {
                     onClick={() => toggle(index)}
                     aria-expanded={open}
                     aria-controls={`faq-${index}`}
-                    className={`w-full flex items-center justify-between px-4 sm:px-6 py-4 sm:py-5 text-left text-[#0f172a] transition-colors duration-200 ${
+                    className={`w-full cursor-pointer flex items-center justify-between px-4 sm:px-6 py-4 sm:py-5 text-left text-[#0f172a] transition-colors duration-200 ${
                       open
                         ? "bg-[#f9fafb] text-[#4888FB]"
                         : "bg-white hover:bg-gray-50"

@@ -8,6 +8,9 @@ import Home4 from "@/Home/Home4";
 
 const InterFont = Inter({
   subsets: ["latin"],
+
+  variable: "--font-inter",
+  display: "swap",
 });
 
 export const metadata = {
@@ -22,7 +25,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${InterFont.className} antialiased`}>
-        {/* <Navbar /> */}
         <div className="mt-[5rem]">
           {children}
           <Home4 />

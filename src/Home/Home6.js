@@ -8,30 +8,21 @@ import {
   useTransform,
   useInView,
 } from "framer-motion";
-import "../style/Home3.css"
+import "../style/Home3.css";
 
-
-
-// check for reduced motion users
+// Reduced motion check
 const prefersReducedMotion = () =>
   typeof window !== "undefined" &&
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+// Animation Variants
 const cardVariants = {
-  hiddenDown: (i) => ({
+  initial: {
     opacity: 0,
     y: 40,
-    scale: 0.97,
-    rotateX: -6,
-    transition: { duration: 0.45, ease: [0.16, 0.84, 0.44, 1], delay: i * 0.05 },
-  }),
-  hiddenUp: (i) => ({
-    opacity: 0,
-    y: -40,
-    scale: 0.97,
-    rotateX: 6,
-    transition: { duration: 0.45, ease: [0.16, 0.84, 0.44, 1], delay: i * 0.05 },
-  }),
+    scale: 0.95,
+    rotateX: -5,
+  },
   visible: (i) => ({
     opacity: 1,
     y: 0,
@@ -39,33 +30,35 @@ const cardVariants = {
     rotateX: 0,
     transition: {
       type: "spring",
-      stiffness: 130,
-      damping: 20,
+      stiffness: 120,
+      damping: 18,
       mass: 0.7,
-      delay: i * 0.08,
+      delay: i * 0.06,
     },
   }),
 };
 
-function AnimatedCard({ card, index, scrollDirection }) {
+function AnimatedCard({ card, index }) {
   const controls = useAnimation();
   const ref = useRef(null);
   const liRef = useRef(null);
-  const inView = useInView(ref, { amount: 0.5 });
 
-  // 3D hover tilt
+  // Only animate once when visible
+  const inView = useInView(ref, { amount: 0.35, once: true });
+
+  // Smooth 3D hover tilt
   useEffect(() => {
     if (prefersReducedMotion()) return;
-    const el = liRef.current;
 
+    const el = liRef.current;
     const handleMove = (e) => {
       const rect = el.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width;
       const y = (e.clientY - rect.top) / rect.height;
 
-      el.style.setProperty("--rx", `${-(y - 0.5) * 12}deg`);
-      el.style.setProperty("--ry", `${(x - 0.5) * 12}deg`);
-      el.style.setProperty("--tz", "12px");
+      el.style.setProperty("--rx", `${-(y - 0.5) * 10}deg`);
+      el.style.setProperty("--ry", `${(x - 0.5) * 10}deg`);
+      el.style.setProperty("--tz", "14px");
     };
 
     const resetTilt = () => {
@@ -85,8 +78,7 @@ function AnimatedCard({ card, index, scrollDirection }) {
 
   useEffect(() => {
     if (inView) controls.start("visible");
-    else controls.start(scrollDirection === "down" ? "hiddenDown" : "hiddenUp");
-  }, [inView, scrollDirection]);
+  }, [inView]);
 
   return (
     <motion.li
@@ -94,11 +86,15 @@ function AnimatedCard({ card, index, scrollDirection }) {
       className="card_wrapper"
       custom={index}
       variants={cardVariants}
-      initial="hiddenDown"
+      initial="initial"
       animate={controls}
     >
       <div className="card_inner" ref={liRef}>
-        <motion.div className="card_li" whileHover={{ scale: 1.015 }}>
+        <motion.div
+          className="card_li"
+          whileHover={{ scale: 1.02 }}
+          transition={{ duration: 0.25, ease: "easeOut" }}
+        >
           <p>{card.title}</p>
           <p className="opacity-cards">{card.text}</p>
 
@@ -117,7 +113,6 @@ function AnimatedCard({ card, index, scrollDirection }) {
 }
 
 export default function Home3() {
-  const [scrollDirection, setScrollDirection] = useState("down");
   const sectionRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -126,17 +121,6 @@ export default function Home3() {
   });
 
   const bgY = useTransform(scrollYProgress, [0, 1], [-60, 60]);
-
-  useEffect(() => {
-    let last = window.scrollY;
-    const onScroll = () => {
-      if (window.scrollY > last) setScrollDirection("down");
-      else setScrollDirection("up");
-      last = window.scrollY;
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   return (
     <section className="_client_testimonial" ref={sectionRef}>
@@ -154,17 +138,13 @@ export default function Home3() {
 
       <ul className="cards">
         {cards.map((card, i) => (
-          <AnimatedCard
-            key={i}
-            index={i}
-            card={card}
-            scrollDirection={scrollDirection}
-          />
+          <AnimatedCard key={i} index={i} card={card} />
         ))}
       </ul>
     </section>
   );
 }
+
 const cards = [
   {
     title: "Recommended",
@@ -180,13 +160,13 @@ const cards = [
   },
   {
     title: "The best payment solution",
-    text: "I've been a Jeton user for a few years! The support was always great and I'm always able to make my payments to the websites I want with no problem.",
+    text: "I've been a Jeton user for a few years! The support was always great and I'm always able to make my payments easily.",
     initials: "KR",
     name: "Karl R.",
   },
   {
     title: "Easy and Fast",
-    text: "Great app for fast and easy transfers. I have been using Jeton for a while now without any problem. I have recently started using their Jeton Card for my everyday purchases too.",
+    text: "Great app for fast and easy transfers. Recently started using Jeton Card for everyday purchases too.",
     initials: "DP",
     name: "Dennis P.",
   },

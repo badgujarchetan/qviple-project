@@ -41,7 +41,7 @@ export default function Page() {
       </section>
 
       {/* ---------------- BLUE CARD SECTION ---------------- */}
-      <section className="bg-[url('/images/chain-bg.png')] bg-cover bg-center py-14 md:py-20">
+      <section className="bg-[url('/images/chain-bg.png')] bg-cover  bg-center py-14 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12">
           <div className="bg-[#4888FB] rounded-3xl p-6 sm:p-10 md:p-14 lg:p-16 flex flex-col lg:flex-row items-center gap-10">
             <div className="text-white space-y-5 lg:max-w-lg text-center lg:text-left">
@@ -57,7 +57,7 @@ export default function Page() {
 
             <img
               src="/images/jtn-ui-2.webp"
-              className="w-[90%] sm:w-[75%] md:w-full max-w-lg rounded-xl shadow-lg hover:scale-105 transition"
+              className="w-[90%] sm:w-[75%] md:w-full max-w-lg rounded-xl hover:scale-102 transition"
               alt="Euro IBAN"
             />
           </div>
@@ -121,44 +121,54 @@ export default function Page() {
       </section>
 
       {/* ---------------- FAQ SECTION ---------------- */}
-      <section className="max-w-3xl mx-auto px-4 sm:px-6 md:px-10 py-14 md:py-20">
-        <h2 className="text-3xl md:text-4xl font-semibold text-center mb-10">
-          Frequently Asked Questions
-        </h2>
+      <section className="mt-10 lg:mt-20 px-5 sm:px-6 lg:px-20 mb-24">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-center text-[#0e1a2c] text-2xl sm:text-3xl lg:text-[40px] font-semibold mb-6">
+            Frequently Asked Questions
+          </h2>
 
-        {faqs.map((item, index) => (
-          <div key={index} className="border-b border-gray-200">
-            <button
-              onClick={() => toggle(index)}
-              className="w-full py-5 flex justify-between items-center text-left text-lg font-medium"
-            >
-              {item.question}
-              <span
-                className={`text-2xl transition-transform ${
-                  openIndex === index ? "rotate-180" : ""
-                }`}
-              >
-                {openIndex === index ? "−" : "+"}
-              </span>
-            </button>
+          <div className="bg-white rounded-xl shadow-lg divide-y divide-gray-200 overflow-hidden">
+            {faqs.map((item, index) => {
+              const open = openIndex === index;
+              return (
+                <div key={index} className="">
+                  <button
+                    onClick={() => toggle(index)}
+                    aria-expanded={open}
+                    aria-controls={`faq-${index}`}
+                    className={`w-full cursor-pointer flex items-center justify-between px-4 sm:px-6 py-4 sm:py-5 text-left text-[#0f172a] transition-colors duration-200 ${
+                      open
+                        ? "bg-[#f9fafb] text-[#4888FB]"
+                        : "bg-white hover:bg-gray-50"
+                    }`}
+                    style={{ minHeight: 56 }}
+                  >
+                    <span className="text-base sm:text-[18px] font-medium">
+                      {item.question}
+                    </span>
+                    <span className="ml-4 text-[20px] font-bold text-[#4888FB]">
+                      {open ? "−" : "+"}
+                    </span>
+                  </button>
 
-            <div
-              className={`transition-all overflow-hidden ${
-                openIndex === index
-                  ? "max-h-[200px] opacity-100"
-                  : "max-h-0 opacity-0"
-              }`}
-            >
-              <p className="text-gray-600 text-base pb-5 leading-relaxed">
-                {item.answer}
-              </p>
-            </div>
+                  <div
+                    id={`faq-${index}`}
+                    className={`px-4 sm:px-6 overflow-hidden transition-all duration-300 ${
+                      open ? "max-h-[400px] py-4" : "max-h-0"
+                    }`}
+                  >
+                    <p className="text-[#6b7280] text-sm sm:text-[15px] leading-relaxed">
+                      {item.answer}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
-        ))}
+        </div>
       </section>
 
-      {/* ---------------- CTA SECTION ---------------- */}
-      <section className="relative bg-[url('/images/chain-bg.png')] bg-cover bg-center py-16 md:py-24">
+      <section className="relative bg-[url('/images/chain-bg.png')] bg-cover bg-center -mt-[5rem] md:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10">
           <div className="rounded-3xl bg-[url('/images/light-blue-bg.webp')] bg-cover bg-center text-white shadow-xl overflow-hidden">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-10 p-10 sm:p-12 md:p-14 lg:p-20">
@@ -173,7 +183,7 @@ export default function Page() {
                   your business.
                 </p>
 
-                <button className="bg-[#131E3D] hover:bg-[#344c89] px-10 py-4 rounded-xl text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg">
+                <button className="bg-[#131E3D] cursor-pointer hover:bg-[#344c89] px-10 py-4 rounded-xl text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg">
                   SIGN UP NOW →
                 </button>
               </div>

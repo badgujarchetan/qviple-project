@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { X } from "lucide-react";
 
-
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -14,7 +13,6 @@ export default function Home1() {
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [openModal, setOpenModal] = useState(false);
 
-  // Controlled form state
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -26,7 +24,6 @@ export default function Home1() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // Submit handler
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -44,28 +41,29 @@ export default function Home1() {
   };
 
   return (
-    <div className="relative w-full min-h-screen overflow-hidden bg-orange-600">
+    <div className="relative w-full min-h-screen overflow-hidden">
       {/* NAVBAR */}
-      <nav className="absolute top-0 left-0 w-full z-50 px-[4%] py-5 flex justify-between items-center">
+      <nav className="absolute top-0 left-0 w-full z-50 px-[5%] py-6 flex justify-between items-center max-w-[1500px] mx-auto">
         <a
           href="/"
-          className="text-[1.8rem] font-extrabold tracking-[1px]
-        bg-gradient-to-r from-[#ff6a00] to-[#ee0979]
-        bg-clip-text text-transparent"
+          className="text-[2.2rem] font-extrabold bg-gradient-to-r from-[#ff6a00] to-[#ee0979] bg-clip-text text-transparent"
         >
           Qviple
         </a>
+        {/* <img
+          className="h-[50px]] w-[100px]"
+          src="/images/logo-qviple.svg "
+        ></img> */}
 
-        {/* ENQUIRY BUTTON */}
         <motion.button
           onClick={() => setOpenModal(true)}
-          initial={{ opacity: 0, scale: 0 }}
+          initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           whileHover={{ scale: 0.95 }}
-          whileTap={{ scale: 0.95 }}
-          transition={{ duration: 0.5 }}
+          whileTap={{ scale: 0.92 }}
+          transition={{ duration: 0.4 }}
           className="bg-gradient-to-r from-[#ff6a00] to-[#ee0979] cursor-pointer
-          text-white px-[1.3rem] py-[0.5rem] rounded-[30px] font-semibold shadow-md"
+          text-white px-6 py-2.5 rounded-full font-semibold shadow-xl hover:shadow-2xl"
         >
           Enquiry
         </motion.button>
@@ -73,19 +71,17 @@ export default function Home1() {
 
       {/* HERO SECTION */}
       <header className="relative w-full h-full">
-        {/* Background Video */}
         <div
-          className={`absolute inset-0 w-full h-full transition-transform duration-500`}
-          style={{ transform: hover ? "scale(1.1)" : "scale(1)" }}
+          className={`absolute inset-0 w-full h-full transition-transform duration-700`}
+          style={{ transform: hover ? "scale(1.08)" : "scale(1)" }}
           onMouseEnter={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
         >
           <video
             className={`w-full h-full object-cover transition-opacity duration-[1.4s] ${
-              videoLoaded ? "opacity-100" : "opacity-70"
+              videoLoaded ? "opacity-100" : "opacity-60"
             }`}
-            src="/videos/background.mp4"
-            type="video/mp4"
+            src="/images/animated video.mp4"
             loop
             autoPlay
             muted
@@ -95,59 +91,62 @@ export default function Home1() {
           ></video>
         </div>
 
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/40 z-10"></div>
+        <div className="absolute inset-0 bg-black/45"></div>
 
-        {/* Main content */}
-        <div className="relative z-20 flex flex-wrap w-full min-h-screen text-white px-[4%] pt-40 pb-48 items-end">
-          <div className="flex-1 md:max-w-[50%] flex flex-col justify-end">
-            <h2 className="text-[3rem] sm:text-[4.2rem] md:text-[5rem] lg:text-[6.2rem] font-semibold leading-[1.1]">
-              <span>One app</span>
-              <br />
-              <span>for all needs</span>
-            </h2>
-          </div>
-
-          {/* Right content */}
-          <div className="flex flex-col justify-end md:max-w-[25%] mt-10 md:mt-0 md:ml-[20%] mb-14">
-            <p className="text-lg md:text-xl font-medium leading-snug">
-              Single account for all your payments.
-            </p>
-
-            <div className="flex gap-5 mt-8">
-              <a
-                href="https://apps.apple.com/in/app/qviple-your-education-online/id6463501865"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative w-[148px] h-[44px] border border-white/30 rounded-md hover:scale-105 transition-all"
+        <div className="relative z-20 w-full min-h-screen flex justify-center items-center px-[5%]">
+          <div className="max-w-[1500px] w-full flex flex-wrap items-center justify-between text-white gap-10 pt-28 pb-20">
+            {/* LEFT CONTENT */}
+            <div className="flex-1">
+              <h2
+                className="font-bold leading-[1.1] tracking-tight
+              text-[3rem] sm:text-[4rem] md:text-[5rem] lg:text-[6rem] xl:text-[6.6rem]"
               >
-                <img
-                  src="/images/app-store-neutral.svg"
-                  className="absolute inset-0 w-full h-full"
-                />
-              </a>
+                One App
+                <br />
+                for all needs
+              </h2>
+            </div>
 
-              <Link
-                href="https://play.google.com/store/apps/details?id=com.mithakalminds.qviple"
-                className="relative w-[148px] h-[44px] border border-white/30 rounded-md hover:scale-105 transition-all"
-                target="_blank"
-              >
-                <img
-                  src="/images/google-play-neutral.svg"
-                  className="absolute inset-0 w-full h-full"
-                />
-              </Link>
+            {/* RIGHT CONTENT */}
+            <div className="flex flex-col gap-6 w-full md:max-w-[320px]">
+              <p className="text-lg md:text-xl font-medium">
+                Single account for all your payments.
+              </p>
+
+              <div className="flex gap-5">
+                <a
+                  href="https://apps.apple.com/in/app/qviple-your-education-online/id6463501865"
+                  target="_blank"
+                  className="relative w-[148px] h-[44px] border border-white/40 rounded-md hover:scale-105 transition-all"
+                >
+                  <img
+                    src="/images/app-store-neutral.svg"
+                    className="absolute inset-0 w-full h-full"
+                  />
+                </a>
+
+                <Link
+                  href="https://play.google.com/store/apps/details?id=com.mithakalminds.qviple"
+                  target="_blank"
+                  className="relative w-[148px] h-[44px] border border-white/40 rounded-md hover:scale-105 transition-all"
+                >
+                  <img
+                    src="/images/google-play-neutral.svg"
+                    className="absolute inset-0 w-full h-full"
+                  />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </header>
 
-      {/* POPUP MODAL */}
+      {/* MODAL */}
       <AnimatePresence>
         {openModal && (
           <>
             <motion.div
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[90]"
+              className="fixed inset-0 bg-black/70 backdrop-blur-md z-[90]"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -155,13 +154,12 @@ export default function Home1() {
             />
 
             <motion.div
-              initial={{ scale: 0.5, opacity: 0, y: -50 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
+              initial={{ scale: 0.6, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.4, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed top-1/2 left-1/2 z-[100] -translate-x-1/2 
-              -translate-y-1/2 bg-white w-[90%] sm:w-[450px] rounded-2xl 
-              shadow-2xl p-6 sm:p-8"
+              className="fixed top-1/2 left-1/2 z-[100] -translate-x-1/2 -translate-y-1/2 
+              bg-white w-[90%] sm:w-[450px] rounded-2xl shadow-2xl p-7"
             >
               <div className="flex justify-between items-center mb-4">
                 <h2 className="text-2xl font-bold text-[#212842]">
@@ -169,13 +167,12 @@ export default function Home1() {
                 </h2>
                 <button onClick={() => setOpenModal(false)}>
                   <X
-                    className="text-gray-500 hover:text-black cursor-pointer"
                     size={24}
+                    className="text-gray-500 hover:text-black cursor-pointer"
                   />
                 </button>
               </div>
 
-              {/* Form */}
               <form className="space-y-4" onSubmit={handleSubmit}>
                 <input
                   type="text"
@@ -183,7 +180,7 @@ export default function Home1() {
                   value={form.name}
                   onChange={handleChange}
                   placeholder="Full Name"
-                  className="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#ff6a00]"
+                  className="w-full px-4 py-3 border rounded-md"
                 />
 
                 <input
@@ -192,7 +189,7 @@ export default function Home1() {
                   value={form.email}
                   onChange={handleChange}
                   placeholder="Email Address"
-                  className="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#ee0979]"
+                  className="w-full px-4 py-3 border rounded-md"
                 />
 
                 <input
@@ -201,7 +198,7 @@ export default function Home1() {
                   value={form.phone}
                   onChange={handleChange}
                   placeholder="Phone Number"
-                  className="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#ff6a00]"
+                  className="w-full px-4 py-3 border rounded-md"
                 />
 
                 <textarea
@@ -209,15 +206,14 @@ export default function Home1() {
                   value={form.message}
                   onChange={handleChange}
                   placeholder="Message"
-                  className="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#ee0979] h-24"
+                  className="w-full px-4 py-3 border rounded-md h-24"
                 ></textarea>
 
                 <motion.button
                   type="submit"
                   whileHover={{ scale: 0.98 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-full cursor-pointer bg-gradient-to-r from-[#ff6a00] to-[#ee0979] 
-                  text-white py-3 rounded-xl font-semibold shadow-md hover:shadow-xl"
+                  className="w-full cursor-pointer bg-gradient-to-r from-[#ff6a00] to-[#ee0979] text-white py-3 rounded-xl font-semibold shadow-xl hover:shadow-2xl"
                 >
                   Submit
                 </motion.button>
@@ -227,7 +223,6 @@ export default function Home1() {
         )}
       </AnimatePresence>
 
-      {/* Toast Container */}
       <ToastContainer />
     </div>
   );

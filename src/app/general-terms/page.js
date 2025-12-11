@@ -5,7 +5,7 @@ import React from "react";
 
 export default function Page() {
   return (
-    <div className="relative -mt-20 ">
+    <div className="relative -mt-20  mb-[1rem]">
       <QvipleNavbar />
 
       <section className="w-full bg-[url('/images/pattern.webp')] bg-cover bg-center min-h-[300px] md:min-h-[450px] md:pt-24 flex items-center justify-center">
@@ -14,7 +14,7 @@ export default function Page() {
         </h1>
       </section>
 
-      <section className="w-full md:max-w-[1200px] mx-auto px-2 md:px-10 lg:px-20 -mt-24">
+      <section className="w-full md:max-w-[1200px] mx-auto px-4 md:px-10 lg:px-20 -mt-24">
         <div className="bg-white shadow-xl rounded-2xl p-6 sm:p-10 md:p-16 text-gray-800 leading-7 text-[15px] md:text-lg">
           <div className="space-y-6">
             {termsData.map((item, index) => {

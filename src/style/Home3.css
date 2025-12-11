@@ -92,6 +92,7 @@
 
 /* Review text */
 .opacity-cards {
+  line-height: 1.3rem;
   opacity: 0.92;
   margin-top: 0.5rem;
 }

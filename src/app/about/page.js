@@ -35,7 +35,7 @@ export default function AboutPage() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="relative z-10 mx-auto px-6 md:px-10 lg:px-28 w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-10 md:-py-32"
+          className="relative z-10 mx-auto px-6 md:px-10 lg:px-32 w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-10 md:-py-32"
         >
           {/* LEFT TEXT */}
           <div className="flex-1">
@@ -136,7 +136,7 @@ export default function AboutPage() {
       </section>
 
       {/* ================= VALUES SECTION ================= */}
-      <section className="bg-[#f73b20] text-white py-20 px-6 lg:px-16">
+      <section className="bg-[#f73b20] text-white py-20 px-6 lg:px-36">
         <div className="max-w-[1300px] mx-auto space-y-20">
           {[
             { num: "01.", title: "For you" },

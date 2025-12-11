@@ -92,8 +92,6 @@ export default function BottomMenu() {
                               {sub.external ? (
                                 <Link
                                   href={sub.href}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
                                   className="drawer-link flex items-center gap-3 text-[#0a192f] no-underline font-medium text-sm hover:text-[#2563eb] transform-gpu hover:translate-x-1 transition-all"
                                 >
                                   <span className="w-1.5 h-1.5 rounded-full bg-[#2563eb] transition-colors" />
@@ -119,9 +117,7 @@ export default function BottomMenu() {
                 <>
                   {item.external ? (
                     <Link
-                      href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href={`${item.href}`}
                       className="flex items-center gap-2 px-2 py-1 rounded-full text-sm font-medium text-white bg-transparent hover:bg-gradient-to-br hover:from-[#1e3a8a] hover:to-[#2563eb] hover:shadow-[0_0_12px_rgba(37,99,235,0.8)] transform-gpu hover:-translate-y-0.5 active:scale-95 transition-all pointer-events-auto no-underline"
                     >
                       <span className="inline-flex">
@@ -131,7 +127,7 @@ export default function BottomMenu() {
                     </Link>
                   ) : (
                     <Link
-                      href={item.href}
+                      href={`${item.href}`}
                       className="flex items-center gap-2 px-2 py-1 rounded-full text-sm font-medium text-white bg-transparent hover:bg-gradient-to-br hover:from-[#1e3a8a] hover:to-[#2563eb] hover:shadow-[0_0_12px_rgba(37,99,235,0.8)] transform-gpu hover:-translate-y-0.5 active:scale-95 transition-all pointer-events-auto no-underline"
                     >
                       <span className="inline-flex">

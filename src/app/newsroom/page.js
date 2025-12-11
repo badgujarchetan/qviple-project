@@ -8,12 +8,11 @@ export default function Page() {
     <div className="mt-[-1rem] mb-20">
       <Navbar />
 
-      
       <header className="relative py-32 md:py-40 bg-[#f73b20] text-white overflow-hidden mb-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_bottom,rgba(255,255,255,0.15),transparent_40%)]"></div>
 
-        <div className="relative container mx-auto px-6 flex flex-col md:flex-row justify-between items-start gap-10">
-          <h1 className="text-[clamp(42px,5vw,64px)] font-bold tracking-tight md:pl-20">
+        <div className="relative container mx-auto px-6 flex flex-col md:flex-row justify-between items-start gap-10 md:px-[9.3rem]">
+          <h1 className="text-[clamp(42px,5vw,64px)] font-bold tracking-tight">
             Newsroom
           </h1>
 
@@ -25,7 +24,7 @@ export default function Page() {
       </header>
 
       {/* ARTICLES */}
-      <main className="px-6 container mx-auto">
+      <main className="px-6 container mx-auto md:px-[9.3rem]">
         <h2 className="text-3xl font-bold mb-12">Latest Articles</h2>
 
         <ul className="grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-7">

@@ -196,7 +196,7 @@ export default function page() {
         className="w-full bg-no-repeat bg-contain py-8 md:py-20 px-1.5 md:px-4"
         style={{ backgroundImage: "url('/images/chain-bg.png')" }}
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[72.3rem] mx-auto">
           {/* FORM WRAPPER */}
           <div
             className="bg-cover rounded-2xl px-6 sm:px-10 lg:px-16 py-12 flex flex-col lg:flex-row items-start justify-between gap-10"
@@ -296,7 +296,7 @@ export default function page() {
               <div className="flex justify-end pt-2">
                 <button
                   type="submit"
-                  className="min-w-[180px] min-h-[56px] bg-[#131E3D] hover:bg-[#314787] text-white text-lg font-medium rounded-md px-8 py-3 transition-all"
+                  className="min-w-[180px] cursor-pointer min-h-[56px] bg-[#131E3D] hover:bg-[#314787] text-white text-lg font-medium rounded-md px-8 py-3 transition-all"
                 >
                   Get the Offer
                 </button>
@@ -306,7 +306,7 @@ export default function page() {
         </div>
       </div>
 
-      <div className="w-full px-4 lg:px-20 xl:px-40 mb-24">
+      <div className="w-full px-4 lg:px-20 xl:px-44 mb-24">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* CARD 1 */}
           <div className="bg-white rounded-lg shadow-xl p-6 flex flex-col justify-between min-h-[520px]">

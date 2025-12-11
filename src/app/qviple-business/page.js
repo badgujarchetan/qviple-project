@@ -182,7 +182,6 @@ export default function Page() {
                   href="/"
                   className="block max-w-md rounded-xl shadow-[0_24px_60px_rgba(0,0,0,0.28)]"
                 >
-                  
                   <div className="flex items-center justify-between gap-4 bg-[#69d2ff] px-6 py-5 sm:px-7">
                     <span className="text-sm font-semibold leading-snug text-[#001744] sm:text-base">
                       Connect with a dedicated expert
@@ -206,7 +205,6 @@ export default function Page() {
                     </div>
                   </div>
 
-               
                   <div className="bg-[#17357b] px-6 pb-6 pt-4 text-xs leading-relaxed text-[rgba(186,198,219,0.9)] sm:px-7 sm:text-sm">
                     Contact your dedicated account manager during and after
                     integration. We are here to help you get started with
@@ -293,10 +291,9 @@ export default function Page() {
                 </div>
                 <div>
                   {/* {item.pill ? ( */}
-                    <span className="inline-block rounded-3xl bg-[#60cdff] px-6 py-2 text-sm font-medium text-[#002991]">
-                      {item.label}
-                    </span>
-                  
+                  <span className="inline-block rounded-3xl bg-[#60cdff] px-6 py-2 text-sm font-medium text-[#002991]">
+                    {item.label}
+                  </span>
                 </div>
               </div>
             ))}
@@ -400,7 +397,7 @@ export default function Page() {
           feel free to reach out to us at{" "}
           <a
             href="mailto:connect@qviple.com"
-            className="underline underline-offset-2"
+            className="underline underline-offset-2 font-bold"
           >
             connect@qviple.com
           </a>{" "}

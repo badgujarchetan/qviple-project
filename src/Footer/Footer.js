@@ -44,7 +44,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-[#125875] text-white pt-16 pb-10">
+    <footer className="w-full bg-gradient-to-br from-[#032b6b] via-[#0641a6] to-[#3c8bff] text-white pt-16 pb-10">
       <motion.div
         initial="hidden"
         animate="show"
@@ -52,15 +52,19 @@ export default function Footer() {
       >
         <motion.div
           variants={fadeUp}
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-10"
         >
           <div>
             <h3 className="font-semibold text-lg mb-3 opacity-90">
               Get Started
             </h3>
             <ul className="flex flex-col gap-2">
-              <AnimatedLink href="/signup">Sign Up</AnimatedLink>
-              <AnimatedLink href="/login">Login</AnimatedLink>
+              <AnimatedLink href="https://qvipleweb.web.app/#/login">
+                Sign Up
+              </AnimatedLink>
+              <AnimatedLink href="https://qvipleweb.web.app/#/login">
+                Login
+              </AnimatedLink>
             </ul>
           </div>
 
@@ -78,22 +82,22 @@ export default function Footer() {
               <AnimatedLink href="/about">About Us</AnimatedLink>
               <AnimatedLink href="/newsroom">Newsroom</AnimatedLink>
               <AnimatedLink href="/partnerships">Partnerships</AnimatedLink>
-              <AnimatedLink href="/media-assets">Media Kit</AnimatedLink>
+              {/* <AnimatedLink href="/media-assets">Media Kit</AnimatedLink> */}
             </ul>
           </div>
 
           <div>
             <h3 className="font-semibold text-lg mb-3 opacity-90">Legal</h3>
             <ul className="flex flex-col gap-2">
-              <AnimatedLink href="/cookie-policy">Cookie Policy</AnimatedLink>
+              <AnimatedLink href="/cookies-policy">Cookie Policy</AnimatedLink>
               <AnimatedLink href="/privacy-policy">Privacy Policy</AnimatedLink>
               <AnimatedLink href="/terms-of-use">Terms of Use</AnimatedLink>
-              <AnimatedLink href="/disclaimers">Disclaimers</AnimatedLink>
-              <AnimatedLink href="/aml-policy">AML Policy</AnimatedLink>
+              {/* <AnimatedLink href="/disclaimers">Disclaimers</AnimatedLink>
+              <AnimatedLink href="/aml-policy">AML Policy</AnimatedLink> */}
             </ul>
           </div>
 
-          <div>
+          {/* <div>
             <h3 className="font-semibold text-lg mb-3 opacity-90">Support</h3>
             <ul className="flex flex-col gap-2">
               <AnimatedLink href="/faq">FAQ</AnimatedLink>
@@ -105,28 +109,29 @@ export default function Footer() {
                 Api Documentation
               </AnimatedLink>
             </ul>
-          </div>
+          </div> */}
         </motion.div>
 
         <motion.div
           variants={fadeUp}
-          className="flex flex-col md:flex-row justify-between items-center mt-14 border-t border-white/20 pt-8 gap-6"
+          className="flex flex-col 
+           justify-between items-center mt-14 border-t border-white/20 pt-8 gap-6"
         >
-          <div className="flex gap-4 flex-wrap">
+          {/* <div className="flex gap-4 flex-wrap">
             <a href="https://apps.apple.com/in/app/qviple-your-education-online/id6463501865">
               <img
                 src="/images/app-store-neutral.svg"
-                className="h-12 hover:opacity-90"
+                className="h-12 hover:opacity-60"
               />
             </a>
 
             <a href="https://play.google.com/store/apps/details?id=com.mithakalminds.qviple">
               <img
                 src="/images/google-play-neutral.svg"
-                className="h-12 hover:opacity-90"
+                className="h-12 hover:opacity-60"
               />
             </a>
-          </div>
+          </div> */}
 
           <div className="flex gap-4">
             {socialIcons.map((item, i) => (
@@ -147,10 +152,8 @@ export default function Footer() {
           className="text-center mt-10 text-white/80 text-sm"
         >
           © {new Date().getFullYear()}{" "}
-          <span className="font-semibold text-white">
-            Mithikal Minds Pvt. Ltd
-          </span>
-          . All Rights Reserved.
+          <span className="font-semibold text-white">Qviple</span>. All Rights
+          Reserved.
         </motion.div>
       </motion.div>
     </footer>

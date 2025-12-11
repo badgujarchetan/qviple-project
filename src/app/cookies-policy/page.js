@@ -5,7 +5,7 @@ import QvipleNavbar from "@/qviple-business_navbar/Qviple-business_navbar";
 
 export default function CookiesPolicy() {
   return (
-    <div className="relative -mt-20 ">
+    <div className="relative -mt-20 mb-[1rem] ">
       <QvipleNavbar />
 
       {/* ===== HERO SECTION ===== */}
@@ -16,7 +16,7 @@ export default function CookiesPolicy() {
       </section>
 
       {/* ===== MAIN CONTENT BOX ===== */}
-      <div className="w-full md:max-w-[1200px] mx-auto px-2 md:px-10 lg:px-20 -mt-24">
+      <div className="w-full md:max-w-[1200px] mx-auto px-4 md:px-10 lg:px-20 -mt-24">
         <div className="bg-white shadow-xl rounded-2xl p-6 sm:p-10 md:p-16 text-gray-800 leading-7 text-[15px] md:text-lg">
           <h3 className="text-lg font-semibold my-4">Necessary Cookies</h3>
           <p className="text-[18px] leading-[34px] my-4">

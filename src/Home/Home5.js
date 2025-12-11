@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 export default function Home5() {
   return (
     <section className="relative w-full flex items-center overflow-hidden">
-
       {/* Background Video */}
       <div className="absolute inset-0 -z-20">
         <video
@@ -22,7 +21,6 @@ export default function Home5() {
 
       {/* CONTENT */}
       <div className="max-w-[1400px] w-full mx-auto px-6 md:px-12 lg:px-24 flex flex-col gap-8 py-40 ">
-
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -52,7 +50,7 @@ export default function Home5() {
         >
           <a
             href="/"
-            className="px-8 py-3 bg-white text-black rounded-xl font-semibold text-lg hover:scale-[1.04] hover:shadow-xl transition-all duration-200"
+            className="px-8 py-3 bg-white text-black rounded-sm font-semibold text-lg hover:scale-[1.04] hover:shadow-xl transition-all duration-200"
           >
             Get Started
           </a>
@@ -68,7 +66,7 @@ export default function Home5() {
           {/* App Store */}
           <a
             href="https://apps.apple.com/"
-            className="w-[160px] h-[52px] rounded-xl border border-white/20 bg-white/10 backdrop-blur-md flex justify-center items-center hover:bg-white/20 hover:scale-105 transition-all duration-200"
+            className="w-[160px] h-[52px] rounded-sm border border-white/20 bg-white/10 backdrop-blur-md flex justify-center items-center hover:bg-white/20 hover:scale-105 transition-all duration-200"
           >
             <img src="/images/app-store-neutral.svg" className="w-[80%]" />
           </a>
@@ -76,7 +74,7 @@ export default function Home5() {
           {/* Google Play */}
           <a
             href="https://play.google.com/"
-            className="w-[160px] h-[52px] rounded-xl border border-white/20 bg-white/10 backdrop-blur-md flex justify-center items-center hover:bg-white/20 hover:scale-105 transition-all duration-200"
+            className="w-[160px] h-[52px] rounded-sm border border-white/20 bg-white/10 backdrop-blur-md flex justify-center items-center hover:bg-white/20 hover:scale-105 transition-all duration-200"
           >
             <img src="/images/google-play-neutral.svg" className="w-[80%]" />
           </a>

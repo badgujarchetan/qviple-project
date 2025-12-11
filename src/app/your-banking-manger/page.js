@@ -45,7 +45,7 @@ export default function Page() {
 
       {/* FEATURES SECTION */}
       <section className="bg-[#0f213f] py-12 md:py-20">
-        <div className="container mx-auto px-6 lg:px-12 text-white">
+        <div className="container mx-auto px-6 lg:px-45 text-white">
           <div className="flex flex-col lg:flex-row gap-10 lg:items-start">
             <div className="flex-1 grid gap-6">
               {[
@@ -235,7 +235,7 @@ export default function Page() {
           <div className="mt-14 text-center">
             <a
               href="/support"
-              className="inline-block w-full sm:w-auto text-center bg-blue-600 hover:bg-blue-500 text-white py-3 px-8 rounded-lg text-[15px] font-medium transition-all duration-200"
+              className="inline-block cursor-pointer w-full sm:w-auto text-center bg-blue-600 hover:bg-blue-500 text-white py-3 px-8 rounded-lg text-[15px] font-medium transition-all duration-200"
             >
               Get Started →
             </a>

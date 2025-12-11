@@ -3,7 +3,7 @@ import QvipleNavbar from "@/qviple-business_navbar/Qviple-business_navbar";
 
 export default function Page() {
   return (
-    <div className="-mt-[5rem]">
+    <div className="-mt-[5rem] mb-[1.3rem]">
       <QvipleNavbar />
 
       {/* HERO SECTION */}
@@ -109,7 +109,7 @@ export default function Page() {
       {/* CTA SECTION */}
       <div className="mt-[2rem] flex justify-center">
         <div className="w-[95%]  lg:w-[60rem] h-auto px-3 py-16 md:py-24 text-white text-center rounded-[1.125rem] bg-[url('/images/virtual-card-get-your-bg.png')] bg-center bg-cover bg-[#131E3D] bg-blend-multiply">
-          <h1 className="text-[2rem] md:text-[3.75rem] font-bold leading-[2.5rem]">
+          <h1 className="text-[2rem] md:text-[3.75rem] font-bold md:leading-[4rem] leading-[3rem]">
             Experience Hassle-Free Payments
           </h1>
 
