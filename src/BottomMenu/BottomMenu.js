@@ -1,22 +1,26 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Home, User, Briefcase, Info, ChevronDown } from "lucide-react";
+import { Home, User, Briefcase, Info } from "lucide-react";
 import Link from "next/link";
 import "./BottomMenu.css";
+
 export default function BottomMenu() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
+  // Hide on scroll logic
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setIsVisible(false);
       } else {
         setIsVisible(true);
       }
+
       setLastScrollY(currentScrollY);
     };
 
@@ -46,39 +50,26 @@ export default function BottomMenu() {
             >
               {item.drawer ? (
                 <>
+                  {/* Main Button */}
                   <button
                     className="flex items-center gap-2 px-2 py-1 rounded-full text-sm font-medium text-white bg-transparent hover:bg-gradient-to-br hover:from-[#1e3a8a] hover:to-[#2563eb] hover:shadow-[0_0_12px_rgba(37,99,235,0.8)] transform-gpu hover:-translate-y-0.5 active:scale-95 transition-all pointer-events-auto"
                     aria-haspopup="menu"
                     aria-expanded={hoveredIndex === idx}
                     type="button"
                   >
-                    <span className="inline-flex">
-                      {IconMap[item.iconName]}
-                    </span>
+                    <span className="inline-flex">{IconMap[item.iconName]}</span>
                     <span className="whitespace-nowrap">{item.label}</span>
-
-                    {/* <motion.span
-                      className="inline-flex items-center"
-                      animate={{ rotate: hoveredIndex === idx ? 180 : 0 }}
-                      transition={{ duration: 0.25 }}
-                    >
-                      <ChevronDown size={14} />
-                    </motion.span> */}
                   </button>
 
+                  {/* Drawer */}
                   <AnimatePresence>
                     {hoveredIndex === idx && (
                       <motion.div
-                        className="menu-drawer absolute bottom-14 left-1/2 -translate-x-1/2 bg-gradient-to-b from-white to-[#e0f0ff] rounded-lg shadow-2xl p-3 min-w-[180px] z-50 backdrop-blur-md pointer-events-auto transform-origin-bottom "
-                        style={{}}
+                        className="menu-drawer absolute bottom-14 left-1/2 -translate-x-1/2 bg-gradient-to-b from-white to-[#e0f0ff] rounded-lg shadow-2xl p-3 min-w-[180px] z-50 backdrop-blur-md pointer-events-auto transform-origin-bottom"
                         initial={{ opacity: 0, y: 20, scale: 0.95 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                        transition={{
-                          type: "spring",
-                          stiffness: 220,
-                          damping: 22,
-                        }}
+                        transition={{ type: "spring", stiffness: 220, damping: 22 }}
                       >
                         <ul className="m-0 p-0 list-none">
                           {item.drawer.map((sub, sIdx) => (
@@ -89,23 +80,14 @@ export default function BottomMenu() {
                               transition={{ delay: sIdx * 0.05 }}
                               className="my-2"
                             >
-                              {sub.external ? (
-                                <Link
-                                  href={sub.href}
-                                  className="drawer-link flex items-center gap-3 text-[#0a192f] no-underline font-medium text-sm hover:text-[#2563eb] transform-gpu hover:translate-x-1 transition-all"
-                                >
-                                  <span className="w-1.5 h-1.5 rounded-full bg-[#2563eb] transition-colors" />
-                                  <span>{sub.label}</span>
-                                </Link>
-                              ) : (
-                                <Link
-                                  href={sub.href}
-                                  className="drawer-link flex items-center gap-3 text-[#0a192f] no-underline font-medium text-sm hover:text-[#2563eb] transform-gpu hover:translate-x-1 transition-all"
-                                >
-                                  <span className="w-1.5 h-1.5 rounded-full bg-[#2563eb] transition-colors" />
-                                  <span>{sub.label}</span>
-                                </Link>
-                              )}
+                              <Link
+                                href={sub.href}
+                                onClick={() => setHoveredIndex(null)} // ⭐ DROPDOWN CLOSE ON CLICK
+                                className="drawer-link flex items-center gap-3 text-[#0a192f] no-underline font-medium text-sm hover:text-[#2563eb] transform-gpu hover:translate-x-1 transition-all"
+                              >
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#2563eb] transition-colors" />
+                                <span>{sub.label}</span>
+                              </Link>
                             </motion.li>
                           ))}
                         </ul>
@@ -115,27 +97,14 @@ export default function BottomMenu() {
                 </>
               ) : (
                 <>
-                  {item.external ? (
-                    <Link
-                      href={`${item.href}`}
-                      className="flex items-center gap-2 px-2 py-1 rounded-full text-sm font-medium text-white bg-transparent hover:bg-gradient-to-br hover:from-[#1e3a8a] hover:to-[#2563eb] hover:shadow-[0_0_12px_rgba(37,99,235,0.8)] transform-gpu hover:-translate-y-0.5 active:scale-95 transition-all pointer-events-auto no-underline"
-                    >
-                      <span className="inline-flex">
-                        {IconMap[item.iconName]}
-                      </span>
-                      <span className="whitespace-nowrap">{item.label}</span>
-                    </Link>
-                  ) : (
-                    <Link
-                      href={`${item.href}`}
-                      className="flex items-center gap-2 px-2 py-1 rounded-full text-sm font-medium text-white bg-transparent hover:bg-gradient-to-br hover:from-[#1e3a8a] hover:to-[#2563eb] hover:shadow-[0_0_12px_rgba(37,99,235,0.8)] transform-gpu hover:-translate-y-0.5 active:scale-95 transition-all pointer-events-auto no-underline"
-                    >
-                      <span className="inline-flex">
-                        {IconMap[item.iconName]}
-                      </span>
-                      <span className="whitespace-nowrap">{item.label}</span>
-                    </Link>
-                  )}
+                  {/* Normal Link */}
+                  <Link
+                    href={item.href}
+                    className="flex items-center gap-2 px-2 py-1 rounded-full text-sm font-medium text-white bg-transparent hover:bg-gradient-to-br hover:from-[#1e3a8a] hover:to-[#2563eb] hover:shadow-[0_0_12px_rgba(37,99,235,0.8)] transform-gpu hover:-translate-y-0.5 active:scale-95 transition-all pointer-events-auto no-underline"
+                  >
+                    <span className="inline-flex">{IconMap[item.iconName]}</span>
+                    <span className="whitespace-nowrap">{item.label}</span>
+                  </Link>
                 </>
               )}
             </li>
@@ -155,6 +124,7 @@ const IconMap = {
 
 const menuItems = [
   { label: "Home", href: "/", iconName: "Home" },
+
   {
     label: "Company",
     iconName: "Company",
@@ -163,6 +133,7 @@ const menuItems = [
       { label: "Newsroom", href: "/newsroom" },
     ],
   },
+
   {
     label: "Partnerships",
     iconName: "Business",
