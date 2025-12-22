@@ -9,7 +9,7 @@ export default function Home5() {
       <div className="absolute inset-0 -z-20">
         <video
           className="md:h-full w-full object-cover"
-          src="/videos/currencies-video-bg.mp4"
+          src="/images/animated video.mp4"
           autoPlay
           muted
           loop

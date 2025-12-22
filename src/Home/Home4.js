@@ -239,7 +239,6 @@ import { motion } from "framer-motion";
 export default function PremiumCTA() {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#07080d] px-6 py-20">
-
       {/* Background Grid & Glow */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#6366f112_1px,transparent_1px),linear-gradient(to_bottom,#6366f112_1px,transparent_1px)] bg-[size:42px_42px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
@@ -256,12 +255,15 @@ export default function PremiumCTA() {
       >
         <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/[0.035] p-1 text-center backdrop-blur-xl">
           <div className="rounded-[2.3rem] border border-white/5 bg-gradient-to-b from-white/[0.08] to-transparent px-8 py-16 sm:px-16 sm:py-24">
-
             {/* Badge */}
             <motion.div
               initial={{ scale: 0.92 }}
               animate={{ scale: 1 }}
-              transition={{ repeat: Infinity, duration: 2.2, repeatType: "reverse" }}
+              transition={{
+                repeat: Infinity,
+                duration: 2.2,
+                repeatType: "reverse",
+              }}
               className="inline-flex items-center gap-2 rounded-full border border-violet-500/30 bg-violet-500/10 px-4 py-1.5 text-sm font-medium text-violet-300 mb-8"
             >
               <span className="relative flex h-2 w-2">
@@ -286,7 +288,6 @@ export default function PremiumCTA() {
 
             {/* Buttons */}
             <div className="flex flex-wrap items-center justify-center gap-6">
-
               {/* App Store */}
               <motion.a
                 whileHover={{ scale: 1.06 }}
@@ -294,7 +295,11 @@ export default function PremiumCTA() {
                 href="https://apps.apple.com/in/app/qviple-your-education-online/id6463501865"
                 className="group relative flex items-center gap-3 rounded-2xl bg-white px-8 py-4 transition-all hover:shadow-[0_0_35px_-5px_rgba(139,92,246,0.4)]"
               >
-                <img src="/app-store-orange.svg" alt="App Store" className="h-7 w-auto" />
+                <img
+                  src="/app-store-orange.svg"
+                  alt="App Store"
+                  className="h-7 w-auto"
+                />
                 <div className="text-left">
                   <span className="block text-[10px] font-bold uppercase tracking-wider text-gray-400">
                     Download on
@@ -312,7 +317,11 @@ export default function PremiumCTA() {
                 href="https://play.google.com/store/apps/details?id=com.mithakalminds.qviple"
                 className="group flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-8 py-4 transition-all hover:bg-white/10 hover:border-white/20"
               >
-                <img src="/google-play-orange.svg" alt="Google Play" className="h-7 w-auto" />
+                <img
+                  src="/google-play-orange.svg"
+                  alt="Google Play"
+                  className="h-7 w-auto"
+                />
                 <div className="text-left">
                   <span className="block text-[10px] font-bold uppercase tracking-wider text-gray-500">
                     Get it on
@@ -342,7 +351,6 @@ export default function PremiumCTA() {
                 </p>
               </div>
             </div>
-
           </div>
         </div>
       </motion.div>
