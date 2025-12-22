@@ -81,7 +81,7 @@ export default function Home1() {
             className={`w-full h-full object-cover transition-opacity duration-[1.4s] ${
               videoLoaded ? "opacity-100" : "opacity-60"
             }`}
-            src="/images/animated video.mp4"
+            src="/videos/background.mp4"
             loop
             autoPlay
             muted

@@ -57,7 +57,9 @@ export default function BottomMenu() {
                     aria-expanded={hoveredIndex === idx}
                     type="button"
                   >
-                    <span className="inline-flex">{IconMap[item.iconName]}</span>
+                    <span className="inline-flex">
+                      {IconMap[item.iconName]}
+                    </span>
                     <span className="whitespace-nowrap">{item.label}</span>
                   </button>
 
@@ -69,7 +71,11 @@ export default function BottomMenu() {
                         initial={{ opacity: 0, y: 20, scale: 0.95 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                        transition={{ type: "spring", stiffness: 220, damping: 22 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 220,
+                          damping: 22,
+                        }}
                       >
                         <ul className="m-0 p-0 list-none">
                           {item.drawer.map((sub, sIdx) => (
@@ -89,7 +95,7 @@ export default function BottomMenu() {
                                 <span>{sub.label}</span>
                               </Link>
                             </motion.li>
-                          ))}
+                          ))} 
                         </ul>
                       </motion.div>
                     )}
@@ -102,7 +108,9 @@ export default function BottomMenu() {
                     href={item.href}
                     className="flex items-center gap-2 px-2 py-1 rounded-full text-sm font-medium text-white bg-transparent hover:bg-gradient-to-br hover:from-[#1e3a8a] hover:to-[#2563eb] hover:shadow-[0_0_12px_rgba(37,99,235,0.8)] transform-gpu hover:-translate-y-0.5 active:scale-95 transition-all pointer-events-auto no-underline"
                   >
-                    <span className="inline-flex">{IconMap[item.iconName]}</span>
+                    <span className="inline-flex">
+                      {IconMap[item.iconName]}
+                    </span>
                     <span className="whitespace-nowrap">{item.label}</span>
                   </Link>
                 </>
